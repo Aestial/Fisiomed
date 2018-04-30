@@ -1,6 +1,7 @@
 # Fisiomed
 
-## Instrucciones taller para creación de UI personalizado con Unity. (para Fisiomed, 05/05/2018).
+### Instrucciones
+#### Taller para creación de UI personalizado con Unity. (para Fisiomed, 05/05/2018).
 
 1.	Descargar Unity: https://store.unity.com/download?ref=personal
 2.	Descargar proyecto de Github: https://github.com/Aestial/Fisiomed
@@ -16,7 +17,7 @@
 12. Animaciones de propiedades de elementos de UI (botones, imágenes, etc.)
 13.	Programación básica de lógica de los eventos. Disparar un evento (reproducir sonido, cambiar texto, etc.) Introducción a la programación.
 
-## Consideraciones:
+### Consideraciones:
 - La aplicación es para diferentes dispositivos móviles con diferentes resoluciones, por lo que debe ser un diseño responsivo en todo momento. Responsive-based design.
 - Manejar los recursos de manera óptima y correcta, i.e. mínima resolución en imágenes, texto creado en Unity, no abuso de gradientes (no se pueden comprimir), creación de atlas, etc.
 - Se debe tener una pantalla (imagen o video) como referencia para el acomodo o layout de los elementos de la UI.
