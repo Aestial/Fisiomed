@@ -3,11 +3,12 @@
 ### Instrucciones
 #### Taller para creación de UI personalizado con Unity. (para Fisiomed, 05/05/2018).
 
-1.	Descargar Unity: https://store.unity.com/download?ref=personal
-2.	Descargar proyecto de Github: https://github.com/Aestial/Fisiomed
-3.	Descargar Assets (videos): Google Drive de cuenta especial. Faltan en repositorio
-4.	Reconocimiento rápido de la interfaz o Editor de Unity, relacionarla con algunos programas de creación de contenido como Photoshop, Blender, Maya, etc.
-5.	Agregar assets en proyecto (siguiendo una buena estructura, jerarquía y nomenclatura)
+1.	Descargar e instalar Unity: https://store.unity.com/download?ref=personal
+2.  Descargar e instalar Github Desktop: https://desktop.github.com/
+3.	Clonar proyecto de Github: https://github.com/Aestial/Fisiomed, para ello seleccionar la opción 'Clone or download' -> 'Open in Desktop'.
+4.	Descargar Assets (videos): Google Drive de cuenta especial. Faltan en repositorio
+5.	Reconocimiento rápido de la interfaz o Editor de Unity, relacionarla con algunos programas de creación de contenido como Photoshop, Blender, Maya, etc.
+6.	Agregar assets en proyecto (siguiendo una buena estructura, jerarquía y nomenclatura)
 6.	Checar opciones de importación de assets, crear sprites/UI a partir de imágenes PNG, crear sprites a partir del multi sprite editor (textura con tilling, atlas).
 7.	Creación de escena, comprensión de los elementos de la escena, creación de objetos.
 8.	Creación de Canvas, para interfaz 2D (UI). Configuración del canvas, conocimiento de los diferentes componentes y comportamiento. Descripción de eventos de entrada de usuario, input.
