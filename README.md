@@ -4,6 +4,18 @@
 #### Taller para creación de UI personalizado con Unity. (para Fisiomed, 05/05/2018).
 
 1.	Descargar e instalar Unity: https://store.unity.com/download?ref=personal
+1.1 Elegir los siguientes componentes en el instalador:
+- Unity 2017.4.2
+- MonoDevelop / Unity Debugger
+- Standard Assets
+- Example Project (Omitir en caso de poca memoria en HDD).
+- Android Build Support
+- WebGL build Support
+![Componentes a Descargar](https://www.dropbox.com/s/2lr143g50p7n2ou/Screenshot%202018-05-01%2018.39.34.png)
+En la imagen se muestran seleccionados los componentes mínimos deseables.
+1.2 (Opcional) Elegir alguno(s) de los siguientes componentes dependiendo los casos planteados.
+- Documentation: se planea trabajar con poco o nulo acceso a internet. Poder consultar la documentación en todo momento es necesario para cualquier usuario de Unity.
+- iOS Build Support: En caso de los usarios de Mac OS que cuenten con un dispositivo iOS (iPhone/iPad).
 2.  Descargar e instalar Github Desktop: https://desktop.github.com/
 3.	Clonar proyecto de Github: https://github.com/Aestial/Fisiomed, para ello seleccionar la opción 'Clone or download' -> 'Open in Desktop'.
 4.	Descargar Assets (videos): Google Drive de cuenta especial. Faltan en repositorio
