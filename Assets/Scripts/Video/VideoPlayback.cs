@@ -28,7 +28,8 @@ public class VideoPlayback : MonoBehaviour
 		Debug.Log(this.currentFrame);
 
 		this.videoPlayer.frame = this.currentFrame;
-		this.videoPlayer.Play();
+		// This breaks Unity editor:
+		// this.videoPlayer.Play();
 	}
 	
 	// Update is called once per frame
@@ -43,9 +44,10 @@ public class VideoPlayback : MonoBehaviour
 			this.percentage = this.currentFrame / (float)this.frameCount;
 		}
 		Debug.Log("Playback Percentage: " + this.percentage);
+		// This breaks Unity editor also:
 		// this.videoPlayer.frame = 0;
 		// this.videoPlayer.frame = this.currentFrame;
 		// this.videoPlayer.Play();
-		this.videoPlayer.Pause();
+		// this.videoPlayer.Pause();
 	}
 }
