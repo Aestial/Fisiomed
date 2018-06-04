@@ -5,10 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Escenas/InputTest.unity
-    guid: 0f3fcc0bab24b43c69c9f442a243381c
   - enabled: 1
     path: Assets/Escenas/Interfaz_Jaime.unity
     guid: 492041cb3945b448682a5d268f7e3a78
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Escenas/Interfaz_Beu.unity
+    guid: 36427610b6d89a64d9f2d3c3ef47c99b
