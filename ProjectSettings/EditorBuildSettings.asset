@@ -6,8 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Escenas/Interfaz_Jaime.unity
-    guid: 492041cb3945b448682a5d268f7e3a78
-  - enabled: 1
-    path: Assets/Escenas/Interfaz_Beu.unity
-    guid: 36427610b6d89a64d9f2d3c3ef47c99b
+    path: Assets/Escenas/Interfaz.unity
+    guid: 7a799ae7925a64b1198f0c5597b2bc24
+  m_configObjects: {}
