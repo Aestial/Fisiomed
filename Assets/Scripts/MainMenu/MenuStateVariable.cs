@@ -11,6 +11,7 @@ public enum MenuState
 	LogIn,
 	SignUp,
 	TopMenu,
+	Progress,
 	Settings,
 	Profile,
 	Volume,
@@ -35,7 +36,8 @@ ISerializationCallbackReceiver
 
 	public void OnAfterDeserialize()
 	{
-		this.RuntimeValue = this.InitialValue;
+		// this.RuntimeValue = this.InitialValue;
+		this.SetState(this.InitialValue);
 	}
 
 	public void OnBeforeSerialize() {}

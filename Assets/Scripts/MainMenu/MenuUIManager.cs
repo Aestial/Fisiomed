@@ -17,7 +17,7 @@ public class MenuUIManager : MonoBehaviour
 	void Start()
 	{
 		this.ActiveAll(true);
-		this.ChangeCanvas(this.startState.RuntimeValue);
+		this.ChangeCanvas(this.startState.InitialValue);
 	}
 
 	void OnEnable ()

@@ -11,8 +11,10 @@ public class MainMenuManager : Singleton<MainMenuManager>
 
 	void Start()
 	{
-		this.state.RuntimeValue = MenuState.Splash;
-		this.ExitSplash();
+		if (this.state.RuntimeValue == MenuState.Splash)
+		{
+			this.ExitSplash();
+		}
 	}
 
 	public void GoToState(MenuState state)
