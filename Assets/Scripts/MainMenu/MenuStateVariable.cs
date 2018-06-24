@@ -15,6 +15,8 @@ public enum MenuState
 	Settings,
 	Profile,
 	Volume,
+	StartMenu,
+	LevelSelect,
 }
 
 [CreateAssetMenu]

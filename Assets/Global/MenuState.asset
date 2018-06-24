@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bd36ea309d646d3ba0eeb83f93b034, type: 3}
   m_Name: My Menu State Variable
   m_EditorClassIdentifier: 
-  InitialValue: 0
+  InitialValue: 5
