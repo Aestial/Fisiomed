@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : Singleton<MainMenuManager>
 {
@@ -9,6 +10,22 @@ public class MainMenuManager : Singleton<MainMenuManager>
 	[SerializeField] private float splashScreenTime;
 	[SerializeField] private float loadScreenTime;
 
+	// Called first
+    void OnEnable()
+    {
+        Debug.Log("OnEnable called");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // Called second
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+		this.state.RuntimeValue = MenuState.Splash;
+        Debug.Log("OnSceneLoaded: " + scene.name);
+        // Debug.Log(mode);
+    }
+
+	// Called third
 	void Start()
 	{
 		if (this.state.RuntimeValue == MenuState.Splash)
