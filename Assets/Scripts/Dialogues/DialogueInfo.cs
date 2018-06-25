@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public struct Dialog
+public struct Dialogue
 {
 	public string content;
 	public float duration;
@@ -12,10 +12,10 @@ public struct Dialog
 }
 
 [CreateAssetMenu]
-public class DialogInfo : ScriptableObject, ISerializationCallbackReceiver
+public class DialogueInfo : ScriptableObject, ISerializationCallbackReceiver
 {
-	public Dialog[] InitialValue;
-	public Dialog[] RuntimeValue;
+	public Dialogue[] InitialValue;
+	public Dialogue[] RuntimeValue;
 	// private	List<Dialog> dialoglist;
 
 	public void OnAfterDeserialize()

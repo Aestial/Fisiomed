@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f98ea10870b2240cc9967903fed56a11, type: 3}
-  m_Name: Recepcion Dialog
+  m_Name: Recepcion Dialogue
   m_EditorClassIdentifier: 
   InitialValue:
   - content: "Hola _Usuario_, bienvenido al caso cl\xEDnico de _Caso_"
