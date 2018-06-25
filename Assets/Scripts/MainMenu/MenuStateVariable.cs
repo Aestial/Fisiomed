@@ -20,8 +20,7 @@ public enum MenuState
 }
 
 [CreateAssetMenu]
-public class MenuStateVariable : ScriptableObject,
-ISerializationCallbackReceiver
+public class MenuStateVariable : ScriptableObject, ISerializationCallbackReceiver
 {
 	public MenuState InitialValue;
 

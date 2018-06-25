@@ -12,7 +12,7 @@ public class MenuButtonController : MonoBehaviour
 	void Start ()
 	{
 		this.button = this.GetComponent<Button>();
-		this.button.onClick.AddListener(ClickEvent);
+		this.button.onClick.AddListener(this.ClickEvent);
 	}
 
 	private void ClickEvent()
