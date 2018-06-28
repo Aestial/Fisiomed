@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 362464038}
   - component: {fileID: 362464039}
   m_Layer: 0
-  m_Name: DialogManager
+  m_Name: DialogueManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,10 +153,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66df779b5232444aaa36fb412fde0f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogInfo: {fileID: 11400000, guid: 7568a01bb8a3f4f919c5f14d9160e587, type: 2}
+  dialogueInfo: {fileID: 11400000, guid: 7568a01bb8a3f4f919c5f14d9160e587, type: 2}
   text: {fileID: 907011341}
   delay: 0
+  showFirstOnAwake: 1
   playOnAwake: 1
+  backButton: {fileID: 0}
+  nextButton: {fileID: 0}
 --- !u!1 &439100349
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,9 +435,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f62c5d51cd4df44f58715d8276f59144, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1027,7 +1030,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 120, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1571882130
 MonoBehaviour:
@@ -1048,9 +1051,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7204f21075d87473da8ea82b1c3b707d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42e35d52e896b4bb8879b78ff6d5376c, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

@@ -43,8 +43,7 @@ public class DialogueManager : MonoBehaviour
 
 	void Start()
 	{
-		this.backButton.onClick.AddListener(this.Back);
-		this.nextButton.onClick.AddListener(this.Next);
+		this.SubscribeButtons(true);
 	}
 	
 	public void Next ()
@@ -69,6 +68,11 @@ public class DialogueManager : MonoBehaviour
 		}		
 	}
 
+	private void PlayAll ()
+	{
+		StartCoroutine(this.PlayAllCoroutine());
+	}
+
 	private void UpdateText (Dialogue dialogue)
 	{
 		this.text.text = dialogue.content;
@@ -76,17 +80,35 @@ public class DialogueManager : MonoBehaviour
 
 	private void UpdateButtons (int index)
 	{
-		this.backButton.interactable = true;
-		this.nextButton.interactable = true;
-		if (index == 0)
-			this.backButton.interactable = false;
-		else if (index == this.last)
-			this.nextButton.interactable = false;
+		if (this.backButton != null)
+		{
+			this.backButton.interactable = true;
+			if (index == 0)
+				this.backButton.interactable = false;
+		}
+		if (this.nextButton != null)
+		{
+			this.nextButton.interactable = true;
+			if (index == this.last)
+				this.nextButton.interactable = false;
+		}
 	}
 
-	private void PlayAll ()
+	private void SubscribeButtons(bool on)
 	{
-		StartCoroutine(this.PlayAllCoroutine());
+		if (this.backButton != null && this.nextButton != null)
+		{
+			if (on)
+			{
+				this.backButton.onClick.AddListener(this.Back);
+				this.nextButton.onClick.AddListener(this.Next);
+			}
+			else 
+			{
+				this.backButton.onClick.RemoveListener(this.Back);
+				this.nextButton.onClick.RemoveListener(this.Next);
+			}
+		}
 	}
 
 	private IEnumerator PlayAllCoroutine()
@@ -103,7 +125,6 @@ public class DialogueManager : MonoBehaviour
 
 	void OnDestroy()
 	{
-		this.backButton.onClick.RemoveListener(this.Back);
-		this.nextButton.onClick.RemoveListener(this.Next);
+		this.SubscribeButtons(false);	
 	}
 }
