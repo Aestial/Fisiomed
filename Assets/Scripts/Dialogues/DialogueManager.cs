@@ -14,11 +14,13 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private Button backButton;
 	[SerializeField] private Button nextButton;
 
+	[SerializeField] private DialogueAnimator animator;
+
 	private Dialogue[] dialogues;
 	private int last;
 	private int index;
 
-	void Awake ()
+	void Start ()
 	{
 		// Retrieve dialogs data from ScriptableObject
 		this.dialogues = this.dialogueInfo.InitialValue;
@@ -41,7 +43,7 @@ public class DialogueManager : MonoBehaviour
 
 	}
 
-	void Start()
+	void Awake()
 	{
 		this.SubscribeButtons(true);
 	}
@@ -76,6 +78,7 @@ public class DialogueManager : MonoBehaviour
 	private void UpdateText (Dialogue dialogue)
 	{
 		this.text.text = dialogue.content;
+		this.animator.Play();
 	}
 
 	private void UpdateButtons (int index)
