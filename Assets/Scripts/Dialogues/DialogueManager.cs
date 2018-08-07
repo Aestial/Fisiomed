@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
 	private int last;
 	private int index;
 
-	void Start ()
+    IEnumerator Start ()
 	{
 		// Retrieve dialogs data from ScriptableObject
 		this.dialogues = this.dialogueInfo.InitialValue;
@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
 		this.index = 0;
 		this.text.text = "";
 
+        yield return new WaitForEndOfFrame();
 		if (this.showFirstOnAwake)
 		{
 			Dialogue dialogue = this.dialogues[this.index];
