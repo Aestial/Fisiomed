@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Escenas/MainMenu.unity
-    guid: 7a799ae7925a64b1198f0c5597b2bc24
-  - enabled: 1
-    path: Assets/Escenas/Recepcion.unity
-    guid: ae40a771bb5fb4ca4a16b11750cbae62
-  - enabled: 1
-    path: Assets/Escenas/C_Insomnio.unity
-    guid: 146269fe146124e589fabb099b7609f3
+    path: Assets/_Fisiomed/Scenes/StartScene.unity
+    guid: d71c5cce4f8674a92a8d4f10bedf1fca
   m_configObjects: {}
