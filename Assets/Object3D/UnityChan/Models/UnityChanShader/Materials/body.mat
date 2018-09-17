@@ -45,7 +45,7 @@ Material:
     m_Floats:
     - _EdgeThickness: 0.5
     - _FalloffPower: 0.3
-    - _SpecularPower: 20
+    - _SpecularPower: 2.99
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ShadowColor: {r: 0.8, g: 0.8, b: 1, a: 1}
