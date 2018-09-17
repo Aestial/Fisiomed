@@ -122,6 +122,7 @@ public class AuthHandler : MonoBehaviour
 				((Firebase.Auth.AuthError)firebaseEx.ErrorCode).ToString());
 			}
 			Debug.Log(authErrorCode + exception.ToString());
+			uc.DisplayMessage(exception.ToString().Replace("Firebase.FirebaseException: ",""));
 		}
 		} else if (task.IsCompleted) {
 		Debug.Log(operation + " completed");
@@ -139,13 +140,15 @@ public class AuthHandler : MonoBehaviour
 		// so that it can be passed to UpdateUserProfile().  displayName will be
 		// reset by AuthStateChanged() when the new user is created and signed in.
 		string newDisplayName = uc.myUser.name;
-		Debug.Log("<color=cyan>"+uc.myUser.password+"</color>");
+		// Debug.Log("<color=cyan>"+uc.myUser.password+"</color>");
 		return auth.CreateUserWithEmailAndPasswordAsync(uc.myUser.email, uc.myUser.password)
 		.ContinueWith((task) => {
 			// EnableUI();
 			if (LogTaskCompletion(task, "User Creation")) {
 				var user = task.Result;
 				user.SendEmailVerificationAsync();
+				uc.DisplayMessage("¡Correo de verificación enviado!");
+				uc.ChangeScreenDelay(false);
 				// DisplayDetailedUserInfo(user, 1);
 				return UpdateUserProfileAsync(newDisplayName: newDisplayName);
 			}
