@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Fisiomed
 {
 	[RequireComponent(typeof(CanvasGroup))]
-	public class EnterPanelController : MonoBehaviour 
+	public class EnterPanelController : MonoBehaviour
 	{
 		[SerializeField] bool showInAwake;
 		[SerializeField] private EnterInputField[] inputFields;
@@ -14,14 +14,14 @@ namespace Fisiomed
 		[SerializeField] private MessageController message;
 
 		private CanvasGroup canvasGroup;
-		private bool isActive;		
+		private bool isActive;
 
 		// Use this for initialization
-		void Awake () 
+		void Awake ()
 		{
 			this.canvasGroup = this.GetComponent<CanvasGroup>();
 			this.isActive = this.ActiveCanvasGroup(this.showInAwake);
-			this.actionButton.interactable = AreFieldsValid();
+			this.ActiveActionButton();
 		}
 
 		bool ActiveCanvasGroup(bool active)
@@ -32,7 +32,12 @@ namespace Fisiomed
 
 			return this.canvasGroup.interactable;
 		}
-		
+
+		public void ActiveActionButton()
+		{
+			this.actionButton.interactable = AreFieldsValid();
+		}
+
 		bool AreFieldsValid()
 		{
 			bool active = true;
@@ -43,10 +48,9 @@ namespace Fisiomed
 			return active;
 		}
 		// Update is called once per frame
-		void Update () 
+		void Update ()
 		{
-			
-		} 
+
+		}
 	}
 }
-

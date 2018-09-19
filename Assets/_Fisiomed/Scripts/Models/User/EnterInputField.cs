@@ -6,7 +6,7 @@ using TMPro;
 
 namespace Fisiomed
 {
-	public class EnterInputField : MonoBehaviour 
+	public class EnterInputField : MonoBehaviour
 	{
 		public enum Type
 		{
@@ -14,19 +14,14 @@ namespace Fisiomed
 			username,
 			password
 		}
-		public Type type;
-		public TMP_InputField inputField;
+		[SerializeField] private Type type;
+		[SerializeField] private TMP_InputField inputField;		
 		bool isValid;
 		public bool IsValid
 		{
-			get 
+			get
 			{
-				string text = inputField.text;
-				isValid = CheckValid(text);
-				if (isValid)
-					Debug.Log("<color=green>"+ text + "</color>");
-				else
-					Debug.Log("<color=red>"+ text + "</color>");
+				this.VerifyValid(inputField.text);
 				return isValid;
 			}
 			set {isValid = value;}
@@ -34,7 +29,11 @@ namespace Fisiomed
 
 		public void VerifyValid(string value)
 		{
-			
+			isValid = CheckValid(value);
+			if (isValid)
+				Debug.Log("<color=green>"+ value + "</color>");
+			else
+				Debug.Log("<color=red>"+ value + "</color>");
 		}
 
 		public bool CheckValid(string value)
@@ -54,13 +53,14 @@ namespace Fisiomed
 		}
 
 		// Use this for initialization
-		void Start () {
-			
+		void Start ()
+		{
+
 		}
-		
+
 		// Update is called once per frame
 		void Update () {
-			
+
 		}
 	}
 }
