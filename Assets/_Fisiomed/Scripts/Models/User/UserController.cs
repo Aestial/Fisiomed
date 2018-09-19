@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class UserController : MonoBehaviour 
 {
@@ -10,6 +10,9 @@ public class UserController : MonoBehaviour
 	[SerializeField] GameObject logInScreen;
 	[SerializeField] GameObject signUpScreen;
 	[SerializeField] float screenDelay;
+
+	[SerializeField] Button signUpButton;
+	[SerializeField] Button logInButton; 
 
 	public User myUser;
 	private bool isValidEmail = false;
@@ -27,6 +30,8 @@ public class UserController : MonoBehaviour
 	void Start ()
 	{
 		ChangeScreen(true);
+		this.logInButton.interactable = false;
+		this.signUpButton.interactable = false;
 	}
 
 	// Update is called once per frame
@@ -96,6 +101,8 @@ public class UserController : MonoBehaviour
 			default:
 				break;
 		}
+		this.logInButton.interactable = isValidEmail && isValidPassword;
+		this.signUpButton.interactable = isValidEmail && isValidName && isValidPassword;
 		return true;
 	}
 

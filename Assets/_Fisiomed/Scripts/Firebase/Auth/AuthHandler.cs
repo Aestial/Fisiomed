@@ -41,7 +41,6 @@ public class AuthHandler : MonoBehaviour
 			dependencyStatus = task.Result;
 			if (dependencyStatus == Firebase.DependencyStatus.Available) {
 				InitializeFirebase();
-				GetMyUser();
 			} else {
 				Debug.LogError(
 				"Could not resolve all Firebase dependencies: " + dependencyStatus);
@@ -49,7 +48,7 @@ public class AuthHandler : MonoBehaviour
 		});
 	}
 
-	private void GetMyUser() 
+	private void Awake() 
 	{
 		uc = GetComponent<UserController>();
 	}
