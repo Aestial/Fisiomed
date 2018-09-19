@@ -11,7 +11,7 @@ namespace Fisiomed
 		[SerializeField] bool showInAwake;
 		[SerializeField] private EnterInputField[] inputFields;
 		[SerializeField] Button actionButton;
-		[SerializeField] private MessageController message;
+		[SerializeField] private MessageController mc;
 
 		private CanvasGroup canvasGroup;
 		private bool isActive;
@@ -24,7 +24,18 @@ namespace Fisiomed
 			this.ActiveActionButton();
 		}
 
-		bool ActiveCanvasGroup(bool active)
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public void ActiveActionButton()
+        {
+            this.actionButton.interactable = AreFieldsValid();
+        }
+
+        private bool ActiveCanvasGroup(bool active)
 		{
 			this.canvasGroup.interactable = active;
 			this.canvasGroup.blocksRaycasts = active;
@@ -33,24 +44,31 @@ namespace Fisiomed
 			return this.canvasGroup.interactable;
 		}
 
-		public void ActiveActionButton()
+		private bool AreFieldsValid()
 		{
-			this.actionButton.interactable = AreFieldsValid();
-		}
-
-		bool AreFieldsValid()
-		{
-			bool active = true;
+			bool valid = true;
 			for (int i = 0; i < inputFields.Length; i++)
 			{
-				active = inputFields[i].IsValid && active;
+				valid = inputFields[i].IsValid && valid;
+                if (!valid)
+                {
+                    switch(inputFields[i].type)
+                    {
+                        case EnterInputField.Type.email:
+                            this.mc.Display("Introduce un correo válido.");
+                            break;
+                        case EnterInputField.Type.username:
+                            this.mc.Display("Introduce un nombre de usuario.");
+                            break;
+                        case EnterInputField.Type.password:
+                            this.mc.Display("Introduce una contraseña con 6 digitos o más.");
+                            break;
+                        default:
+                            return false;
+                    }
+                }
 			}
-			return active;
-		}
-		// Update is called once per frame
-		void Update ()
-		{
-
+			return valid;
 		}
 	}
 }

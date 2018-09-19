@@ -8,15 +8,19 @@ namespace Fisiomed
 {
 	public class EnterInputField : MonoBehaviour
 	{
-		public enum Type
+        [SerializeField] private TMP_InputField inputField;
+
+        public enum Type
 		{
 			email,
 			username,
 			password
 		}
-		[SerializeField] private Type type;
-		[SerializeField] private TMP_InputField inputField;		
-		bool isValid;
+        public Type type;
+
+        private MessageController mc;
+		private bool isValid;
+
 		public bool IsValid
 		{
 			get
@@ -27,7 +31,19 @@ namespace Fisiomed
 			set {isValid = value;}
 		}
 
-		public void VerifyValid(string value)
+        // Use this for initialization
+        void Start()
+        {
+            this.mc = FindObjectOfType<MessageController>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public void VerifyValid(string value)
 		{
 			isValid = CheckValid(value);
 			if (isValid)
@@ -36,7 +52,7 @@ namespace Fisiomed
 				Debug.Log("<color=red>"+ value + "</color>");
 		}
 
-		public bool CheckValid(string value)
+		private bool CheckValid(string value)
 		{
 			switch(type)
 			{
@@ -50,17 +66,6 @@ namespace Fisiomed
 				default:
 					return false;
 			}
-		}
-
-		// Use this for initialization
-		void Start ()
-		{
-
-		}
-
-		// Update is called once per frame
-		void Update () {
-
 		}
 	}
 }
