@@ -11,7 +11,7 @@ public class UserManager : MonoBehaviour
 	void Start () 
 	{
 		Username.text = PlayerPrefs.GetString("Username");
-		Username.text = PlayerPrefs.GetString("UserRange");
+		UserRange.text = PlayerPrefs.GetString("UserRange");
 	}
 	
 	void Update () 

@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 222402537117810530}
   - component: {fileID: 114159907982155816}
   - component: {fileID: 114416465578664072}
+  - component: {fileID: 114588335618795466}
   m_Layer: 5
   m_Name: Generic_InputPanel
   m_TagString: Untagged
@@ -108,7 +109,6 @@ GameObject:
   - component: {fileID: 114758042140889578}
   - component: {fileID: 114498089203019616}
   - component: {fileID: 114829694793750596}
-  - component: {fileID: 114689395917628478}
   m_Layer: 5
   m_Name: Input_TMPInputField
   m_TagString: Untagged
@@ -472,19 +472,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   borderWidth: 3
   falloffDistance: 1
---- !u!114 &114689395917628478
+--- !u!114 &114588335618795466
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1668967721909506}
+  m_GameObject: {fileID: 1335956141794686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457ec410a10304146b599f25c1ad1dbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 6384f8c69e08145f89396c233b005113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userController: {fileID: 0}
-  valueType: 1
+  inputField: {fileID: 114758042140889578}
+  mc: {fileID: 0}
+  errorMessage: "Ingresa un correo v\xE1lido"
+  type: 0
 --- !u!114 &114758042140889578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -540,9 +542,20 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114689395917628478}
-        m_MethodName: UpdateClassValue
+      - m_Target: {fileID: 114588335618795466}
+        m_MethodName: VerifyValid
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: ActiveActionButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -818,8 +831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 488.94156, y: -100}
-  m_SizeDelta: {x: 977.8831, y: 200}
+  m_AnchoredPosition: {x: 540, y: -100}
+  m_SizeDelta: {x: 1080, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224539985101770614
 RectTransform:

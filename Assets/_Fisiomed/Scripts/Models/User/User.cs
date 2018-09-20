@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class User 
 {
-	public enum UserValue
-	{
-		Name,
-		Email,
-		Password,
-	}
 	public string name;
 	public int id;
 	public string email;
 	public string password;
 
-	public string range;
+	public string range = "Principiante";
 	public int level;
 
 	public int medals;
