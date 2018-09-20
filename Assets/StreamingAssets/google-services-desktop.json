@@ -1,42 +1,37 @@
 {
-  "project_info": {
-    "project_number": "1088172377023",
-    "firebase_url": "https://fisiomed-unam.firebaseio.com",
-    "project_id": "fisiomed-unam",
-    "storage_bucket": "fisiomed-unam.appspot.com"
-  },
   "client": [
     {
-      "client_info": {
-        "mobilesdk_app_id": "1:1088172377023:android:033fa6120f577120",
-        "android_client_info": {
-          "package_name": "com.medicinaunam.fisiomed"
+      "services": {
+        "appinvite_service": {
+          "status": 0
+        }, 
+        "analytics_service": {
+          "status": 0
         }
-      },
+      }, 
       "oauth_client": [
         {
-          "client_id": "1088172377023-89r7khc9airlfrfk1ttfsk4um8r3q5qg.apps.googleusercontent.com",
-          "client_type": 3
+          "client_id": "1088172377023-7r3t9fmse5bkkqthsf0tltnbfjnm53jv.apps.googleusercontent.com"
         }
-      ],
+      ], 
       "api_key": [
         {
-          "current_key": "AIzaSyBS7fFGETX39MLWG90xoOvieiBtERKkLck"
+          "current_key": "AIzaSyDfsLC8LtRuDF6y0vWnUFjrxqAf4yt-6LU"
         }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+      ], 
+      "client_info": {
+        "mobilesdk_app_id": "1:1088172377023:ios:b8c8cda60650e51e", 
+        "android_client_info": {
+          "package_name": "com.idcarso.firebasetest"
         }
       }
     }
-  ],
-  "configuration_version": "1"
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "fisiomed-unam.appspot.com", 
+    "project_id": "fisiomed-unam", 
+    "firebase_url": "https://fisiomed-unam.firebaseio.com", 
+    "project_number": "1088172377023"
+  }
 }
