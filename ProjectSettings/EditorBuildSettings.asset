@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Fisiomed/Scenes/LogScene.unity
+    path: Assets/_Fisiomed/Scenes/EnterScene.unity
     guid: d71c5cce4f8674a92a8d4f10bedf1fca
   - enabled: 1
     path: Assets/_Fisiomed/Scenes/MainScene.unity
