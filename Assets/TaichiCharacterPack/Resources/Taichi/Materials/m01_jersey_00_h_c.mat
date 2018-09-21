@@ -28,5 +28,5 @@ Material:
     - _ShadowThreshold: 0.5
     - _Shininess: 0.5
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.40784314, g: 1, b: 0.8039216, a: 1}
     - _ShadowColor: {r: 0, g: 0, b: 0.3529412, a: 0.15686275}
