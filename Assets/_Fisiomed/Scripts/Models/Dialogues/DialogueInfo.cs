@@ -35,7 +35,7 @@ public class DialogueInfo : ScriptableObject, ISerializationCallbackReceiver
 
 	public void OnAfterDeserialize()
 	{
-		// this.RuntimeValue = this.InitialValue;
+		this.RuntimeValue = this.InitialValue;
 	}
 
 	public void OnBeforeSerialize() {}
