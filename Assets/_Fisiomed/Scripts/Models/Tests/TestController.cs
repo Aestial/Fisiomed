@@ -3,46 +3,49 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
-using TMPro;
 
 public class TestController : MonoBehaviour
 {
-    [SerializeField] private QuestionController questionController;
-    private Test test;
-    private int index = -1;
-    private const string filePath = "Resources/Tests/test.xml";
+    [SerializeField] QuestionController questionController;
+
+    Test test;
+    int currentIndex = -1;
+    const string filePath = "Resources/Tests/test.xml";
 
     void Start()
     {
-        this.questionController.test = this;
-        this.Fetch();
-        this.Play();
+        questionController.test = this;
+        Fetch();
+        Play();
     }
     
     public void Correct()
     {
-        this.Play();
+        Play();
     }
 
-    private void Display(int index)
+    void Display(int index)
     {
-        Question current = this.test.questions[index];
-        this.questionController.Print(current);
+        Question current = test.questions[index];
+        questionController.Print(current);
     }
 
-    private void Play()
+    void Play()
     {
-        if (this.index < this.test.questions.Length - 1) {
-            this.Display(++this.index);
-        } else {
+        if (currentIndex < test.questions.Length - 1)
+        {
+            Display(++currentIndex);
+        }
+        else
+        {
             Debug.Log("Finished Test!");
         }
     }
 
-    private void Fetch()
+    void Fetch()
     {
         var path = Path.Combine(Application.dataPath, filePath);
-        this.test = Test.Load(path);
+        test = Test.Load(path);
     }
 
 }
