@@ -70,6 +70,9 @@ public class QuestionController : MonoBehaviour
     private void Fetch()
     {
         var path = Path.Combine(Application.dataPath, filePath);
+#if UNITY_ANDROID
+        path = "jar:file://" + path;
+#endif
         this.question = Question.Load(path);
     }
 
