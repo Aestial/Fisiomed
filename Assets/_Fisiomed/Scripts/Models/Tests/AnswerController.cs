@@ -27,6 +27,7 @@ public class AnswerController : MonoBehaviour
         
         if (isCorrect) {
             correctEvents.Invoke();
+            question.EnableAnswers(false);
             StartCoroutine(ContinueCoroutine(continueWaitTime));
         } else {
             wrongEvents.Invoke();

@@ -11,12 +11,25 @@ public class QuestionController : MonoBehaviour
     [SerializeField] private TMP_Text questionText;
     [SerializeField] private Transform answersPanel;
     [SerializeField] private GameObject answerPrefab;
+
+    CanvasGroup answersGroup;
     
     private Question question;
     private const string filePath = "Resources/Tests/question.xml";
 
     public TestController test;
-   
+
+    void Awake()
+    {
+        answersGroup = answersPanel.GetComponent<CanvasGroup>();
+        Debug.Log(answersGroup);
+    }
+
+    public void EnableAnswers(bool enabled)
+    {
+        answersGroup.interactable = enabled;
+    }
+
     public void CorrectAnswer()
     {
         Debug.Log("Correct answer!");
@@ -26,13 +39,14 @@ public class QuestionController : MonoBehaviour
     public void Print(Question question)
     {
         this.question = question;
-        this.Print();
+        ClearAnswers();
+        EnableAnswers(true);
+        Print();
     }
 
     public void Print()
     {
-        this.ClearAnswers();
-        this.questionText.text = this.question.text;        
+        questionText.text = this.question.text;        
         int length = this.question.answers.Length;
         for (int i = 0; i < length; i++ )
         {
