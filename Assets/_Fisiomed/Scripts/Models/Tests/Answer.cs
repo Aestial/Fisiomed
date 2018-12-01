@@ -7,4 +7,6 @@ public class Answer
 	public string text;
 	[XmlAttribute("value")]
 	public bool value;
+    [XmlAttribute("feedback")]
+    public string feedback;
 }

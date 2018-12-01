@@ -1,4 +1,4 @@
-<test title="Epilepsia">
+<quiz title="Epilepsia" hasFeedback='false'>
 <questions>
     <question text="¿A qué se debe que el interior celular sea “negativo” con respecto al exterior?">
         <answers>
@@ -6,6 +6,7 @@
             <answer text="Repulsión de cargas positivas en el interior celular." value="false"/>
             <answer text="Un gradiente de concentración que permite la salida de iones positivos de la célula." value="true"/>
             <answer text="Un gradiente de presión que lleva iones positivos fuera de la célula." value="false"/>
+            <answer text="Un gradiente de presión que lleva iones positivos dentro de la célula." value="false"/>
         </answers>
     </question>
     <question text="¿Cuáles de las siguientes son características de un potencial de acción?">
@@ -33,4 +34,4 @@
         </answers>
     </question>
 </questions>
-</test>
+</quiz>

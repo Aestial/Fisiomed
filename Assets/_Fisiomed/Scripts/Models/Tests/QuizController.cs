@@ -4,17 +4,17 @@ using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class TestController : MonoBehaviour
+public class QuizController : MonoBehaviour
 {
     [SerializeField] QuestionController questionController;
 
-    Test test;
+    Quiz test;
     int currentIndex = -1;
-    const string filePath = "Resources/Tests/test.xml";
+    const string filePath = "Resources/Quiz/quiz.xml";
 
     void Start()
     {
-        questionController.test = this;
+        questionController.quiz = this;
         Fetch();
         Play();
     }
@@ -38,14 +38,14 @@ public class TestController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Finished Test!");
+            Debug.Log("Finished Quiz!");
         }
     }
 
     void Fetch()
     {
         var path = Path.Combine(Application.dataPath, filePath);
-        test = Test.Load(path);
+        test = Quiz.Load(path);
     }
 
 }

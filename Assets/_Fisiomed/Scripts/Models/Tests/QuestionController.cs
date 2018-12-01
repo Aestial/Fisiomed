@@ -15,9 +15,9 @@ public class QuestionController : MonoBehaviour
     CanvasGroup answersGroup;
     
     private Question question;
-    private const string filePath = "Resources/Tests/question.xml";
+    private const string filePath = "Resources/Quiz/question.xml";
 
-    public TestController test;
+    public QuizController quiz;
 
     void Awake()
     {
@@ -33,7 +33,7 @@ public class QuestionController : MonoBehaviour
     public void CorrectAnswer()
     {
         Debug.Log("Correct answer!");
-        this.test.Correct();
+        this.quiz.Correct();
     }
 
     public void Print(Question question)

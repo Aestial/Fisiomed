@@ -1,6 +1,6 @@
-<question text="¿A qué se debe que el interior celular sea “negativo” con respecto al exterior?">
+<question text="¿A qué se debe que el interior celular sea “negativo” con respecto al exterior?" hasFeedback='true' >
 <answers>
-  <answer text="Un gradiente eléctrico que permite la entrada de aniones a la célula." value="false"/>
+  <answer text="Un gradiente eléctrico que permite la entrada de aniones a la célula." value="false" feedback='Esto es porque blña bla bla...'/>
   <answer text="Repulsión de cargas positivas en el interior celular." value="false"/>
   <answer text="Un gradiente de concentración que permite la salida de iones positivos de la célula." value="true"/>
   <answer text="Un gradiente de presión que lleva iones positivos fuera de la célula." value="false"/>

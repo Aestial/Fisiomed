@@ -24,7 +24,6 @@ public class AnswerController : MonoBehaviour
 	
 	public void Check ()
 	{
-        
         if (isCorrect) {
             correctEvents.Invoke();
             question.EnableAnswers(false);
@@ -39,5 +38,6 @@ public class AnswerController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         question.CorrectAnswer();
+
     }
 }
