@@ -1,0 +1,13 @@
+<DialogueCollection title = "Insomnio">
+	<Dialogues>
+		<Dialogue text = "Buen Día Sra. Yara. Soy el Dr. Falcon, cuenteme ¿Porque le envían?" value = 0/>
+		<Dialogue text = "Desde hace un tiempo no he podido dormir Dr." value = 1 />
+		<Dialogue text = "¿Desde cuando tiene estas molestías?" value = 0/>
+		<Dialogue text = "Desde hace dos meses" value = 1 />
+		<Dialogue text = "¿Cada cuanto le sucede?" value = 0/>
+		<Dialogue text = "Tres días a la semana, o más" value = 1 />
+		<Dialogue text = "Y durante este tiempo, ¿Ha tomado algo para dormir mejor?" value = 0/>
+		<Dialogue text = "Tés, que me han recomendado, de Tila recuerdo." value = 1 />
+		<Dialogue text = "¿Cuál es tu impresión diagnóstica?" value = 0/>
+	</Dialogues>
+</DialogueCollection>
