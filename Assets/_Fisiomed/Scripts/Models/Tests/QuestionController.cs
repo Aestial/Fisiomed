@@ -15,7 +15,7 @@ public class QuestionController : MonoBehaviour
     CanvasGroup answersGroup;
     
     private Question question;
-    private const string filePath = "Resources/Quiz/question.xml";
+    private const string filePath = "Quiz/question.xml";
 
     public QuizController quiz;
 
@@ -69,10 +69,7 @@ public class QuestionController : MonoBehaviour
     
     private void Fetch()
     {
-        var path = Path.Combine(Application.dataPath, filePath);
-#if UNITY_ANDROID
-        path = "jar:file://" + path;
-#endif
+        var path = Path.Combine(Application.streamingAssetsPath, filePath);
         this.question = Question.Load(path);
     }
 

@@ -10,7 +10,7 @@ public class QuizController : MonoBehaviour
 
     Quiz test;
     int currentIndex = -1;
-    const string filePath = "Resources/Quiz/quiz.xml";
+    const string filePath = "Quiz/quiz.xml";
 
     void Start()
     {
@@ -44,7 +44,7 @@ public class QuizController : MonoBehaviour
 
     void Fetch()
     {
-        var path = Path.Combine(Application.dataPath, filePath);
+        var path = Path.Combine(Application.streamingAssetsPath, filePath);
         test = Quiz.Load(path);
     }
 
