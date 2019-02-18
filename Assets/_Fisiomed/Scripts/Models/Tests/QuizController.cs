@@ -7,16 +7,16 @@ using UnityEngine;
 public class QuizController : MonoBehaviour
 {
     [SerializeField] QuestionController questionController;
+    [SerializeField] string url;
 
-    Quiz test;
+    Quiz quiz;
     int currentIndex = -1;
     const string filePath = "Quiz/quiz.xml";
 
     void Start()
     {
         questionController.quiz = this;
-        Fetch();
-        Play();
+        StartCoroutine(Fetch(url));
     }
     
     public void Correct()
@@ -26,13 +26,13 @@ public class QuizController : MonoBehaviour
 
     void Display(int index)
     {
-        Question current = test.questions[index];
+        Question current = quiz.questions[index];
         questionController.Print(current);
     }
 
     void Play()
     {
-        if (currentIndex < test.questions.Length - 1)
+        if (currentIndex < quiz.questions.Length - 1)
         {
             Display(++currentIndex);
         }
@@ -45,7 +45,17 @@ public class QuizController : MonoBehaviour
     void Fetch()
     {
         var path = Path.Combine(Application.streamingAssetsPath, filePath);
-        test = Quiz.Load(path);
+        quiz = Quiz.Load(path);
     }
 
+    IEnumerator Fetch(string url)
+    {
+        using (WWW www = new WWW(url))
+        {
+            yield return www;
+            quiz = Quiz.LoadFromText(www.text);
+            Debug.Log(www.text);
+            Play();
+        }
+    }
 }
