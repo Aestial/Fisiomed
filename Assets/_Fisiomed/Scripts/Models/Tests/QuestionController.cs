@@ -11,11 +11,12 @@ public class QuestionController : MonoBehaviour
     [SerializeField] private TMP_Text questionText;
     [SerializeField] private Transform answersPanel;
     [SerializeField] private GameObject answerPrefab;
+    [SerializeField] private GameObject feedbackPanel;
 
     CanvasGroup answersGroup;
     
     private Question question;
-    private const string filePath = "Resources/Quiz/question.xml";
+    private const string filePath = "Quiz/question.xml";
 
     public QuizController quiz;
 
@@ -33,7 +34,17 @@ public class QuestionController : MonoBehaviour
     public void CorrectAnswer()
     {
         Debug.Log("Correct answer!");
-        this.quiz.Correct();
+        if(this.question.hasFeedback) {
+            this.ShowFeedback();
+        }
+        else {
+            this.quiz.Correct();
+        }
+    }
+
+    private void ShowFeedback()
+    {
+        feedbackPanel.SetActive(true);
     }
 
     public void Print(Question question)
@@ -69,10 +80,7 @@ public class QuestionController : MonoBehaviour
     
     private void Fetch()
     {
-        var path = Path.Combine(Application.dataPath, filePath);
-#if UNITY_ANDROID
-        path = "jar:file://" + path;
-#endif
+        var path = Path.Combine(Application.streamingAssetsPath, filePath);
         this.question = Question.Load(path);
     }
 
