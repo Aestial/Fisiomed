@@ -11,6 +11,7 @@ public class QuestionController : MonoBehaviour
     [SerializeField] private TMP_Text questionText;
     [SerializeField] private Transform answersPanel;
     [SerializeField] private GameObject answerPrefab;
+    [SerializeField] private GameObject feedbackPanel;
 
     CanvasGroup answersGroup;
     
@@ -33,7 +34,17 @@ public class QuestionController : MonoBehaviour
     public void CorrectAnswer()
     {
         Debug.Log("Correct answer!");
-        this.quiz.Correct();
+        if(this.question.hasFeedback) {
+            this.ShowFeedback();
+        }
+        else {
+            this.quiz.Correct();
+        }
+    }
+
+    private void ShowFeedback()
+    {
+        feedbackPanel.SetActive(true);
     }
 
     public void Print(Question question)
