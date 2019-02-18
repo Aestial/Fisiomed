@@ -4,8 +4,8 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-[XmlRoot("test")]
-public class Test
+[XmlRoot("quiz")]
+public class Quiz
 {
 	[XmlAttribute("title")]
 	public string title;
@@ -14,25 +14,25 @@ public class Test
 
 	public void Save(string path)
  	{
- 		var serializer = new XmlSerializer(typeof(Test));
+ 		var serializer = new XmlSerializer(typeof(Quiz));
  		using(var stream = new FileStream(path, FileMode.Create))
  		{
  			serializer.Serialize(stream, this);
  		}
  	}
 	
-	public static Test Load(string path)
+	public static Quiz Load(string path)
 	{
-		var serializer = new XmlSerializer(typeof(Test));
+		var serializer = new XmlSerializer(typeof(Quiz));
 		using(var stream = new FileStream(path, FileMode.Open))
 		{
-			return serializer.Deserialize(stream) as Test;
+			return serializer.Deserialize(stream) as Quiz;
 		}
 	}
 
-	public static Test LoadFromText(string text)
+	public static Quiz LoadFromText(string text)
 	{
-		var serializer = new XmlSerializer(typeof(Test));
-		return serializer.Deserialize(new StringReader(text)) as Test;
+		var serializer = new XmlSerializer(typeof(Quiz));
+		return serializer.Deserialize(new StringReader(text)) as Quiz;
 	}
 }

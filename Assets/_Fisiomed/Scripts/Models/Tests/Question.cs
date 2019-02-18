@@ -9,6 +9,8 @@ public class Question
 {
 	[XmlAttribute("text")]
 	public string text;
+    [XmlAttribute("hasFeedback")]
+    public bool hasFeedback;
 	[XmlArray("answers"), XmlArrayItem("answer")]
 	public Answer[] answers;
 
