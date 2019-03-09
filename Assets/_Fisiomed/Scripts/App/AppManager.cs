@@ -79,4 +79,9 @@ public class AppManager : Singleton<AppManager>
 		this.m_CurrentSceneName = sceneName;
 		StartCoroutine(this.LoadAndChangeCoroutine(sceneName, 1.1f));
 	}
+
+	public void ShowLoader(bool show)
+	{
+		this.loaderCanvas.enabled = show;
+	}
 }
