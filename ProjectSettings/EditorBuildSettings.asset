@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Fisiomed/Scenes/ChatScene.unity
     guid: 225f6dcd1e68f9b4281350d3b5fd4720
+  - enabled: 1
+    path: Assets/_Fisiomed/Scenes/QuizScene.unity
+    guid: 0a54c91f3e05e4f858780dd217b80511
   m_configObjects: {}
