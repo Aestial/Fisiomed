@@ -20,5 +20,13 @@ public class FreeModifier : ProceduralImageModifier {
 		return radius;
 	}
 
-	#endregion
+    #endregion
+
+    protected void OnValidate()
+    {
+        radius.x = Mathf.Max(0, radius.x);
+        radius.y = Mathf.Max(0, radius.y);
+        radius.z = Mathf.Max(0, radius.z);
+        radius.w = Mathf.Max(0, radius.w);
+    }
 }

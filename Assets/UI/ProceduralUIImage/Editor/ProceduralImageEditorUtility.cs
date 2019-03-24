@@ -19,15 +19,16 @@ namespace UnityEditor.UI {
 				o.transform.SetParent (Selection.activeGameObject.transform, false);
 				Selection.activeGameObject = o;
 			}
-			/*else if (Selection.activeGameObject != null) {
-				//selected GameObject is not child of canvas:
-			}*/
 			else {
 				if(GameObject.FindObjectOfType<Canvas>()==null)	{
 					EditorApplication.ExecuteMenuItem("GameObject/UI/Canvas");
 				}
 				Canvas c = GameObject.FindObjectOfType<Canvas>();
-				o.transform.SetParent (c.transform, false);
+
+                //Set Texcoord shader channels for canvas
+                c.additionalShaderChannels |= AdditionalCanvasShaderChannels.TexCoord1 | AdditionalCanvasShaderChannels.TexCoord2 | AdditionalCanvasShaderChannels.TexCoord3;
+
+                o.transform.SetParent (c.transform, false);
 				Selection.activeGameObject = o;
 			}
 		}
