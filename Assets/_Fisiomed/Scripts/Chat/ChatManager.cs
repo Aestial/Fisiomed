@@ -4,57 +4,56 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UI.ProceduralImage;
 using TMPro;
+using Fisiomed.Loader;
 
-public class ChatManager : MonoBehaviour {
+namespace Fisiomed.Chat
+{
+	public class ChatManager : MonoBehaviour {
 
-	/*Creamos una lista de "Message", la cual nos ayudara a instanciar
-	cada diálogo, entre el doctor, paciente, familiar y jugador. El tamaño
-	ha de depender del numero de dialogos (ver archivo dialogos*)*/
+		[SerializeField] Sprite[] characterSprites;
+		[SerializeField] GameObject bubblePrefab;
+		[SerializeField] Transform containerPanel;
 
-	List<Message> messageDialogosList = new List<Message>();
+		[SerializeField] string url;
 
-	public GameObject chatPanel;
-	public GameObject dialogos_Dr;
-	public GameObject dialogos_Paciente;
-	public GameObject dialogos_Usuario;
-	public GameObject dialogos_Familiar;
-	[SerializeField] private TMP_Text dialogos_Dr_Text;
-	[SerializeField] private TMP_Text dialogos_Paciente_Text;
-	[SerializeField] private TMP_Text dialogos_Usuario_Text;
-	[SerializeField] private TMP_Text dialogos_Familiar_Text;
+		Chat chat;
+		int index = 0;
 
-	//Este contador, es solo ayuda visual, sirve para mostrar en la pantalla 
-	//burbujas al azar
-	private int _numRan;
-
-	public void SiguienteBurbujaChat()
-	{
-		/*Solo sirve de ayuda visual, todavia no es lo que se planea con los dialogos de verdad*/
-		_numRan = Random.Range (0, 4);
-		if (_numRan == 0) {
-			//Dialogo del Dr.
-			PublicaMenssageChat (dialogos_Dr, dialogos_Dr_Text,"Bienvenido!");
-		} else if (_numRan == 1) {
-			//Dialogo del Paciente
-			PublicaMenssageChat (dialogos_Paciente, dialogos_Paciente_Text,"Buen Dia Dr!");
-		} else if (_numRan == 2) {
-			//Dialogo del Usuario.
-			PublicaMenssageChat (dialogos_Usuario, dialogos_Usuario_Text,"Mi diagnostico es ...");
-		} else if (_numRan == 3) {
-			//Dialogo del Familiar
-			PublicaMenssageChat (dialogos_Familiar, dialogos_Familiar_Text,"Ya lleva tiempo así!");
+		void Start()
+		{
+			StartCoroutine(Downloader.Instance.LoadJSON(url, OnDownloaded));
 		}
-	}
 
-	public void PublicaMenssageChat(GameObject burbuja, TMP_Text dialogo, string mensaje)
-	{
-		//Se crea un nuevo mensaje y se añade a la lista
-		Message newMessage = new Message();
-		newMessage.dialogue_text = mensaje;
+		void OnDownloaded(string json)
+		{
+			chat = JsonUtility.FromJson<Chat>(json);
+			ShowBubble(chat, index);
+		}
 
-		//Instanciamos el mensaje
-		dialogo.text = newMessage.dialogue_text;
-		GameObject newDialogue = Instantiate(burbuja, chatPanel.transform);
-		messageDialogosList.Add (newMessage);
+		private void ShowBubble(Chat chat, int index)
+		{
+			Dialog dialog = chat.dialogs[index];
+			Character character = chat.characters[dialog.character];
+
+			GameObject newBubble = Instantiate(bubblePrefab, containerPanel);
+			BubbleController newBC = newBubble.GetComponent<BubbleController>();
+			newBC.content = dialog.message;
+			newBC.characterSprite = characterSprites[dialog.character];
+			BubbleSide side = character.side == "left" ? BubbleSide.Left:BubbleSide.Right;
+			newBC.side = side;
+			Color faceBColor = new Color();
+			Color texsBColor = new Color();
+			ColorUtility.TryParseHtmlString (character.faceBColor, out faceBColor);
+			ColorUtility.TryParseHtmlString (character.textBColor, out texsBColor);
+			newBC.charBColor = faceBColor;
+			newBC.textBColor = texsBColor;
+			newBC.radius = 60;
+			newBC.SetAll();
+		}
+
+		public void NextBubble()
+		{
+			ShowBubble(chat, ++index);
+		}
 	}
 }
