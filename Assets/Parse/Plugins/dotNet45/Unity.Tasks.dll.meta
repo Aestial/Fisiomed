@@ -12,11 +12,12 @@ PluginImporter:
   isPreloaded: 0
   isOverridable: 0
   isExplicitlyReferenced: 0
+  validateReferences: 1
   platformData:
   - first:
       '': 
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       '': Any
@@ -37,7 +38,7 @@ PluginImporter:
   - first:
       Android: Android
     second:
-      enabled: 0
+      enabled: 1
       settings:
         CPU: ARMv7
   - first:
@@ -48,7 +49,7 @@ PluginImporter:
   - first:
       Editor: Editor
     second:
-      enabled: 0
+      enabled: 1
       settings:
         CPU: AnyCPU
         DefaultValueInitialized: true
@@ -68,29 +69,29 @@ PluginImporter:
   - first:
       Nintendo Switch: Switch
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       PS4: PS4
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       Standalone: Linux
     second:
-      enabled: 0
+      enabled: 1
       settings:
         CPU: x86
   - first:
       Standalone: Linux64
     second:
-      enabled: 0
+      enabled: 1
       settings:
         CPU: x86_64
   - first:
       Standalone: LinuxUniversal
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       Standalone: OSXUniversal
@@ -101,19 +102,19 @@ PluginImporter:
   - first:
       Standalone: Win
     second:
-      enabled: 0
+      enabled: 1
       settings:
         CPU: AnyCPU
   - first:
       Standalone: Win64
     second:
-      enabled: 0
+      enabled: 1
       settings:
         CPU: AnyCPU
   - first:
       WebGL: WebGL
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       Windows Store Apps: WindowsStoreApps
@@ -124,12 +125,12 @@ PluginImporter:
   - first:
       XboxOne: XboxOne
     second:
-      enabled: 0
+      enabled: 1
       settings: {}
   - first:
       iPhone: iOS
     second:
-      enabled: 0
+      enabled: 1
       settings:
         AddToEmbeddedBinaries: false
         CompileFlags: 
@@ -137,7 +138,7 @@ PluginImporter:
   - first:
       tvOS: tvOS
     second:
-      enabled: 0
+      enabled: 1
       settings:
         CompileFlags: 
         FrameworkDependencies: 
