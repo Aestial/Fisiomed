@@ -29,6 +29,27 @@ namespace Fisiomed.Loader
             }
         }
 
+        public IEnumerator LoadTexture(string uri, Action<Texture> onCompleted)
+        {
+            using (UnityWebRequest webRequest = UnityWebRequestTexture.GetTexture(uri))
+            {
+                // Request and wait for the desired page.
+                yield return webRequest.SendWebRequest();
+
+                if (webRequest.isNetworkError || webRequest.isHttpError)
+                {
+                    Debug.Log(uri + ": Error: " + webRequest.error);
+                }
+                else
+                {
+                    Texture texture = ((DownloadHandlerTexture) webRequest.downloadHandler).texture;
+                    Debug.Log(uri + ":\nReceived: " + texture);
+                    // Callback function
+                    onCompleted(texture);
+                }
+            }
+        }
+
         public IEnumerator LoadAsset(string uri, Action<GameObject> onCompleted)
         {
             Debug.Log("Downloader - Loading Asset");

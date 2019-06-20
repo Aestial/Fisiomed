@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1330498796}
+  m_Material: {fileID: 1272311451}
   m_Color: {r: 0.98039216, g: 0.9843137, b: 1, a: 0.85882354}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 914820327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7023f44d3b5be43999893c0ff3f282cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 2957e8667d9fe47e7908295d6426e513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &914820329
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1330498796}
+  m_Material: {fileID: 1272311451}
   m_Color: {r: 0.37254903, g: 0.6901961, b: 0.5921569, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1330498796}
+  m_Material: {fileID: 1272311451}
   m_Color: {r: 0.7490196, g: 0.7490196, b: 0.7607843, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1402,7 +1402,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225636679}
   m_CullTransparentMesh: 0
---- !u!21 &1330498796
+--- !u!21 &1272311451
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1330498796}
+  m_Material: {fileID: 1272311451}
   m_Color: {r: 0.95686275, g: 0.3529412, b: 0.45882353, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -2092,13 +2092,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f60aa9928effb4d9e36c79ccab310a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSprites:
-  - {fileID: 21300000, guid: 8fa6a4cba81ad4e49bed88b9fd31cce8, type: 3}
-  - {fileID: 21300000, guid: e0c0cbf5ab1ce48568d28949c225e0bf, type: 3}
   bubblePrefab: {fileID: 8472894544987303615, guid: 18fef53fa8c8e482194e11030ca46f48,
     type: 3}
   containerPanel: {fileID: 860187399}
   url: https://dl.dropboxusercontent.com/s/j3q7q3j3czdu2tw/Chat.json?dl=0
+  characterSprites: []
 --- !u!4 &2085215767
 Transform:
   m_ObjectHideFlags: 0

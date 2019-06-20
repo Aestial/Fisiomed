@@ -12,6 +12,7 @@ namespace Fisiomed.Chat
         public string side;
         public string faceBColor;
         public string textBColor;
+        public string imageUrl;
     }
 
     [Serializable]

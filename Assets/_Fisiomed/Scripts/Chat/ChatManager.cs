@@ -10,24 +10,51 @@ namespace Fisiomed.Chat
 {
 	public class ChatManager : MonoBehaviour {
 
-		[SerializeField] Sprite[] characterSprites;
+		// [SerializeField] Sprite[] characterSprites;
 		[SerializeField] GameObject bubblePrefab;
 		[SerializeField] Transform containerPanel;
 
 		[SerializeField] string url;
 
-		Chat chat;
+		public List<Sprite> characterSprites = new List<Sprite>();
 		int index = 0;
+		Chat chat;
 
 		void Start()
 		{
-			StartCoroutine(Downloader.Instance.LoadJSON(url, OnDownloaded));
+			AppManager.Instance.ShowLoader(true);
+			StartCoroutine(Downloader.Instance.LoadJSON(url, OnMetadataLoaded));
 		}
 
-		void OnDownloaded(string json)
+		void OnMetadataLoaded(string json)
 		{
 			chat = JsonUtility.FromJson<Chat>(json);
-			ShowBubble(chat, index);
+			Character[] characters = chat.characters;
+			
+			// Download Character Images
+			StartCoroutine(DownloadSprites());
+
+			// // Change to OnCharactersLoaded
+			// ShowBubble(chat, index);
+		}
+
+		IEnumerator DownloadSprites()
+		{
+			for (int i = 0; i < chat.characters.Length; i++)
+			{
+				string url = chat.characters[i].imageUrl;
+				yield return StartCoroutine(Downloader.Instance.LoadTexture(url, OnTextureLoaded));
+			}
+			yield return null;
+			AppManager.Instance.ShowLoader(false);
+			ShowBubble(chat, index);			
+		}
+
+		void OnTextureLoaded(Texture texture)
+		{
+			Texture2D tex = (Texture2D) texture;
+			Sprite sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
+			characterSprites.Add(sprite);
 		}
 
 		private void ShowBubble(Chat chat, int index)
