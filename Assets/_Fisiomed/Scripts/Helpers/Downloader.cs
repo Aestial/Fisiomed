@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Fisiomed.Loader
+namespace Loader
 {
     public class Downloader : Singleton<Downloader>
     {
