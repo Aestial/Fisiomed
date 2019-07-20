@@ -13,6 +13,7 @@ namespace Fisiomed.Main
         [SerializeField] string defaultUrl;
         [SerializeField] TMP_Text textView;
         [SerializeField] Gradient2 gradient;
+        [SerializeField] Image[] dots;
         [SerializeField] Image image;
         Button button;
 
@@ -42,6 +43,9 @@ namespace Fisiomed.Main
                 } 
             };
             gradient.EffectGradient = effectGradient;
+            dots[0].color = colorA;
+            dots[2].color = colorB;
+            dots[1].color = Color.Lerp(colorA, colorB, 0.5f);
         }
 
         void SetSprite(string url)

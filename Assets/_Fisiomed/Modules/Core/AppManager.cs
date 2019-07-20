@@ -42,8 +42,16 @@ public class AppManager : Singleton<AppManager>
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
-		GameObject loader = Instantiate(loaderPrefab);
-		this.loaderCanvas = loader.GetComponent<Canvas>();
+
+		LoaderController loader = FindObjectOfType<LoaderController>();
+		
+		if (loader) {
+			this.loaderCanvas = loader.GetComponent<Canvas>();
+		} else {
+			GameObject newLoader = Instantiate(loaderPrefab);
+			this.loaderCanvas = newLoader.GetComponent<Canvas>();
+		}
+		
 		this.loaderCanvas.enabled = false;
     }
 
@@ -56,6 +64,9 @@ public class AppManager : Singleton<AppManager>
 
 	private IEnumerator LoadAndChangeCoroutine(int scene, float time)
 	{
+		this.loaderCanvas.gameObject.SetActive(false);
+		yield return null;
+		this.loaderCanvas.gameObject.SetActive(true);
 		this.loaderCanvas.enabled = true;
 		yield return new WaitForSeconds(time);
 		SceneManager.LoadScene(scene);
@@ -63,6 +74,9 @@ public class AppManager : Singleton<AppManager>
 
 	private IEnumerator LoadAndChangeCoroutine(string scene, float time)
 	{
+		this.loaderCanvas.gameObject.SetActive(false);
+		yield return null;
+		this.loaderCanvas.gameObject.SetActive(true);
 		this.loaderCanvas.enabled = true;
 		yield return new WaitForSeconds(time);
 		SceneManager.LoadScene(scene);

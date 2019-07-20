@@ -301,7 +301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5, y: -5}
+  m_AnchoredPosition: {x: -2.5000153, y: -5}
   m_SizeDelta: {x: -35, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2609369040130207421
@@ -885,6 +885,10 @@ MonoBehaviour:
   defaultUrl: https://dl.dropboxusercontent.com/s/iug8er6q07b6l1e/Info.json?dl=0
   textView: {fileID: 2609369040843505476}
   gradient: {fileID: 2609369040397401986}
+  dots:
+  - {fileID: 2609369040863878001}
+  - {fileID: 2609369041217193117}
+  - {fileID: 2609369039939602068}
   image: {fileID: 2609369040130207422}
 --- !u!114 &2609369041350982929
 MonoBehaviour:
