@@ -14,6 +14,7 @@ namespace Fisiomed.Chat
 		[SerializeField] string defaultUrl;
 		[Header("Visual")]
 		[SerializeField] GameObject bubblePrefab;
+		[SerializeField] GameObject questionPrefab;
 		[SerializeField] Transform containerPanel;
 		[SerializeField] Button nextButton;
 
@@ -32,31 +33,42 @@ namespace Fisiomed.Chat
 		public void NextBubble()
 		{
 			if (++index < lenght)
-				ShowBubble(chat, index);
+				ShowElement(index);
 			if (index >= lenght - 1)
 				nextButton.interactable = false;
 		}
 
-		private void ShowBubble(Chat chat, int index)
+		private void ShowElement(int index)
 		{
-			Dialog dialog = chat.dialogs[index];
-			Character character = chat.characters[dialog.character];
-
-			GameObject bubbleGO = Instantiate(bubblePrefab, containerPanel);
-			BubbleController bubble = bubbleGO.GetComponent<BubbleController>();
-			bubble.SetDialog(dialog, character);
-			bubble.SetSprite(characterSprites[dialog.character]);
+			// Dialog dialog = chat.dialogs[index];
+			Element element = chat.dialogue[index];
+			Character character = chat.characters[element.character];
+			Sprite sprite = characterSprites[element.character];
+			switch (element.type)
+			{
+				case ElementType.Message:
+					Message message = chat.messages[element.message];
+					GameObject newBubble = Instantiate(bubblePrefab, containerPanel);
+					BubbleController bubbleC = newBubble.GetComponent<BubbleController>();
+					bubbleC.Set(message, character, sprite);
+				break;
+				case ElementType.Question:
+					Question question = chat.questions[element.question];
+					GameObject newQuestion = Instantiate(bubblePrefab, containerPanel);
+					QuestionController questionC = newQuestion.GetComponent<QuestionController>();
+					questionC.Set(question, character, sprite);
+				break;
+				default:
+				break;
+			}
+			
 		}
 
 		void OnMetadataLoaded(string json)
 		{
 			chat = JsonUtility.FromJson<Chat>(json);
-			lenght = chat.dialogs.Length;
-			Character[] characters = chat.characters;
-
-			// Start Chat
-			// ShowBubble(chat, index);
-		
+			lenght = chat.dialogue.Length;
+			Character[] characters = chat.characters;						
 			// Download Character Images
 			StartCoroutine(DownloadSprites());
 		}
@@ -70,7 +82,7 @@ namespace Fisiomed.Chat
 			}
 			yield return null;
 			AppManager.Instance.ShowLoader(false);
-			ShowBubble(chat, index);			
+			ShowElement(index);			
 		}
 
 		void OnTextureLoaded(Texture texture)

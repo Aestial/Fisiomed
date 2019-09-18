@@ -19,19 +19,18 @@ namespace Fisiomed.Chat
         [SerializeField] Image textBubbleShadow;
         [SerializeField] Text text;
 
-        public void SetDialog(Dialog dialog, Character character)
+        public void Set(Message message, Character character, Sprite sprite)
         {
-            SetContent(dialog.message);
-            SetSide(character.side);
-            // SetSprite(character.imageUrl);
             SetColors(character.textColor, character.textBColor, character.faceBColor);
+            SetContent(message.text);
+            SetSide(character.side);                                    
+            SetSprite(sprite);
         }
 
         public void SetSprite(Sprite sprite)
         {
             characterImage.sprite = sprite;
         }
-
 
         void SetContent(string content)
         {
