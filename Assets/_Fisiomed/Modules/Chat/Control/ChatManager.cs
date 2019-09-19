@@ -13,23 +13,14 @@ namespace Fisiomed.Chat
 		[Header("Data")]
 		[SerializeField] string defaultUrl;
 		[Header("Visual")]
-		[SerializeField] GameObject bubblePrefab;
-		[SerializeField] GameObject questionPrefab;
+		[SerializeField] GameObject messageBubblePrefab;
+		[SerializeField] GameObject questionBubblePrefab;
 		[SerializeField] Transform containerPanel;
 		[SerializeField] Button nextButton;
-
 		List<Sprite> characterSprites = new List<Sprite>();
-		int lenght = 0;
-		int index = 0;
+		int lenght = 0, index = 0;
 		Chat chat;
-
-		void Start()
-		{
-			AppManager.Instance.ShowLoader(true);
-			string url = PlayerPrefs.GetString("url", defaultUrl);
-			StartCoroutine(Downloader.Instance.LoadJSON(url, OnMetadataLoaded));
-		}
-
+		#region Public Methods
 		public void NextBubble()
 		{
 			if (++index < lenght)
@@ -37,24 +28,32 @@ namespace Fisiomed.Chat
 			if (index >= lenght - 1)
 				nextButton.interactable = false;
 		}
-
+		#endregion
+		#region MonoBehaviour
+		void Start()
+		{
+			AppManager.Instance.ShowLoader(true);
+			string url = PlayerPrefs.GetString("url", defaultUrl);
+			StartCoroutine(Downloader.Instance.LoadJSON(url, OnMetadataLoaded));
+		}
+		#endregion
 		private void ShowElement(int index)
 		{
 			// Dialog dialog = chat.dialogs[index];
 			Element element = chat.dialogue[index];
 			Character character = chat.characters[element.character];
 			Sprite sprite = characterSprites[element.character];
-			switch (element.type)
+			switch ((ElementType)element.type)
 			{
 				case ElementType.Message:
-					Message message = chat.messages[element.message];
-					GameObject newBubble = Instantiate(bubblePrefab, containerPanel);
-					BubbleController bubbleC = newBubble.GetComponent<BubbleController>();
-					bubbleC.Set(message, character, sprite);
+					Message message = chat.messages[element.index];
+					GameObject newMessage = Instantiate(messageBubblePrefab, containerPanel);
+					MessageController messageC = newMessage.GetComponent<MessageController>();
+					messageC.Set(message, character, sprite);
 				break;
 				case ElementType.Question:
-					Question question = chat.questions[element.question];
-					GameObject newQuestion = Instantiate(bubblePrefab, containerPanel);
+					Question question = chat.questions[element.index];
+					GameObject newQuestion = Instantiate(questionBubblePrefab, containerPanel);
 					QuestionController questionC = newQuestion.GetComponent<QuestionController>();
 					questionC.Set(question, character, sprite);
 				break;
@@ -67,6 +66,9 @@ namespace Fisiomed.Chat
 		void OnMetadataLoaded(string json)
 		{
 			chat = JsonUtility.FromJson<Chat>(json);
+			Debug.Log(chat);
+			Debug.Log(chat.dialogue);
+			Debug.Log(chat.questions);
 			lenght = chat.dialogue.Length;
 			Character[] characters = chat.characters;						
 			// Download Character Images

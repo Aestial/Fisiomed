@@ -13,15 +13,16 @@ namespace Fisiomed.Chat
     [Serializable]
     public class Element
     {
-        public ElementType type;
+        public int type;
+        public int index;
         public int character;
-        public int message;
-        public int question;
     }
+    [Serializable]
     public enum ElementType
     {
         Message,
-        Question
+        Question,
+        Interactive,
     }
     [Serializable]
     public class Character
@@ -41,8 +42,6 @@ namespace Fisiomed.Chat
     [Serializable]
     public class Question
     {
-        public string text;
-        public bool showFeedback;
         public Answer[] answers;
     }
     [Serializable]
@@ -50,6 +49,7 @@ namespace Fisiomed.Chat
     {
         public string text;
         public bool isCorrect;
+        public bool hasFeedback;
         public string feedback;
     }
     

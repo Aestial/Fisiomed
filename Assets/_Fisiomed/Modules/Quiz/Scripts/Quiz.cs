@@ -4,35 +4,38 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-[XmlRoot("quiz")]
-public class Quiz
+namespace Fisiomed.Questions_OLD
 {
-	[XmlAttribute("title")]
-	public string title;
-	[XmlArray("questions"), XmlArrayItem("question")]
-	public Question[] questions;
-
-	public void Save(string path)
- 	{
- 		var serializer = new XmlSerializer(typeof(Quiz));
- 		using(var stream = new FileStream(path, FileMode.Create))
- 		{
- 			serializer.Serialize(stream, this);
- 		}
- 	}
-	
-	public static Quiz Load(string path)
+	[XmlRoot("quiz")]
+	public class Quiz
 	{
-		var serializer = new XmlSerializer(typeof(Quiz));
-		using(var stream = new FileStream(path, FileMode.Open))
+		[XmlAttribute("title")]
+		public string title;
+		[XmlArray("questions"), XmlArrayItem("question")]
+		public Question[] questions;
+
+		public void Save(string path)
 		{
-			return serializer.Deserialize(stream) as Quiz;
+			var serializer = new XmlSerializer(typeof(Quiz));
+			using(var stream = new FileStream(path, FileMode.Create))
+			{
+				serializer.Serialize(stream, this);
+			}
 		}
-	}
+		
+		public static Quiz Load(string path)
+		{
+			var serializer = new XmlSerializer(typeof(Quiz));
+			using(var stream = new FileStream(path, FileMode.Open))
+			{
+				return serializer.Deserialize(stream) as Quiz;
+			}
+		}
 
-	public static Quiz LoadFromText(string text)
-	{
-		var serializer = new XmlSerializer(typeof(Quiz));
-		return serializer.Deserialize(new StringReader(text)) as Quiz;
+		public static Quiz LoadFromText(string text)
+		{
+			var serializer = new XmlSerializer(typeof(Quiz));
+			return serializer.Deserialize(new StringReader(text)) as Quiz;
+		}
 	}
 }
