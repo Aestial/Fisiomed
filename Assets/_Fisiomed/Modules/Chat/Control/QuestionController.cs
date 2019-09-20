@@ -19,23 +19,34 @@ namespace Fisiomed.Chat
             this.chat = chat;
             SetAnswers(question, character);
         }
-        void EnableAnswers(bool enabled)
-        {
-            answersGroup.interactable = enabled;
-        }
         public void CorrectAnswer()
         {
             Debug.Log("Correct answer!");
             EnableAnswers(false);
             chat.NextBubble();
+        }        
+        #endregion
+        #region Private Methods
+        private void ClearAnswers()
+        {
+            int length = this.container.transform.childCount;
+            for (int i = 0; i < length; i++)
+            {
+                Transform answer = this.container.transform.GetChild(i);
+                Destroy(answer.gameObject);
+            }
         }
-        void SetAnswers(Question question, Character character)
+        private void EnableAnswers(bool enabled)
+        {
+            answersGroup.interactable = enabled;
+        }
+        private void SetAnswers(Question question, Character character)
         {
             // this.question = question;
             Print(question, character);
             EnableAnswers(true);
         }
-        void Print(Question question, Character character)
+        private void Print(Question question, Character character)
         {
             // questionText.text = this.question.text;        
             int length = question.answers.Length;
@@ -47,46 +58,12 @@ namespace Fisiomed.Chat
             }
         }
         #endregion
-        private void ClearAnswers()
-        {
-            int length = this.container.transform.childCount;
-            for (int i = 0; i < length; i++)
-            {
-                Transform answer = this.container.transform.GetChild(i);
-                Destroy(answer.gameObject);
-            }
-        }
-        // void SetColors(string text, string textB, string faceB)
-        // {
-        //     Color textColor = new Color();
-        // 	Color textBColor = new Color();
-        // 	Color faceBColor = new Color();
-        // 	ColorUtility.TryParseHtmlString (text, out textColor);
-        // 	ColorUtility.TryParseHtmlString (textB, out textBColor);
-        // 	ColorUtility.TryParseHtmlString (faceB, out faceBColor);
-        //     SetColors(textColor, textBColor, faceBColor);
-        // }
-        // void SetColors(Color textColor, Color textBColor, Color charBColor)
-        // {            
-        //     text.color = textColor;
-        //     textBubble.color = textBColor;
-        //     characterBubble.color = charBColor;            
-        // }
-        void Awake()
+        #region MonoBehaviour Methods
+        void Start()
         {
             answersGroup = container.GetComponent<CanvasGroup>();
             Debug.Log(answersGroup);
         }
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        #endregion
     }
 }

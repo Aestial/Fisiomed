@@ -18,14 +18,14 @@ namespace Fisiomed.Chat
 		[SerializeField] Transform containerPanel;
 		[SerializeField] Button nextButton;
 		List<Sprite> characterSprites = new List<Sprite>();
-		int lenght = 0, index = 0;
+		int lenght = 0, current = 0;
 		Chat chat;
 		#region Public Methods
 		public void NextBubble()
 		{
-			if (++index < lenght)
-				ShowElement(index);
-			if (index >= lenght - 1)
+			if (++current < lenght)
+				ShowElement(current);
+			if (current >= lenght - 1)
 				nextButton.interactable = false;
 		}
 		#endregion
@@ -84,7 +84,7 @@ namespace Fisiomed.Chat
 			}
 			yield return null;
 			AppManager.Instance.ShowLoader(false);
-			ShowElement(index);			
+			ShowElement(current);			
 		}
 
 		void OnTextureLoaded(Texture texture)
