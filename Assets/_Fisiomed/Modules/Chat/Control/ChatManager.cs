@@ -33,10 +33,11 @@ namespace Fisiomed.Chat
 		void Start()
 		{
 			AppManager.Instance.ShowLoader(true);
-			// string url = PlayerPrefs.GetString("url", defaultUrl);
-		}
-		#endregion
-		private void ShowElement(int index)
+            // string url = PlayerPrefs.GetString("url", defaultUrl);
+            StartCoroutine(Downloader.Instance.LoadJSON(defaultUrl, OnMetadataLoaded));
+        }
+        #endregion
+        private void ShowElement(int index)
 		{
 			// Dialog dialog = chat.dialogs[index];
 			Element element = chat.dialogue[index];
