@@ -39,6 +39,7 @@ namespace Fisiomed.Chat
         }
         public void Check()
         {
+            button.interactable = false;
             if (answer.hasFeedback)
             {
                 ShowFeedback();
@@ -49,7 +50,6 @@ namespace Fisiomed.Chat
             } else {
                 wrongEvents.Invoke();
             }
-            button.interactable = false;
         }
 
         public void ShowFeedback()

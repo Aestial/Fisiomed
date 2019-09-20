@@ -10,12 +10,13 @@ namespace Fisiomed.Chat
         [SerializeField] Image characterBubble;
         [SerializeField] GameObject answerBubblePrefab;
         [SerializeField] private Transform container;
-
-        CanvasGroup answersGroup;        
+        ChatManager chat;
+        CanvasGroup answersGroup;
         // Question question;        
         #region Public Methods
-        public void Set(Question question, Character character, Sprite sprite)
+        public void Set(ChatManager chat, Question question, Character character, Sprite sprite)
         {
+            this.chat = chat;
             SetAnswers(question, character);
         }
         void EnableAnswers(bool enabled)
@@ -25,6 +26,8 @@ namespace Fisiomed.Chat
         public void CorrectAnswer()
         {
             Debug.Log("Correct answer!");
+            EnableAnswers(false);
+            chat.NextBubble();
         }
         void SetAnswers(Question question, Character character)
         {
@@ -36,18 +39,18 @@ namespace Fisiomed.Chat
         {
             // questionText.text = this.question.text;        
             int length = question.answers.Length;
-            for (int i = 0; i < length; i++ )
+            for (int i = 0; i < length; i++)
             {
                 GameObject newGO = Instantiate(answerBubblePrefab, container);
                 AnswerController answer = newGO.GetComponent<AnswerController>();
                 answer.Set(this, question.answers[i], character);
-            } 
+            }
         }
         #endregion
         private void ClearAnswers()
         {
             int length = this.container.transform.childCount;
-            for(int i = 0; i < length; i++)
+            for (int i = 0; i < length; i++)
             {
                 Transform answer = this.container.transform.GetChild(i);
                 Destroy(answer.gameObject);
@@ -56,11 +59,11 @@ namespace Fisiomed.Chat
         // void SetColors(string text, string textB, string faceB)
         // {
         //     Color textColor = new Color();
-		// 	Color textBColor = new Color();
-		// 	Color faceBColor = new Color();
-		// 	ColorUtility.TryParseHtmlString (text, out textColor);
-		// 	ColorUtility.TryParseHtmlString (textB, out textBColor);
-		// 	ColorUtility.TryParseHtmlString (faceB, out faceBColor);
+        // 	Color textBColor = new Color();
+        // 	Color faceBColor = new Color();
+        // 	ColorUtility.TryParseHtmlString (text, out textColor);
+        // 	ColorUtility.TryParseHtmlString (textB, out textBColor);
+        // 	ColorUtility.TryParseHtmlString (faceB, out faceBColor);
         //     SetColors(textColor, textBColor, faceBColor);
         // }
         // void SetColors(Color textColor, Color textBColor, Color charBColor)
@@ -77,13 +80,13 @@ namespace Fisiomed.Chat
         // Start is called before the first frame update
         void Start()
         {
-            
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+
         }
     }
 }

@@ -33,8 +33,7 @@ namespace Fisiomed.Chat
 		void Start()
 		{
 			AppManager.Instance.ShowLoader(true);
-			string url = PlayerPrefs.GetString("url", defaultUrl);
-			StartCoroutine(Downloader.Instance.LoadJSON(url, OnMetadataLoaded));
+			// string url = PlayerPrefs.GetString("url", defaultUrl);
 		}
 		#endregion
 		private void ShowElement(int index)
@@ -55,7 +54,7 @@ namespace Fisiomed.Chat
 					Question question = chat.questions[element.index];
 					GameObject newQuestion = Instantiate(questionBubblePrefab, containerPanel);
 					QuestionController questionC = newQuestion.GetComponent<QuestionController>();
-					questionC.Set(question, character, sprite);
+					questionC.Set(this, question, character, sprite);
 				break;
 				default:
 				break;
