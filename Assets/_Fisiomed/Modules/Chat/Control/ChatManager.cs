@@ -34,6 +34,7 @@ namespace Fisiomed.Chat
 		{
 			AppManager.Instance.ShowLoader(true);
 			// string url = PlayerPrefs.GetString("url", defaultUrl);
+			StartCoroutine(Downloader.Instance.LoadJSON(defaultUrl, OnMetadataLoaded));
 		}
 		#endregion
 		private void ShowElement(int index)
