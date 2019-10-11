@@ -399,7 +399,7 @@ MonoBehaviour:
     una disminuci\xF3n de la afinidad por el O2 (efecto Bohr)."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81bd885fb80ec4349b4c1de7cd5a9a70, type: 2}
-  m_sharedMaterial: {fileID: 7085649809590735066, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
+  m_sharedMaterial: {fileID: 1541229860599632177, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 37.7
+  m_fontSize: 37.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -665,6 +665,7 @@ GameObject:
   - component: {fileID: 5797901025267280333}
   - component: {fileID: 5797901025267280338}
   - component: {fileID: 5797901025267280339}
+  - component: {fileID: 223951282}
   m_Layer: 5
   m_Name: Simulation_Manager
   m_TagString: Untagged
@@ -755,6 +756,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &223951282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5797901025267280336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 091f44303c9d4473cba6acc30df8ca71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5797901025325844144
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +839,7 @@ MonoBehaviour:
     disociaci\xF3n de la Hb-O2 se desplace hacia la derecha."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81bd885fb80ec4349b4c1de7cd5a9a70, type: 2}
-  m_sharedMaterial: {fileID: 7085649809590735066, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
+  m_sharedMaterial: {fileID: 1541229860599632177, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -852,7 +865,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 32.85
+  m_fontSize: 32.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1205,6 +1218,17 @@ MonoBehaviour:
       - m_Target: {fileID: 5797901026566867736}
         m_MethodName: set_enabled
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 223951282}
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1869,7 +1893,7 @@ MonoBehaviour:
     de O2."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81bd885fb80ec4349b4c1de7cd5a9a70, type: 2}
-  m_sharedMaterial: {fileID: 7085649809590735066, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
+  m_sharedMaterial: {fileID: 1541229860599632177, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1895,7 +1919,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40.6
+  m_fontSize: 40.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2388,7 +2412,7 @@ MonoBehaviour:
   m_text: "Analiza las gr\xE1ficas y selecciona la respuesta correcta.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81bd885fb80ec4349b4c1de7cd5a9a70, type: 2}
-  m_sharedMaterial: {fileID: 7085649809590735066, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
+  m_sharedMaterial: {fileID: 1541229860599632177, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2548,7 +2572,7 @@ MonoBehaviour:
     un aumento de la afinidad por el O2 (efecto Bohr)."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81bd885fb80ec4349b4c1de7cd5a9a70, type: 2}
-  m_sharedMaterial: {fileID: 7085649809590735066, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
+  m_sharedMaterial: {fileID: 1541229860599632177, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2574,7 +2598,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 37.7
+  m_fontSize: 37.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4111,7 +4135,7 @@ MonoBehaviour:
     disociaci\xF3n de la Hb-O2 se desplace hacia la izquierda."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81bd885fb80ec4349b4c1de7cd5a9a70, type: 2}
-  m_sharedMaterial: {fileID: 7085649809590735066, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
+  m_sharedMaterial: {fileID: 1541229860599632177, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4137,7 +4161,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 32.85
+  m_fontSize: 32.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4430,7 +4454,7 @@ MonoBehaviour:
     de O2."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 81bd885fb80ec4349b4c1de7cd5a9a70, type: 2}
-  m_sharedMaterial: {fileID: 7085649809590735066, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
+  m_sharedMaterial: {fileID: 1541229860599632177, guid: 81bd885fb80ec4349b4c1de7cd5a9a70,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4456,7 +4480,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 40.6
+  m_fontSize: 40.4
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
