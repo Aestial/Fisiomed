@@ -10,11 +10,11 @@ namespace Fisiomed.Chat
         [SerializeField] Image characterBubble;
         [SerializeField] GameObject answerBubblePrefab;
         [SerializeField] private Transform container;
-        ChatManager chat;
+        ChatController chat;
         CanvasGroup answersGroup;
         // Question question;        
         #region Public Methods
-        public void Set(ChatManager chat, Question question, Character character, Sprite sprite)
+        public void Set(ChatController chat, Question question, Character character, Sprite sprite)
         {
             this.chat = chat;
             SetAnswers(question, character);

@@ -5,9 +5,10 @@ namespace Fisiomed.Chat
     [Serializable]
     public class Chat
     {
-        public Element[] dialogue;
+        public Element[] sequence;
         public Character[] characters;
         public Message[] messages;
+        public Interactive[] interactives;
         public Question[] questions;
     }    
     [Serializable]
@@ -38,6 +39,11 @@ namespace Fisiomed.Chat
     public class Message
     {
         public string text;
+    }
+    [Serializable]
+    public class Interactive
+    {
+        public string url;
     }
     [Serializable]
     public class Question

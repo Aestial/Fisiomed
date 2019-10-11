@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml.Serialization;
 using UnityEngine;
-using UnityEngine.UI.ProceduralImage;
 using TMPro;
 
-namespace Fisiomed.Questions_OLD
+namespace Fisiomed.Quiz
 {
     public class QuestionController : MonoBehaviour
     {
@@ -14,12 +9,8 @@ namespace Fisiomed.Questions_OLD
         [SerializeField] private Transform answersPanel;
         [SerializeField] private GameObject answerPrefab;
         [SerializeField] private GameObject feedbackPanel;
-
         CanvasGroup answersGroup;
-        
         private Question question;
-        private const string filePath = "Quiz/question.xml";
-
         public QuizController quiz;
 
         void Awake()
@@ -27,12 +18,10 @@ namespace Fisiomed.Questions_OLD
             answersGroup = answersPanel.GetComponent<CanvasGroup>();
             Debug.Log(answersGroup);
         }
-
         public void EnableAnswers(bool enabled)
         {
             answersGroup.interactable = enabled;
         }
-
         public void CorrectAnswer()
         {
             Debug.Log("Correct answer!");
@@ -43,12 +32,10 @@ namespace Fisiomed.Questions_OLD
                 this.quiz.Correct();
             }
         }
-
         private void ShowFeedback()
         {
             feedbackPanel.SetActive(true);
         }
-
         public void Print(Question question)
         {
             this.question = question;
@@ -56,7 +43,6 @@ namespace Fisiomed.Questions_OLD
             EnableAnswers(true);
             Print();
         }
-
         public void Print()
         {
             questionText.text = this.question.text;        
@@ -69,7 +55,6 @@ namespace Fisiomed.Questions_OLD
                 ac.Set(this, answer);
             } 
         }
-
         private void ClearAnswers()
         {
             int length = this.answersPanel.transform.childCount;
@@ -78,13 +63,6 @@ namespace Fisiomed.Questions_OLD
                 Transform answer = this.answersPanel.transform.GetChild(i);
                 Destroy(answer.gameObject);
             }
-        }
-        
-        private void Fetch()
-        {
-            var path = Path.Combine(Application.streamingAssetsPath, filePath);
-            this.question = Question.Load(path);
-        }
-
+        }    
     }
 }

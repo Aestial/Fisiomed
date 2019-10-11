@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
-namespace Fisiomed.Questions_OLD
+namespace Fisiomed.Quiz
 {
     public class AnswerController : MonoBehaviour 
     {
@@ -20,10 +19,9 @@ namespace Fisiomed.Questions_OLD
         public void Set(QuestionController question, Answer answer)
         {
             this.question = question;
-            this.isCorrect = answer.value;
+            this.isCorrect = answer.isCorrect;
             this.text.text = answer.text;
-        }
-        
+        }        
         public void Check ()
         {
             if (isCorrect) {
@@ -35,12 +33,10 @@ namespace Fisiomed.Questions_OLD
             }
             button.interactable = false;
         }
-
         IEnumerator ContinueCoroutine(float waitTime)
         {
             yield return new WaitForSeconds(waitTime);
             question.CorrectAnswer();
-
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Fisiomed.Chat
         }
         void SetContent(string content)
         {
-            text.text = content;
+            text.text = TextProcess.Process(content);
         }
         void SetSide(string input)
         {
