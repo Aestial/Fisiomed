@@ -9,6 +9,7 @@ namespace Fisiomed.Chat
 	public class ChatController : Singleton<ChatController> 
 	{	
 		[Header("Visual")]
+		[SerializeField] Canvas canvas;
 		[SerializeField] GameObject messageBubblePrefab;
 		[SerializeField] GameObject questionBubblePrefab;
 		[SerializeField] Transform containerPanel;
@@ -34,6 +35,8 @@ namespace Fisiomed.Chat
 				ShowElement(index);
 			if (index >= lenght - 1)
 				nextButton.interactable = false;
+			if (index >= lenght)
+				canvas.enabled = false;
 		}
 		#endregion
 		private void ShowElement(int index)
@@ -57,6 +60,10 @@ namespace Fisiomed.Chat
 					QuestionController questionC = newQuestion.GetComponent<QuestionController>();
 					questionC.Set(this, question, character, sprite);
 					nextButton.interactable = false;
+				break;
+				case ElementType.Interactive:
+					string url = chat.interactives[element.index].url;
+					InteractiveController.Instance.Play(url);
 				break;
 				default:
 				break;
