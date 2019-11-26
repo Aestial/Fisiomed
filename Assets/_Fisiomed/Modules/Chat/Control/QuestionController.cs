@@ -18,6 +18,7 @@ namespace Fisiomed.Chat
         {
             this.chat = chat;
             SetAnswers(question, character);
+            SetSprite(sprite);
         }
         void EnableAnswers(bool enabled)
         {
@@ -34,6 +35,10 @@ namespace Fisiomed.Chat
             // this.question = question;
             Print(question, character);
             EnableAnswers(true);
+        }
+        void SetSprite(Sprite sprite)
+        {
+            characterImage.sprite = sprite;
         }
         void Print(Question question, Character character)
         {
@@ -55,7 +60,7 @@ namespace Fisiomed.Chat
                 Transform answer = this.container.transform.GetChild(i);
                 Destroy(answer.gameObject);
             }
-        }
+        }        
         // void SetColors(string text, string textB, string faceB)
         // {
         //     Color textColor = new Color();

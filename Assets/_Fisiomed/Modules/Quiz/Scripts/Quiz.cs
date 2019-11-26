@@ -13,6 +13,7 @@ namespace Fisiomed.Quiz
 	{
 		public string text;
 		public bool hasFeedback;
+		public string feedback;
 		public Answer[] answers;
 	}
 	[Serializable]
@@ -20,6 +21,5 @@ namespace Fisiomed.Quiz
 	{
 		public string text;
 		public bool isCorrect;
-		public string feedback;
 	}
 }

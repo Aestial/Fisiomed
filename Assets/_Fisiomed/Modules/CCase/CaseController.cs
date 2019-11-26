@@ -10,6 +10,8 @@ namespace Fisiomed.Case
     {
         [Header("Data")]
         [SerializeField] string defaultUrl;
+        [Header("Visuals")]
+        [SerializeField] float loaderTime;
         CCase ccase;
         // Start is called before the first frame update
         void Start()
@@ -27,7 +29,7 @@ namespace Fisiomed.Case
         }
         IEnumerator WaitLoader()
         {
-            yield return new WaitForSeconds(2.85f);
+            yield return new WaitForSeconds(loaderTime);
             AppManager.Instance.ShowLoader(false);
         }
     }

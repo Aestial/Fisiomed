@@ -14,7 +14,7 @@ namespace Fisiomed.Chat
 		[SerializeField] GameObject questionBubblePrefab;
 		[SerializeField] Transform containerPanel;
 		[SerializeField] Button nextButton;
-		List<Sprite> characterSprites = new List<Sprite>();
+		public List<Sprite> characterSprites = new List<Sprite>();
 		int lenght = 0, index = 0;
 		Chat chat;
 		#region Public Methods
@@ -62,7 +62,16 @@ namespace Fisiomed.Chat
 					nextButton.interactable = false;
 				break;
 				case ElementType.Interactive:
-					string url = chat.interactives[element.index].url;
+					string url;
+					switch(Application.platform)
+					{
+						case RuntimePlatform.Android:
+							url = chat.interactives[element.index].url;
+							break;
+						default:
+							url =  chat.interactives[element.index].ios;
+							break;
+					}
 					InteractiveController.Instance.Play(url);
 				break;
 				default:

@@ -6,6 +6,7 @@ namespace Fisiomed.Quiz
     public class QuestionController : MonoBehaviour
     {
         [SerializeField] private TMP_Text questionText;
+        [SerializeField] private TMP_Text feedbackText;
         [SerializeField] private Transform answersPanel;
         [SerializeField] private GameObject answerPrefab;
         [SerializeField] private GameObject feedbackPanel;
@@ -34,7 +35,9 @@ namespace Fisiomed.Quiz
         }
         private void ShowFeedback()
         {
+            feedbackText.text = question.feedback;
             feedbackPanel.SetActive(true);
+
         }
         public void Print(Question question)
         {

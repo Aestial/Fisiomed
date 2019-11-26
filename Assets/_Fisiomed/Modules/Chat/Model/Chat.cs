@@ -44,6 +44,7 @@ namespace Fisiomed.Chat
     public class Interactive
     {
         public string url;
+        public string ios;
     }
     [Serializable]
     public class Question
