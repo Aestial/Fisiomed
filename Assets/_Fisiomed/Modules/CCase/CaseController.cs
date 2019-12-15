@@ -13,19 +13,18 @@ namespace Fisiomed.Case
         [Header("Visuals")]
         [SerializeField] float loaderTime;
         CCase ccase;
-        // Start is called before the first frame update
         void Start()
         {
             AppManager.Instance.ShowLoader(true);
             StartCoroutine(Downloader.Instance.LoadJSON(defaultUrl, OnMetadataLoaded));
-            StartCoroutine(WaitLoader());
         }
         void OnMetadataLoaded(string json)
         {
             ccase = JsonUtility.FromJson<CCase>(json);            
             PresentationController.Instance.Set(ccase.info);
-            ChatController.Instance.Set(ccase.chat);
-            QuizController.Instance.Set(ccase.quiz);         
+            ChatController.Instance.Set(ccase.chat);            
+            QuizController.Instance.Set(ccase.quiz);
+            StartCoroutine(WaitLoader());
         }
         IEnumerator WaitLoader()
         {
