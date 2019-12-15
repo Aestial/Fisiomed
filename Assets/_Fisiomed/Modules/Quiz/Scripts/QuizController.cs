@@ -1,13 +1,32 @@
 using UnityEngine;
+using Fisiomed.Feedback;
+using System;
 
 namespace Fisiomed.Quiz
 {
-    public class QuizController : Singleton<QuizController>
+    public class QuizController : Singleton<QuizController>, ILoader
     {
-        [SerializeField] QuestionController questionController;
+        [SerializeField] QuestionController questionController;        
+        [SerializeField] int currentIndex = -1;
+        [SerializeField] bool hasDefault;
+        [SerializeField] string json;
         Quiz quiz;
-        int currentIndex = -1;
-
+        Notifier notifier = new Notifier();
+        
+        void Start()
+        {
+            CheckDefault(hasDefault, json);
+            notifier.Subscribe(FeedbackController.ON_MODAL_CLOSED, HandleOnModalClosed);
+        }
+        void OnDestroy()
+        {
+            notifier.UnsubcribeAll();
+        }
+        private void HandleOnModalClosed(object[] args)
+        {
+            if((string)args[0] == "quiz")
+                Play();
+        }
         public void Set(Quiz quiz)
         {
             this.quiz = quiz;
@@ -32,6 +51,13 @@ namespace Fisiomed.Quiz
             else
             {
                 Debug.Log("Finished Quiz!");
+            }
+        }
+        public void CheckDefault(bool hasDefault, string json)
+        {
+            if (hasDefault)
+            {
+                Set(JsonUtility.FromJson<Quiz>(json));
             }
         }
     }

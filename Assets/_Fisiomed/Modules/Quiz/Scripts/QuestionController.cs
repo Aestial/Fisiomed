@@ -1,15 +1,14 @@
 using UnityEngine;
 using TMPro;
+using Fisiomed.Feedback;
 
 namespace Fisiomed.Quiz
 {
     public class QuestionController : MonoBehaviour
     {
         [SerializeField] private TMP_Text questionText;
-        [SerializeField] private TMP_Text feedbackText;
         [SerializeField] private Transform answersPanel;
         [SerializeField] private GameObject answerPrefab;
-        [SerializeField] private GameObject feedbackPanel;
         CanvasGroup answersGroup;
         private Question question;
         public QuizController quiz;
@@ -35,9 +34,7 @@ namespace Fisiomed.Quiz
         }
         private void ShowFeedback()
         {
-            feedbackText.text = question.feedback;
-            feedbackPanel.SetActive(true);
-
+            FeedbackController.Instance.Show("quiz", question.feedback, true);
         }
         public void Print(Question question)
         {
