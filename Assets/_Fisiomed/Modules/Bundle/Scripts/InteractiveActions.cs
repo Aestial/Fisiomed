@@ -2,9 +2,13 @@
 using Fisiomed.Chat;
 public class InteractiveActions : MonoBehaviour
 {
+    [SerializeField] bool destroyTarget;
+    [SerializeField] GameObject target;
     public void Close()
     {
-        ChatController.Instance.NextBubble();
-        Destroy(gameObject);
+        if (destroyTarget)
+            Destroy(target);
+        else
+            Destroy(gameObject);
     }    
 }

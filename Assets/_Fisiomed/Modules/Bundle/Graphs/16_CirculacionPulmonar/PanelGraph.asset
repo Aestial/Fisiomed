@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: PanelGraph
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Simulacion
+      16","summary":"Circulacion Pulmonar","pan":{"x":-3.112194,"y":27.72156},"zoom":0.85,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-312.0,"y":-172.0},"guid":"db5d17d4-e17d-4c69-a88d-6c0cd219263d","$version":"A","$type":"Bolt.Start"},{"coroutine":false,"defaultValues":{},"position":{"x":-193.0,"y":-171.0},"guid":"10d4feea-bd0a-4f1b-a0d5-1a68610f128d","$version":"A","$type":"Bolt.Update"},{"coroutine":true,"defaultValues":{"name":{"$content":"Correct","$type":"System.String"}},"position":{"x":-309.0,"y":-44.0},"guid":"fb0f39c1-225f-46fc-bac7-7e6e984a9a2d","$version":"A","$type":"Bolt.BoltUnityEvent","$id":"13"},{"defaultValues":{"seconds":{"$content":1.0,"$type":"System.Single"},"unscaledTime":{"$content":false,"$type":"System.Boolean"}},"position":{"x":-129.0,"y":-44.0},"guid":"21ab5857-314a-4087-931d-392c71a62ba4","$version":"A","$type":"Bolt.WaitForSecondsUnit","$id":"15"},{"chainable":false,"member":{"name":"enabled","parameterTypes":null,"targetType":"UnityEngine.Canvas","targetTypeName":"UnityEngine.Canvas","$version":"A"},"defaultValues":{"target":null,"input":{"$content":false,"$type":"System.Boolean"}},"position":{"x":49.0,"y":-44.0},"guid":"9819abd6-2ff1-43a8-b9e5-115059aecb65","$version":"A","$type":"Bolt.SetMember","$id":"17"},{"coroutine":true,"defaultValues":{"name":{"$content":"Finish","$type":"System.String"}},"position":{"x":-308.0,"y":100.0},"guid":"e26e5e77-1045-4e6e-a22c-636a139f23c9","$version":"A","$type":"Bolt.BoltUnityEvent","$id":"20"},{"defaultValues":{"seconds":{"$content":1.0,"$type":"System.Single"},"unscaledTime":{"$content":false,"$type":"System.Boolean"}},"position":{"x":-127.0,"y":100.0},"guid":"be523e01-53b7-45d7-acf2-456577dd508c","$version":"A","$type":"Bolt.WaitForSecondsUnit","$id":"22"},{"chainable":false,"member":{"name":"Close","parameterTypes":[],"targetType":"InteractiveActions","targetTypeName":"InteractiveActions","$version":"A"},"defaultValues":{"target":null},"position":{"x":49.0,"y":100.0},"guid":"07cedf09-b68a-45ef-aca9-76fa7952aed8","$version":"A","$type":"Bolt.InvokeMember","$id":"24"},{"sourceUnit":{"$ref":"15"},"sourceKey":"exit","destinationUnit":{"$ref":"17"},"destinationKey":"assign","guid":"635f0fb9-654d-4f8b-91de-533a53a29068","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"22"},"sourceKey":"exit","destinationUnit":{"$ref":"24"},"destinationKey":"enter","guid":"ba3dcaa6-dd5f-494d-99b5-6d0df9d01cf0","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"13"},"sourceKey":"trigger","destinationUnit":{"$ref":"15"},"destinationKey":"enter","guid":"d682676c-1541-4120-b574-9073ebf0dcc1","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"20"},"sourceKey":"trigger","destinationUnit":{"$ref":"22"},"destinationKey":"enter","guid":"99855a6d-44fd-4240-8428-0a93ba9324be","$type":"Bolt.ControlConnection"}],"$version":"A"}}'
+    _objectReferences: []
