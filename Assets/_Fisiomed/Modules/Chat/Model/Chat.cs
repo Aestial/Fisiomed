@@ -43,7 +43,8 @@ namespace Fisiomed.Chat
     [Serializable]
     public class Interactive
     {
-        public string url;
+        public string text;
+        public string and;
         public string ios;
     }
     [Serializable]
@@ -59,5 +60,4 @@ namespace Fisiomed.Chat
         public bool hasFeedback;
         public string feedback;
     }
-    
 }
