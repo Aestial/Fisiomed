@@ -1,12 +1,12 @@
 using UnityEngine;
 using Fisiomed.Feedback;
-using System;
 
 namespace Fisiomed.Quiz
 {
     public class QuizController : Singleton<QuizController>, ILoader
     {
-        [SerializeField] QuestionController questionController;        
+        [SerializeField] QuestionController questionController;
+        [SerializeField] Canvas questionCanvas;
         [SerializeField] int currentIndex = -1;
         [SerializeField] bool hasDefault;
         [SerializeField] string json;
@@ -51,6 +51,7 @@ namespace Fisiomed.Quiz
             else
             {
                 Debug.Log("Finished Quiz!");
+                questionCanvas.enabled = false;
             }
         }
         public void CheckDefault(bool hasDefault, string json)
@@ -59,6 +60,6 @@ namespace Fisiomed.Quiz
             {
                 Set(JsonUtility.FromJson<Quiz>(json));
             }
-        }
+        }        
     }
 }

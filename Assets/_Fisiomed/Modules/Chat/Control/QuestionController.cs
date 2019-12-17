@@ -11,7 +11,7 @@ namespace Fisiomed.Chat
         [SerializeField] GameObject answerBubblePrefab;
         [SerializeField] private Transform container;
         ChatController chat;
-        CanvasGroup answersGroup;
+        //CanvasGroup answersGroup;
         // Question question;        
         #region Public Methods
         public void Set(ChatController chat, Question question, Character character, Sprite sprite)
@@ -20,21 +20,22 @@ namespace Fisiomed.Chat
             SetAnswers(question, character);
             SetSprite(sprite);
         }
-        void EnableAnswers(bool enabled)
-        {
-            answersGroup.interactable = enabled;
-        }
+        //void EnableAnswers(bool isEnabled)
+        //{
+        //    answersGroup.interactable = isEnabled;
+        //}
         public void CorrectAnswer()
         {
             Debug.Log("Correct answer!");
-            EnableAnswers(false);
+            //EnableAnswers(false);
+            FreeAnswers();
             chat.NextBubble();
         }
         void SetAnswers(Question question, Character character)
         {
             // this.question = question;
             Print(question, character);
-            EnableAnswers(true);
+            //EnableAnswers(true);
         }
         void SetSprite(Sprite sprite)
         {
@@ -52,13 +53,15 @@ namespace Fisiomed.Chat
             }
         }
         #endregion
-        private void ClearAnswers()
+        private void FreeAnswers()
         {
-            int length = this.container.transform.childCount;
+            int length = container.childCount;
             for (int i = 0; i < length; i++)
             {
-                Transform answer = this.container.transform.GetChild(i);
-                Destroy(answer.gameObject);
+                AnswerController ac = container.GetChild(i).GetComponent<AnswerController>();
+                ac.Free();
+                //Transform answer = this.container.transform.GetChild(i);
+                //Destroy(answer.gameObject);
             }
         }        
         // void SetColors(string text, string textB, string faceB)
@@ -76,22 +79,6 @@ namespace Fisiomed.Chat
         //     text.color = textColor;
         //     textBubble.color = textBColor;
         //     characterBubble.color = charBColor;            
-        // }
-        void Awake()
-        {
-            answersGroup = container.GetComponent<CanvasGroup>();
-            Debug.Log(answersGroup);
-        }
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        // }       
     }
 }

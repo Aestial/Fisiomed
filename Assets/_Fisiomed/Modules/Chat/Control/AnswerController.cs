@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using Fisiomed.Feedback;
 
 namespace Fisiomed.Chat
 {
@@ -17,7 +17,7 @@ namespace Fisiomed.Chat
         [SerializeField] UnityEvent wrongEvents;
         Answer answer;
         Button button;
-        FeedbackController feedback;
+        bool notAnswered;
         public void Set(QuestionController question, Answer answer, Character character)
         {
             this.question = question;
@@ -39,30 +39,36 @@ namespace Fisiomed.Chat
         }
         public void Check()
         {
-            button.interactable = false;
+            if (notAnswered)
+            {
+                button.interactable = false;
+                if (answer.isCorrect)
+                {
+                    correctEvents.Invoke();
+                    StartCoroutine(ContinueCoroutine(continueWaitTime));
+                }
+                else
+                    wrongEvents.Invoke();                
+            }            
             if (answer.hasFeedback)
             {
                 ShowFeedback();
             }
-            if (answer.isCorrect) {
-                correctEvents.Invoke();                           
-                StartCoroutine(ContinueCoroutine(continueWaitTime));
-            } else {
-                wrongEvents.Invoke();
-            }
         }
-
+        public void Free()
+        {
+            notAnswered = false;
+            button.interactable = true;
+        }
         public void ShowFeedback()
         {
-            feedback.Show(answer.feedback, answer.isCorrect);
+            FeedbackController.Instance.Show("chat", answer.feedback, answer.isCorrect);
         }
-
         void Start()
         {
-            feedback = FindObjectOfType<FeedbackController>();
             button = GetComponent<Button>();
+            notAnswered = true;
         }
-
         IEnumerator ContinueCoroutine(float waitTime)
         {
             yield return new WaitForSeconds(waitTime);

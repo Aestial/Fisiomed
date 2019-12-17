@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Loader;
+using TMPro;
 
 namespace Fisiomed.Chat
 {
@@ -9,7 +10,6 @@ namespace Fisiomed.Chat
         Left,
         Right
     }
-
     public class MessageController : MonoBehaviour
     {
         [Header("Customize Components")]
@@ -17,7 +17,7 @@ namespace Fisiomed.Chat
         [SerializeField] Image characterBubble;
         [SerializeField] Image textBubble;
         [SerializeField] Image textBubbleShadow;
-        [SerializeField] Text text;
+        [SerializeField] TMP_Text text;
         #region Public Methods
         public void Set(Message message, Character character, Sprite sprite)
         {           

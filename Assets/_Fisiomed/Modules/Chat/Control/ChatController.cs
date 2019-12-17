@@ -12,10 +12,12 @@ namespace Fisiomed.Chat
 		[SerializeField] Canvas canvas;
 		[SerializeField] GameObject messageBubblePrefab;
 		[SerializeField] GameObject questionBubblePrefab;
+        [SerializeField] GameObject interactiveBubblePrefab;
 		[SerializeField] Transform containerPanel;
 		[SerializeField] Button nextButton;
 		public List<Sprite> characterSprites = new List<Sprite>();
-		int lenght = 0, index = 0;
+        [SerializeField] int lenght;
+        [SerializeField] int currentIndex;
 		Chat chat;
 		#region Public Methods
 		public void Set(Chat chat)
@@ -31,12 +33,12 @@ namespace Fisiomed.Chat
 		}
 		public void NextBubble()
 		{
-			if (++index < lenght)
-				ShowElement(index);
-			if (index >= lenght - 1)
-				nextButton.interactable = false;
-			if (index >= lenght)
-				canvas.enabled = false;
+            bool last = currentIndex <= lenght - 1;
+            //canvas.enabled &= currentIndex <= lenght;
+            canvas.enabled = last;
+            nextButton.interactable = last;
+            if (++currentIndex < lenght)
+				ShowElement(currentIndex);			
 		}
 		#endregion
 		private void ShowElement(int index)
@@ -62,17 +64,11 @@ namespace Fisiomed.Chat
 					nextButton.interactable = false;
 				break;
 				case ElementType.Interactive:
-					string url;
-					switch(Application.platform)
-					{
-						case RuntimePlatform.Android:
-							url = chat.interactives[element.index].url;
-							break;
-						default:
-							url =  chat.interactives[element.index].ios;
-							break;
-					}
-					InteractiveController.Instance.Play(url);
+                    Interactive interactive = chat.interactives[element.index];
+                    GameObject newInteractive = Instantiate(interactiveBubblePrefab, containerPanel);
+                    InteractiveController interactiveC = newInteractive.GetComponent<InteractiveController>();                    
+                    interactiveC.Set(interactive, character, sprite);
+                    nextButton.interactable = false;
 				break;
 				default:
 				break;
@@ -86,7 +82,7 @@ namespace Fisiomed.Chat
 				yield return StartCoroutine(Downloader.Instance.LoadTexture(url, OnTextureLoaded));
 			}
 			yield return null;
-			ShowElement(index);			
+			ShowElement(currentIndex);			
 		}
 		void OnTextureLoaded(Texture texture)
 		{

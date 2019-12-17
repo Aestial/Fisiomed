@@ -1,20 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-namespace Fisiomed.Chat
+namespace Fisiomed.Feedback
 {
-    public class FeedbackController : MonoBehaviour
+    public class FeedbackController : Singleton<FeedbackController>
     {
         [SerializeField] Canvas canvas;
         [SerializeField] TMP_Text text;
         [SerializeField] Canvas rightCanvas;
         [SerializeField] Canvas wrongCanvas;
+        string caller;
+        Notifier notifier = new Notifier();
+        public const string ON_MODAL_CLOSED = "OnModalClosed";
         #region Public Methods 
-        public void Show(string message, bool isCorrect)
+        public void Show(string caller, string message, bool isCorrect)
         {
+            this.caller = caller;
             SelectTitleCanvas(isCorrect);
             text.text = message;
             canvas.enabled = true;
@@ -22,6 +23,7 @@ namespace Fisiomed.Chat
         public void Close()
         {
             canvas.enabled = false;
+            notifier.Notify(ON_MODAL_CLOSED, caller);
         }
         #endregion
         void SelectTitleCanvas(bool isCorrect)
@@ -29,7 +31,6 @@ namespace Fisiomed.Chat
             rightCanvas.enabled = isCorrect;
             wrongCanvas.enabled = !isCorrect;
         }
-        // Start is called before the first frame update
         void Start()
         {
             canvas.enabled = false;
