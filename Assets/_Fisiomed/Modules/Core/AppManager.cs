@@ -37,7 +37,6 @@ public class AppManager : Singleton<AppManager>
         // Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -54,7 +53,6 @@ public class AppManager : Singleton<AppManager>
 		
 		this.loaderCanvas.enabled = false;
     }
-
     // called when the game is terminated
     void OnDisable()
     {
@@ -71,7 +69,6 @@ public class AppManager : Singleton<AppManager>
 		yield return new WaitForSeconds(time);
 		SceneManager.LoadScene(scene);
 	}
-
 	private IEnumerator LoadAndChangeCoroutine(string scene, float time)
 	{
 		this.loaderCanvas.gameObject.SetActive(false);
@@ -81,21 +78,27 @@ public class AppManager : Singleton<AppManager>
 		yield return new WaitForSeconds(time);
 		SceneManager.LoadScene(scene);
 	}
-
 	public void ChangeScene (int scene)
 	{
 		this.m_CurrentScene = scene;
 		StartCoroutine(this.LoadAndChangeCoroutine(scene, 1.1f));
 	}
-
 	public void ChangeScene (string sceneName)
 	{
 		this.m_CurrentSceneName = sceneName;
 		StartCoroutine(this.LoadAndChangeCoroutine(sceneName, 1.1f));
 	}
-
 	public void ShowLoader(bool show)
 	{
 		this.loaderCanvas.enabled = show;
 	}
+    public void ShowLoaderDelay(bool show, float delay)
+    {
+        StartCoroutine(ShowLoaderCoroutine(show, delay)); 
+    }
+    public IEnumerator ShowLoaderCoroutine(bool show, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        this.loaderCanvas.enabled = show;
+    }
 }

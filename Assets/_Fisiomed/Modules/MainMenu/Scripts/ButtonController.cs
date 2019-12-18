@@ -23,11 +23,11 @@ namespace Fisiomed.Main
         }
 
         public void SetOption(Option option)
-        {
+        {            
             SetColor(option.colorA, option.colorB);
             SetSprite(option.image);
             SetText(option.title);
-            SetUrl(option.url);
+            SetUrl(option);
         }
 
         void SetColor(string a, string b)
@@ -60,12 +60,12 @@ namespace Fisiomed.Main
                 textView.text = text;
         }
 
-        void SetUrl(string url)
+        void SetUrl(Option o)
         {
-            if (!string.IsNullOrEmpty(url) && !string.IsNullOrWhiteSpace(url))
+            if (o.isActive && (!string.IsNullOrEmpty(o.url) && !string.IsNullOrWhiteSpace(o.url)))
             {
                 button.interactable = true;
-                button.onClick.AddListener(() => ChangeSceneWithUrl(url));
+                button.onClick.AddListener(() => ChangeSceneWithUrl(o.url));
             }
         }
 

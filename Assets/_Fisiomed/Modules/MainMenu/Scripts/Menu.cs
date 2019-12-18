@@ -13,6 +13,7 @@ namespace Fisiomed.Main
     public class Option
     {
         public string url;
+        public bool isActive;
         public string title;
         public string colorA;
         public string colorB;
