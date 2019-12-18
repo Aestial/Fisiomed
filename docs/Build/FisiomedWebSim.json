@@ -1,0 +1,13 @@
+{
+"companyName": "MedicinaUNAM",
+"productName": "Fisiomed",
+"dataUrl": "FisiomedWebSim.data.unityweb",
+"asmCodeUrl": "FisiomedWebSim.asm.code.unityweb",
+"asmMemoryUrl": "FisiomedWebSim.asm.memory.unityweb",
+"asmFrameworkUrl": "FisiomedWebSim.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Light",
+"backgroundColor": "#F5F8F8"
+}

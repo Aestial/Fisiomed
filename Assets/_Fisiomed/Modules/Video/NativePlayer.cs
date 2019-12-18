@@ -65,7 +65,9 @@ public class NativePlayer : MonoBehaviour
     {
         if (File.Exists(m_pathToFile))
         {
+#if !UNITY_WEBGL
             Handheld.PlayFullScreenMovie(m_pathToFile, Color.black, FullScreenMovieControlMode.Full, FullScreenMovieScalingMode.AspectFit);
+#endif
         }
     }
 }

@@ -46,10 +46,10 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
-  defaultScreenWidthWeb: 960
-  defaultScreenHeightWeb: 600
+  defaultScreenWidthWeb: 1080
+  defaultScreenHeightWeb: 1920
   m_StereoRenderingPath: 0
-  m_ActiveColorSpace: 1
+  m_ActiveColorSpace: 0
   m_MTRendering: 1
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
@@ -160,7 +160,8 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.medicinaunam.fisiomed
     iPhone: com.medicinaunam.fisiomed
-  buildNumber: {}
+  buildNumber:
+    iOS: 015
   AndroidBundleVersionCode: 105
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
@@ -718,7 +719,8 @@ PlayerSettings:
   webGLThreadsSupport: 0
   scriptingDefineSymbols: {}
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Android: 0
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
