@@ -35,11 +35,27 @@ namespace Fisiomed.Bundles
 			}
 		}
 
-		[MenuItem("Assets/Build Asset Bundles for Android and iOS")]
+		[MenuItem("Assets/Build Asset Bundles for Web")]
+		static void BuildAllAssetBundleWeb()
+		{
+			string path = EditorUtility.OpenFolderPanel("Please, choose a saving directory...", "", "");
+			try
+			{
+				BuildPipeline.BuildAssetBundles(path + "/WebPack", BuildAssetBundleOptions.None, BuildTarget.WebGL);
+			}
+			catch
+			{
+				CreateDirectory(path + "/WebPack");
+				BuildPipeline.BuildAssetBundles(path + "/WebPack", BuildAssetBundleOptions.None, BuildTarget.WebGL);
+			}
+		}
+
+		[MenuItem("Assets/Build Asset Bundles for all platforms")]
 		static void BuildAllAssetBundleAndroidAndIos()
 		{
 			BuildAllAssetBundleAndroid();
 			BuildAllAssetBundleiOS();
+			BuildAllAssetBundleWeb();
 		}
 
 		static void CreateDirectory(string path)

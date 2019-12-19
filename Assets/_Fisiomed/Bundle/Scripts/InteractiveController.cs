@@ -22,6 +22,9 @@ namespace Fisiomed.Chat
                 case RuntimePlatform.IPhonePlayer:
                     url = interactive.ios;
                     break;
+                case RuntimePlatform.WebGLPlayer:
+                    url = interactive.web;
+                    break;
                 // Android Default
                 case RuntimePlatform.Android:
                 default:
