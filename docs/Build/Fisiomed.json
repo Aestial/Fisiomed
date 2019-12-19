@@ -1,0 +1,12 @@
+{
+"companyName": "MedicinaUNAM",
+"productName": "Fisiomed",
+"dataUrl": "Fisiomed.data.unityweb",
+"wasmCodeUrl": "Fisiomed.wasm.code.unityweb",
+"wasmFrameworkUrl": "Fisiomed.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Light",
+"backgroundColor": "#F5F8F8"
+}
