@@ -32,7 +32,7 @@ namespace Fisiomed.Main
             {
                 Option option = menu.options[i];
                 GameObject buttonGO = Instantiate(buttonPrefab, containerPanel);
-                ButtonController button = buttonGO.GetComponent<ButtonController>();
+                CCaseButtonController button = buttonGO.GetComponent<CCaseButtonController>();
                 button.SetOption(option);
             }
         }

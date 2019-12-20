@@ -7,7 +7,7 @@ using Loader;
 namespace Fisiomed.Main
 {
     [RequireComponent(typeof(Button))]
-    public class ButtonController : MonoBehaviour
+    public class CCaseButtonController : MonoBehaviour
     {
         [SerializeField] string nextScene;
         [SerializeField] string defaultUrl;
