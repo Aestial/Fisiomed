@@ -5,8 +5,10 @@ PluginImporter:
   serializedVersion: 2
   iconMap: {}
   executionOrder: {}
+  defineConstraints: []
   isPreloaded: 0
   isOverridable: 0
+  isExplicitlyReferenced: 0
   platformData:
   - first:
       Android: Android
@@ -26,7 +28,7 @@ PluginImporter:
       settings:
         DefaultValueInitialized: true
   - first:
-      Nintendo 3DS: N3DS
+      Lumin: Lumin
     second:
       enabled: 1
       settings: {}
@@ -37,16 +39,6 @@ PluginImporter:
       settings: {}
   - first:
       PS4: PS4
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      PSM: PSM
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      PSP2: PSP2
     second:
       enabled: 1
       settings: {}
@@ -81,17 +73,7 @@ PluginImporter:
       enabled: 1
       settings: {}
   - first:
-      Tizen: Tizen
-    second:
-      enabled: 1
-      settings: {}
-  - first:
       WebGL: WebGL
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      WiiU: WiiU
     second:
       enabled: 1
       settings: {}

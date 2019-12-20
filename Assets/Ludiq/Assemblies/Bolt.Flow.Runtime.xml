@@ -2199,6 +2199,11 @@
             A mathematical or logical expression tree.
             </summary>
         </member>
+        <member name="P:Bolt.Formula.cacheArguments">
+            <summary>
+            Whether input arguments should only be fetched once and then reused.
+            </summary>
+        </member>
         <member name="P:Bolt.Formula.result">
             <summary>
             The result of the calculation or evaluation.
