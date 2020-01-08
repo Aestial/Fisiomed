@@ -35,6 +35,9 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-
 # Video formats
 *.mp4
+
+# MacOS meta files
+*.icloud
+.DS_Store
