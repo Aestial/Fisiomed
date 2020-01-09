@@ -163,7 +163,7 @@ PlayerSettings:
     iPhone: com.medicinaunam.fisiomed
   buildNumber:
     iOS: 015
-  AndroidBundleVersionCode: 105
+  AndroidBundleVersionCode: 107
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -252,7 +252,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{inproject}: '
+  AndroidKeystoreName: 
   AndroidKeyaliasName: 
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
