@@ -1,10 +1,11 @@
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
 /[Bb]undle/
 /[Bb]undles/
+/[Kk]eys/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
 /Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
@@ -35,6 +36,9 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-
 # Video formats
 *.mp4
+
+# MacOS meta files
+*.icloud
+.DS_Store

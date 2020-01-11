@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1.5
+  bundleVersion: 0.1.6
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -162,9 +162,9 @@ PlayerSettings:
     iOS: com.MedicinaUNAM.Fisiomed
     iPhone: com.medicinaunam.fisiomed
   buildNumber:
-    iOS: 015
-  AndroidBundleVersionCode: 105
-  AndroidMinSdkVersion: 19
+    iOS: 016
+  AndroidBundleVersionCode: 107
+  AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -249,10 +249,10 @@ PlayerSettings:
   clonedFromGUID: 00000000000000000000000000000000
   templatePackageId: 
   templateDefaultScene: 
-  AndroidTargetArchitectures: 1
+  AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: '{inproject}: '
+  AndroidKeystoreName: 
   AndroidKeyaliasName: 
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
@@ -725,7 +725,7 @@ PlayerSettings:
   platformArchitecture:
     iOS: 2
   scriptingBackend:
-    Android: 0
+    Android: 1
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}

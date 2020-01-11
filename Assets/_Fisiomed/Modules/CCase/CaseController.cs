@@ -16,7 +16,15 @@ namespace Fisiomed.Case
         void Start()
         {
             AppManager.Instance.ShowLoader(true);
-            StartCoroutine(Downloader.Instance.LoadJSON(defaultUrl, OnMetadataLoaded));
+            string url = GetUrl();
+            StartCoroutine(Downloader.Instance.LoadJSON(url, OnMetadataLoaded));
+        }
+        private string GetUrl()
+        {
+            string url = AppManager.Instance.GetComponent<AppData>().GetStringValue("url");
+            if(string.IsNullOrEmpty(url) || string.IsNullOrWhiteSpace(url))
+                return defaultUrl;
+            return url;
         }
         void OnMetadataLoaded(string json)
         {

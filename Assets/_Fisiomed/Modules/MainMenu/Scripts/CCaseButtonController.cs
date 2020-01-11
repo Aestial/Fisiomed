@@ -66,6 +66,7 @@ namespace Fisiomed.Main
             {
                 button.interactable = true;
                 button.onClick.AddListener(() => ChangeSceneWithUrl(o.url));
+                defaultUrl = o.url;
             }
         }
 

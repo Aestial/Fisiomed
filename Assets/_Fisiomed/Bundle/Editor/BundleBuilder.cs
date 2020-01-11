@@ -11,12 +11,12 @@ namespace Fisiomed.Bundles
 			string path = EditorUtility.OpenFolderPanel("Please, choose a saving directory...", "", "");
 			try
 			{
-				BuildPipeline.BuildAssetBundles(path + "/AndroidPack", BuildAssetBundleOptions.None, BuildTarget.Android);
+				BuildPipeline.BuildAssetBundles(path + "/Bundles/AndroidPack", BuildAssetBundleOptions.None, BuildTarget.Android);
 			}
 			catch
 			{
 				CreateDirectory(path + "/AndroidPack");
-				BuildPipeline.BuildAssetBundles(path + "/AndroidPack", BuildAssetBundleOptions.None, BuildTarget.Android);
+				BuildPipeline.BuildAssetBundles(path + "/Bundles/AndroidPack", BuildAssetBundleOptions.None, BuildTarget.Android);
 			}
 		}
 
@@ -26,12 +26,12 @@ namespace Fisiomed.Bundles
 			string path = EditorUtility.OpenFolderPanel("Please, choose a saving directory...", "", "");
 			try
 			{
-				BuildPipeline.BuildAssetBundles(path + "/iOSPack", BuildAssetBundleOptions.None, BuildTarget.iOS);
+				BuildPipeline.BuildAssetBundles(path + "/Bundles/iOSPack", BuildAssetBundleOptions.None, BuildTarget.iOS);
 			}
 			catch
 			{
 				CreateDirectory(path + "/iOSPack");
-				BuildPipeline.BuildAssetBundles(path + "/iOSPack", BuildAssetBundleOptions.None, BuildTarget.iOS);
+				BuildPipeline.BuildAssetBundles(path + "/Bundles/iOSPack", BuildAssetBundleOptions.None, BuildTarget.iOS);
 			}
 		}
 
@@ -41,12 +41,12 @@ namespace Fisiomed.Bundles
 			string path = EditorUtility.OpenFolderPanel("Please, choose a saving directory...", "", "");
 			try
 			{
-				BuildPipeline.BuildAssetBundles(path + "/WebPack", BuildAssetBundleOptions.None, BuildTarget.WebGL);
+				BuildPipeline.BuildAssetBundles(path + "/Bundles/WebPack", BuildAssetBundleOptions.None, BuildTarget.WebGL);
 			}
 			catch
 			{
 				CreateDirectory(path + "/WebPack");
-				BuildPipeline.BuildAssetBundles(path + "/WebPack", BuildAssetBundleOptions.None, BuildTarget.WebGL);
+				BuildPipeline.BuildAssetBundles(path + "/Bundles/WebPack", BuildAssetBundleOptions.None, BuildTarget.WebGL);
 			}
 		}
 

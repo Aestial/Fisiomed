@@ -107,7 +107,7 @@ namespace Loader
                     string filePath = Path.Combine(Application.persistentDataPath, filename);
 
                     File.WriteAllBytes(filePath, webRequest.downloadHandler.data);
-                    Debug.Log("VideoDonload - Video saved: " + filePath);
+                    Debug.Log("VideoDownload - Video saved: " + filePath);
 
                     // Callback function
                     onCompleted(filePath);
