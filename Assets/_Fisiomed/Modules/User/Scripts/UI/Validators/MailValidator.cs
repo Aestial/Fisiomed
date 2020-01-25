@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class PasswordValidator : MonoBehaviour, IInputValidator
+public class MailValidator : MonoBehaviour, IInputValidator
 {
-    [SerializeField] internal TMP_Text message;
-    [SerializeField] internal int minCharacters = 8;
-    [SerializeField] internal string errorMessage;
-    [SerializeField] internal string emptyErrorMessage;
+    [SerializeField] private TMP_Text message;
+    [SerializeField] private string errorMessage;
+    [SerializeField] private string emptyErrorMessage;
     private void Start()
     {
         message.enabled = false;
@@ -18,11 +17,11 @@ public class PasswordValidator : MonoBehaviour, IInputValidator
             OnInvalid(emptyErrorMessage);
             return;
         }
-        if(content.Length < minCharacters)
+        if (!RegexUtilities.IsValidEmail(content))
         {
             OnInvalid(errorMessage);
             return;
-        }
+        }        
         OnValid();
     }
     public void OnValid()
