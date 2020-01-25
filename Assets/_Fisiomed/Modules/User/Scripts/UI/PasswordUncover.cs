@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class UncoverPassword : MonoBehaviour
+public class PasswordUncover : MonoBehaviour
 {
     [SerializeField] TMP_InputField inputField;
     bool isCovered = true;
