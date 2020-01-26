@@ -2,20 +2,23 @@
 using UnityEngine;
 using TMPro;
 
-public class NumberDropdownPopulator : MonoBehaviour
+namespace Fisiomed.UI
 {
-    [SerializeField] TMP_Dropdown dropdown;
-    [SerializeField] int start;
-    [SerializeField] int end;
-    List<string> options;
-    void Start()
+    public class NumberDropdownPopulator : MonoBehaviour
     {
-        options = new List<string>();
-        for (int i = start; i <= end; i++)
+        [SerializeField] TMP_Dropdown dropdown;
+        public int start;
+        public int end;
+        List<string> options;
+        void Start()
         {
-            string option = i.ToString();
-            options.Add(option);
+            options = new List<string>();
+            for (int i = start; i <= end; i++)
+            {
+                string option = i.ToString();
+                options.Add(option);
+            }
+            dropdown.AddOptions(options);
         }
-        dropdown.AddOptions(options);
     }
 }
