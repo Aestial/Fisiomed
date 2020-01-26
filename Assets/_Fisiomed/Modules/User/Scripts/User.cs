@@ -10,6 +10,11 @@ namespace Fisiomed.User
         public string password;
         public GameProfile gamer;
         public PersonalProfile personal;
+        public User()
+        {
+            gamer = new GameProfile();
+            personal = new PersonalProfile();
+        }
     }
     [Serializable]
     public class GameProfile
