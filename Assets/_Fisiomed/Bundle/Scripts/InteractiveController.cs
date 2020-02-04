@@ -6,7 +6,6 @@ namespace Fisiomed.Chat
 {
     public class InteractiveController : Singleton<InteractiveController>
     {
-        [SerializeField] Transform parent;
         [Header("Customize Components")]
         [SerializeField] Image characterImage;
         [SerializeField] Image characterBubble;
