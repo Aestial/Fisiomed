@@ -37,53 +37,17 @@ MonoBehaviour:
     reqReferences: {fileID: 0}
     isExpanded: 1
     _keyValues:
-    - RA.Core.CameraSettings
-    - RA.Core.ARBehaviour
-    - RA.Core.KeyManager
-    - RA.Core.CloudTracker
-    - RA.Core.EventManager
-    - RA.Favs.FavoritesManager
-    - RA.Favs.Element
-    - RA.Loader.Downloader
-    - RA.Asset.AssetPlayerController
-    - RA.Asset.IsAssetStatic
-    - RA.Asset.AnimatorControl
-    - RA.Video.VideoPlayerController
-    - RA.Video.FullscreenImageResize
-    - RA.UI.UIActions
-    - RA.UI.UICameraActions
-    - RA.UI.UIAnimatorController
+    - Loader.Downloader
+    - Fisiomed.Video.VideoManager
+    - Fisiomed.Video.FullscreenImageResize
+    - Fisiomed.Chat.VideoController
     _keys:
-    - RA.Core.CameraSettings
-    - RA.Core.ARBehaviour
-    - RA.Core.KeyManager
-    - RA.Core.CloudTracker
-    - RA.Core.EventManager
-    - RA.Favs.FavoritesManager
-    - RA.Favs.Element
-    - RA.Loader.Downloader
-    - RA.Asset.AssetPlayerController
-    - RA.Asset.IsAssetStatic
-    - RA.Asset.AnimatorControl
-    - RA.Video.VideoPlayerController
-    - RA.Video.FullscreenImageResize
-    - RA.UI.UIActions
-    - RA.UI.UICameraActions
-    - RA.UI.UIAnimatorController
+    - Loader.Downloader
+    - Fisiomed.Video.VideoManager
+    - Fisiomed.Video.FullscreenImageResize
+    - Fisiomed.Chat.VideoController
     _values:
-    - {r: 0.027450979, g: 0.32808134, b: 0.5647059, a: 1}
-    - {r: 0.11196155, g: 0.55845016, b: 0.6415094, a: 1}
-    - {r: 0.034754362, g: 0.6698113, b: 0.6072, a: 1}
-    - {r: 0, g: 0.5471698, b: 0.43352485, a: 1}
-    - {r: 0.35746807, g: 0.5377358, b: 0.053266283, a: 1}
-    - {r: 0.46204627, g: 0.5, b: 0.16745284, a: 1}
-    - {r: 0.49645728, g: 0.5943396, b: 0.08130119, a: 1}
-    - {r: 0.43071377, g: 0.29521182, b: 0.5849056, a: 1}
-    - {r: 0.8207547, g: 0.5250207, b: 0.058072258, a: 1}
-    - {r: 0.5849056, g: 0.3214441, b: 0.041384827, a: 1}
-    - {r: 0.7264151, g: 0.5517106, b: 0.08566215, a: 1}
+    - {r: 0.03529412, g: 0.34901962, b: 0.8235294, a: 1}
     - {r: 0.754717, g: 0.18155926, b: 0.44372645, a: 1}
-    - {r: 0.5566038, g: 0.16015485, b: 0.33498448, a: 1}
-    - {r: 0.5510124, g: 0.06897471, b: 0.5849056, a: 1}
-    - {r: 0.5529412, g: 0.07058824, b: 0.5882353, a: 1}
-    - {r: 0.5529412, g: 0.07058824, b: 0.5882353, a: 1}
+    - {r: 0.6313726, g: 0.18039216, b: 0.38039216, a: 1}
+    - {r: 0.15686275, g: 0.49803922, b: 0.48235294, a: 1}
