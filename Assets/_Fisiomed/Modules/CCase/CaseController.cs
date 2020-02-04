@@ -9,6 +9,7 @@ namespace Fisiomed.Case
     public class CaseController : Singleton<CaseController>
     {
         [Header("Data")]
+        [SerializeField] bool useDefault;
         [SerializeField] string defaultUrl;
         [Header("Visuals")]
         [SerializeField] float loaderTime;
@@ -21,7 +22,9 @@ namespace Fisiomed.Case
         }
         private string GetUrl()
         {
-            string url = AppManager.Instance.GetComponent<AppData>().GetStringValue("url");
+            if (useDefault)
+                return defaultUrl;
+            string url = AppManager.Instance.GetComponent<AppData>().GetStringValue("url");            
             if(string.IsNullOrEmpty(url) || string.IsNullOrWhiteSpace(url))
                 return defaultUrl;
             return url;
