@@ -14,7 +14,7 @@ namespace Fisiomed.Video
     /// </summary>
     public class UIPlaybackBehaviour : MonoBehaviour
     {
-        public VideoPlayerController video;
+        public VideoManager video;
 
         [Header("UI Elements")]
         [SerializeField] Slider slider;

@@ -892,7 +892,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6918411061553681599}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6921688742941167733}
+        m_MethodName: SwitchToOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6918411061553681599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,7 +969,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7100677114908977107}
   - component: {fileID: 7102086846348264693}
-  - component: {fileID: 6918580655011711281}
   - component: {fileID: 2128516095703649048}
   - component: {fileID: 2128516095703649051}
   m_Layer: 5
@@ -1010,21 +1020,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1000
   m_TargetDisplay: 0
---- !u!114 &6918580655011711281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7030387361563659307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a7add32284949959023e466fc41c7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 6921688742941167733}
-  videoOutputImage: {fileID: 2128516095394947010}
-  aspectRatioFitter: {fileID: 2128516095394947021}
 --- !u!114 &2128516095703649048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,6 +1903,7 @@ GameObject:
   - component: {fileID: 7098103587098806959}
   - component: {fileID: 2128516095394947010}
   - component: {fileID: 2128516095394947021}
+  - component: {fileID: 1427909625}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -1980,7 +1976,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 3
-  m_AspectRatio: 0.599988
+  m_AspectRatio: 0.5625
+--- !u!114 &1427909625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7030899381133221143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a7add32284949959023e466fc41c7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  video: {fileID: 6921688742941167733}
+  videoOutputImage: {fileID: 2128516095394947010}
+  aspectRatioFitter: {fileID: 2128516095394947021}
 --- !u!1 &7031052646693093297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,15 +2282,15 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 2
-  m_AspectRatio: 5
-  m_DataSource: 0
+  m_AspectRatio: 1
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://ibsi.online/fisiomed/unityapp/data/videos/29_Diabetes_Animacion_1.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -2302,7 +2313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   video: {fileID: 7031200184055097852}
   isActive: 0
-  currentMode: 1
+  currentMode: 0
   fullscreenHUD: {fileID: 6917851944194764681}
 --- !u!1 &7031206678441557425
 GameObject:

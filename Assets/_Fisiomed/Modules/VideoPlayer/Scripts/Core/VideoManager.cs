@@ -9,15 +9,13 @@ namespace Fisiomed.Video
         Off,
         Fullscreen
     };
-
     /// <summary>
-    /// <c>VideoPlayerController</c> controls the VideoPlayer object and components
-    /// It is used to play videos with two modes: OnTarget and Fullscreen
+    /// <c>VideoManager</c> controls the VideoPlayer object and components
     /// 
     /// \Author: Jaime Hernandez
     /// \Date: May 2019
     /// </summary>
-    public class VideoPlayerController : Singleton<VideoPlayerController>
+    public class VideoManager : Singleton<VideoManager>
     {
         public VideoPlayer video;
         public bool isActive;
@@ -36,26 +34,21 @@ namespace Fisiomed.Video
         {
             get { return video.isPrepared; }
         }
-
         public bool IsPlaying
         {
             get { return video.isPlaying; }
         }
-
         public bool IsLooping
         {
             get { return video.isLooping; }
             set { video.isLooping = value; }
         }
-
         public bool IsDone { get; private set; }
-
         public double Time
         {
             get { return video.time; }
             set { video.time = value; }
         }
-
         public double Length
         {
             get { return video.length; }
@@ -66,14 +59,11 @@ namespace Fisiomed.Video
         void Awake()
         {
             notifier = new Notifier();            
-            //notifier.Subscribe(NotificationEvents.ON_ASSET_CLOSED, HandleOnAssetClosed);
         }
-
         void Start()
         {
             SwitchToMode(currentMode);
-        }
-       
+        }       
         void OnEnable()
         {
             onEndReached += OnEndReached;
@@ -84,7 +74,6 @@ namespace Fisiomed.Video
             video.started += Started;
             video.seekCompleted += SeekCompleted;
         }
-
         void OnDisable()
         {
             onEndReached -= OnEndReached;
@@ -95,11 +84,9 @@ namespace Fisiomed.Video
             video.started -= Started;
             video.seekCompleted -= SeekCompleted;
         }
-
         void OnDestroy()
         {
             notifier.UnsubcribeAll();
-            //base.OnDestroy();
         }
         #endregion
 
@@ -110,29 +97,24 @@ namespace Fisiomed.Video
             video.url = url;
             video.Prepare();
         }
-
         public void Play()
         {
             if (!IsPrepared) return;
             video.Play();
         }
-
         public void Pause()
         {
             video.Pause();
             onPaused();
         }
-
         public void Seek(float time)
         {
             Time = time;
         }
-
         public void Seek(double time)
         {
             Time = time;
         }
-
        public void SwitchToMode(VideoMode mode)
         {
             Log.Color("Switch to: " + mode, this);
@@ -149,32 +131,23 @@ namespace Fisiomed.Video
             }
             currentMode = mode;
         }
-        #endregion
-
-        #region NotifierHandlers
-        void HandleOnAssetClosed(params object[] args)
+        public void SwitchToOff()
         {
             SwitchToMode(VideoMode.Off);
-            video.Stop();
-            isActive = false;
-            Log.Color("Closed, Switched off.", this);
         }
-        #endregion
-
+        #endregion       
 
         #region PrivateMethods
         private void OnPrepared(int width, int height)
         {
             IsDone = false;
-            SwitchToMode(currentMode);
+            SwitchToMode(VideoMode.Fullscreen);
             Play();
         }
-
         private void OnEndReached()
         {
             IsDone = !IsLooping;
         }
-
         private void SetOrientation(bool canRotate)
         {
             if (canRotate)
@@ -197,22 +170,18 @@ namespace Fisiomed.Video
         {
             onEndReached();
         }
-
         private void PrepareCompleted(VideoPlayer vp)
         {
             onPrepared((int)vp.width, (int)vp.height);
         }
-
         private void Started(VideoPlayer vp)
         {
             onPlaying();
         }
-
         private void SeekCompleted(VideoPlayer vp)
         {
             onPositionChanged();
         }
         #endregion
-
     }
 }

@@ -13,7 +13,7 @@ namespace Fisiomed.Video
 	/// </summary>
     public class FullscreenUIAppear : MonoBehaviour
     {
-        public VideoPlayerController video;
+        public VideoManager video;
 
         [SerializeField] CanvasGroup canvasGroup;
 

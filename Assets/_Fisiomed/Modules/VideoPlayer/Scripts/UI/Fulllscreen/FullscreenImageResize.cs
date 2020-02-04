@@ -13,7 +13,7 @@ namespace Fisiomed.Video
 	/// </summary>
     public class FullscreenImageResize : MonoBehaviour
     {
-        public VideoPlayerController video;
+        public VideoManager video;
 
         [Header("UI Elements")]
         [SerializeField] RawImage videoOutputImage;
@@ -23,17 +23,14 @@ namespace Fisiomed.Video
         {
             videoOutputImage.enabled = false;
         }
-
         void OnEnable()
         {
             video.onPrepared += EnableVideoImage;
         }
-
         void OnDisable()
         {
             video.onPrepared -= EnableVideoImage;
         }
-
         void EnableVideoImage(int width, int height)
         {
             videoOutputImage.enabled = true;
