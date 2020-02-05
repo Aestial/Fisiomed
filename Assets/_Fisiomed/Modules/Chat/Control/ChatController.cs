@@ -13,7 +13,8 @@ namespace Fisiomed.Chat
 		[SerializeField] GameObject messageBubblePrefab;
 		[SerializeField] GameObject questionBubblePrefab;
         [SerializeField] GameObject interactiveBubblePrefab;
-		[SerializeField] Transform containerPanel;
+        [SerializeField] GameObject videoBubblePrefab;
+        [SerializeField] Transform containerPanel;
 		[SerializeField] Button nextButton;
 		public List<Sprite> characterSprites = new List<Sprite>();
         [SerializeField] int lenght;
@@ -43,7 +44,6 @@ namespace Fisiomed.Chat
 		#endregion
 		private void ShowElement(int index)
 		{
-			// Dialog dialog = chat.dialogs[index];
 			Element element = chat.sequence[index];
 			Character character = chat.characters[element.character];
 			Sprite sprite = characterSprites[element.character];
@@ -70,6 +70,13 @@ namespace Fisiomed.Chat
                     interactiveC.Set(interactive, character, sprite);
                     nextButton.interactable = false;
 				break;
+                case ElementType.Video:
+                    Video video = chat.videos[element.index];
+                    GameObject newVideo = Instantiate(videoBubblePrefab, containerPanel);
+                    VideoController videoC = newVideo.GetComponent<VideoController>();
+                    videoC.Set(video, character, sprite);
+                    nextButton.interactable = false;
+                    break;
 				default:
 				break;
 			}			
