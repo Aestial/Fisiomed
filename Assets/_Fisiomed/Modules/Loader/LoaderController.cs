@@ -3,28 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LoaderController : Singleton<LoaderController>
-{
-    public bool iAmFirst;
-
-    void Awake()
+{    
+    [SerializeField] Canvas loaderCanvas;
+    [SerializeField] Animator animator;
+    [SerializeField] float resetTime = 1.0f;
+    float enabledTime, disabledTime;
+    public void SetLoader(bool enabled)
     {
-       DontDestroyOnLoad(Instance);
-
-       LoaderController[] controllers = FindObjectsOfType(typeof(LoaderController)) as LoaderController[];
-
-       if(controllers.Length > 1)
-       {
-           for(int i = 0; i < controllers.Length; i++)
-           {
-               if(!controllers[i].iAmFirst)
-               {
-                   DestroyImmediate(controllers[i].gameObject);
-               }
-           }
-       }
-       else
-       {
-           iAmFirst = true;
-       }
+        loaderCanvas.enabled = enabled;
+        if (enabled)
+        {
+            enabledTime = Time.time;
+        }
+        else
+        {
+            disabledTime = Time.time;
+        }
+        if (enabledTime - disabledTime > resetTime)
+        {
+            animator.Rebind();
+        }            
     }
 }
