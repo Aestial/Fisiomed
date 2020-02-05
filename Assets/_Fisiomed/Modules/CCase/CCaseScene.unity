@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2123702036}
+  m_Material: {fileID: 1356057849}
   m_Color: {r: 0.9490196, g: 0.95686275, b: 0.98039216, a: 0.52156866}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1020,7 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2123702036}
+  m_Material: {fileID: 1356057849}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2123702036}
+  m_Material: {fileID: 1356057849}
   m_Color: {r: 0.40392157, g: 0.40392157, b: 0.40392157, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1595,7 +1595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2123702036}
+  m_Material: {fileID: 1356057849}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -4079,7 +4079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2123702036}
+  m_Material: {fileID: 1356057849}
   m_Color: {r: 0.37254903, g: 0.6901961, b: 0.5921569, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -4391,7 +4391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2123702036}
+  m_Material: {fileID: 1356057849}
   m_Color: {r: 0.65882355, g: 0.6627451, b: 0.6784314, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -4631,7 +4631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2123702036}
+  m_Material: {fileID: 1356057849}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5080,7 +5080,7 @@ PrefabInstance:
     - target: {fileID: 7027465360645507809, guid: cf8f50d2173394976baaa6d2e9f4be29,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7027465360645507809, guid: cf8f50d2173394976baaa6d2e9f4be29,
         type: 3}
@@ -5376,7 +5376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2123702036}
+  m_Material: {fileID: 1356057849}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5401,6 +5401,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336603469}
   m_CullTransparentMesh: 0
+--- !u!21 &1356057849
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/Procedural UI Image
+  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1366335438
 GameObject:
   m_ObjectHideFlags: 0
@@ -5813,7 +5846,7 @@ Transform:
   - {fileID: 531093929}
   - {fileID: 2092080119}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1435764904
 MonoBehaviour:
@@ -5827,7 +5860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b8760de6ed94734b0d682a38e58b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useDefault: 1
+  useDefault: 0
   defaultUrl: https://dl.dropboxusercontent.com/s/m8jtzmc4zq6xcsk/29_Diabetes.json?dl=0
   closeSceneName: MainMenuScene
   loaderTime: 3
@@ -7011,7 +7044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2123702036}
+  m_Material: {fileID: 1356057849}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -7068,9 +7101,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 297713669}
-        m_MethodName: ChangeScene
-        m_Mode: 5
+      - m_Target: {fileID: 1435764904}
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7571,7 +7604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2123702036}
+  m_Material: {fileID: 1356057849}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -7706,39 +7739,6 @@ MonoBehaviour:
   m_AspectMode: 1
   m_AspectRatio: 1
 --- !u!21 &2120209873
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/Procedural UI Image
-  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &2123702036
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -8101,7 +8101,7 @@ PrefabInstance:
     - target: {fileID: 2189967895637880441, guid: 650bca22efe934dfa8d3f4c9d42bd445,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2189967895637880441, guid: 650bca22efe934dfa8d3f4c9d42bd445,
         type: 3}
@@ -8276,12 +8276,12 @@ PrefabInstance:
     - target: {fileID: 2189967895465615175, guid: 650bca22efe934dfa8d3f4c9d42bd445,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2189967895465615175, guid: 650bca22efe934dfa8d3f4c9d42bd445,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2189967895637879174, guid: 650bca22efe934dfa8d3f4c9d42bd445,
         type: 3}

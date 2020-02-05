@@ -27,8 +27,10 @@ namespace Fisiomed.Case
         }
         string GetUrl()
         {
+#if UNITY_EDITOR
             if (useDefault)
                 return defaultUrl;
+#endif
             string url = AppManager.Instance.GetComponent<AppData>().GetStringValue("url");            
             if(string.IsNullOrEmpty(url) || string.IsNullOrWhiteSpace(url))
                 return defaultUrl;
