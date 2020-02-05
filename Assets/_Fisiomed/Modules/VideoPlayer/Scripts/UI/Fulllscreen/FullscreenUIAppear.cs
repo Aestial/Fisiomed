@@ -17,10 +17,12 @@ namespace Fisiomed.Video
 
         [SerializeField] CanvasGroup canvasGroup;
 
-        [SerializeField] float waitTime = 3.0f;
+        [SerializeField] float startWaitTime = 1.5f;
+        [SerializeField] float triggerWaitTime = 3.0f;
         [SerializeField] float appearSpeed = 0.5f;
         [SerializeField] float disappearSpeed = 1.0f;
-
+        float waitTime;
+        bool hasStarted = true;
         bool isShown;
         bool hasTriggered;
         bool canTrigger;
@@ -64,28 +66,26 @@ namespace Fisiomed.Video
                 Start();
                 Appear(true);
             }
+            waitTime = hasStarted ? startWaitTime : triggerWaitTime;
             if ((Time.time - startTime > waitTime) && canTrigger && !hasTriggered && isShown)
             {
                 hasTriggered = true;
                 Appear(false);
+                hasStarted = false;
             }
     	}
-
         public void Appear(bool appear)
         {
             StartCoroutine(AppearCoroutine(appear));
         }
-
         private void OnPlaying()
         {
             canTrigger = true;
         }
-
         private void OnEndReached()
         {
             canTrigger = false;
         }
-
         IEnumerator AppearCoroutine(bool isAppearing)
         {
             float animTime = 0;

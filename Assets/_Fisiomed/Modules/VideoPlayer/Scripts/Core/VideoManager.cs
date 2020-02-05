@@ -109,11 +109,12 @@ namespace Fisiomed.Video
         }
         public void Seek(float time)
         {
-            Time = time;
+            Seek((double)time);
         }
         public void Seek(double time)
         {
             Time = time;
+            if (!IsPlaying) Play();
         }
        public void SwitchToMode(VideoMode mode)
         {
@@ -121,11 +122,11 @@ namespace Fisiomed.Video
             switch (mode)
             {               
                 case VideoMode.Fullscreen:
-                    SetOrientation(IsPrepared);
-                    fullscreenHUD.Show(IsPrepared);
+                    //SetOrientation(IsPrepared);
+                    fullscreenHUD.Show(true);
                     break;
                 default:
-                    SetOrientation(false);
+                    //SetOrientation(false);
                     fullscreenHUD.Show(false);
                     break;
             }
@@ -140,29 +141,30 @@ namespace Fisiomed.Video
         #region PrivateMethods
         private void OnPrepared(int width, int height)
         {
-            IsDone = false;
+            IsDone = false;            
             SwitchToMode(VideoMode.Fullscreen);
             Play();
+            AppManager.Instance.ShowLoaderDelay(false, 0.25f);
         }
         private void OnEndReached()
         {
             IsDone = !IsLooping;
         }
-        private void SetOrientation(bool canRotate)
-        {
-            if (canRotate)
-            {
-                Screen.orientation = ScreenOrientation.AutoRotation;
-                Screen.autorotateToPortrait = true;
-                Screen.autorotateToLandscapeLeft = true;
-                Screen.autorotateToLandscapeRight = true;
-                Screen.autorotateToPortraitUpsideDown = false;
-            }
-            else 
-            {
-                Screen.orientation = ScreenOrientation.Portrait;
-            }
-        }
+        //private void SetOrientation(bool canRotate)
+        //{
+        //    if (canRotate)
+        //    {
+        //        Screen.orientation = ScreenOrientation.AutoRotation;
+        //        Screen.autorotateToPortrait = true;
+        //        Screen.autorotateToLandscapeLeft = true;
+        //        Screen.autorotateToLandscapeRight = true;
+        //        Screen.autorotateToPortraitUpsideDown = false;
+        //    }
+        //    else 
+        //    {
+        //        Screen.orientation = ScreenOrientation.Portrait;
+        //    }
+        //}
         #endregion
 
         #region VideoPlayerEvents
