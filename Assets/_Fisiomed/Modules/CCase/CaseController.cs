@@ -7,20 +7,25 @@ using Fisiomed.Quiz;
 namespace Fisiomed.Case
 {
     public class CaseController : Singleton<CaseController>
-    {
+    {        
         [Header("Data")]
         [SerializeField] bool useDefault;
         [SerializeField] string defaultUrl;
+        [SerializeField] string closeSceneName;
         [Header("Visuals")]
         [SerializeField] float loaderTime;
         CCase ccase;
+        public void Close()
+        {
+            AppManager.Instance.ChangeScene(closeSceneName);
+        }
         void Start()
         {
             AppManager.Instance.ShowLoader(true);
             string url = GetUrl();
             StartCoroutine(Downloader.Instance.LoadJSON(url, OnMetadataLoaded));
         }
-        private string GetUrl()
+        string GetUrl()
         {
             if (useDefault)
                 return defaultUrl;

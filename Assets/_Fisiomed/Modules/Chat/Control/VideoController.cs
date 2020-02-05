@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using Loader;
 using Fisiomed.Video;
@@ -40,8 +41,7 @@ namespace Fisiomed.Chat
             {
                 ChatController.Instance.NextBubble();
                 firstTime = false;
-            }
-            AppManager.Instance.ShowLoader(false);
+            }            
         }
         void SetColors(string textCol, string textBack, string faceBack)
         {

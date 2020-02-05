@@ -44,7 +44,6 @@ namespace Fisiomed.Chat
 		#endregion
 		private void ShowElement(int index)
 		{
-			// Dialog dialog = chat.dialogs[index];
 			Element element = chat.sequence[index];
 			Character character = chat.characters[element.character];
 			Sprite sprite = characterSprites[element.character];
