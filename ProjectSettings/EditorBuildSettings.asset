@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Fisiomed/Modules/CCase/CCaseScene.unity
     guid: 26277e64c318f454c88faa1763098a0b
-  - enabled: 1
-    path: Assets/_Fisiomed/Modules/Video/VideosScene.unity
-    guid: 4e8f3b1b0112a4318a98ca0bec6a69a4
   m_configObjects: {}

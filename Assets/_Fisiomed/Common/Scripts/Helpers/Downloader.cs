@@ -17,12 +17,12 @@ namespace Loader
 
                 if (webRequest.isNetworkError || webRequest.isHttpError)
                 {
-                    Debug.Log(uri + ": Error: " + webRequest.error);
+                    Log.Color(uri + ": Error: " + webRequest.error, this);
                 }
                 else
                 {
                     string text = webRequest.downloadHandler.text;
-                    Debug.Log(uri + ":\nReceived: " + text);
+                    Log.Color(uri + ":\nReceived: " + text, this);
                     // Callback function
                     onCompleted(text);
                 }
@@ -38,12 +38,12 @@ namespace Loader
 
                 if (webRequest.isNetworkError || webRequest.isHttpError)
                 {
-                    Debug.Log(uri + ": Error: " + webRequest.error);
+                    Log.Color(uri + ": Error: " + webRequest.error, this);
                 }
                 else
                 {
                     Texture texture = ((DownloadHandlerTexture) webRequest.downloadHandler).texture;
-                    Debug.Log(uri + ":\nReceived: " + texture);
+                    Log.Color(uri + ":\nReceived: " + texture, this);
                     // Callback function
                     onCompleted(texture);
                 }
@@ -52,7 +52,7 @@ namespace Loader
 
         public IEnumerator LoadAsset(string uri, Action<GameObject> onCompleted)
         {
-            Debug.Log("Downloader - Loading Asset");
+            Log.Color("Downloader - Loading Asset", this);
             using (UnityWebRequest webRequest = UnityWebRequestAssetBundle.GetAssetBundle(uri))
             {
                 // Request and wait for the desired page.
@@ -60,14 +60,14 @@ namespace Loader
                 // Fail
                 if (webRequest.isNetworkError || webRequest.isHttpError)
                 {
-                    Debug.Log("Downloader - Error: " + webRequest.error + " from: " + uri);
+                    Log.Color("Downloader - Error: " + webRequest.error + " from: " + uri, this);
                 }
                 // Success
                 else
                 {
                     // Load and retreive the AssetBundle
                     AssetBundle bundle = DownloadHandlerAssetBundle.GetContent(webRequest);
-                    Debug.Log("Downloader - Received: " + bundle + " from: " + uri);
+                    Log.Color("Downloader - Received: " + bundle + " from: " + uri, this);
 
                     // Load the object asynchronously
                     AssetBundleRequest request = bundle.LoadAssetAsync(bundle.GetAllAssetNames()[0], typeof(GameObject));
@@ -79,7 +79,7 @@ namespace Loader
 
                     GameObject prefab = request.asset as GameObject;
 
-                    Debug.Log("Downloader - Loaded: " + prefab);
+                    Log.Color("Downloader - Loaded: " + prefab, this);
 
                     bundle.Unload(false);
                     // Callback function
@@ -92,29 +92,38 @@ namespace Loader
 
         public IEnumerator LoadVideo(string uri, string filename, Action<string> onCompleted)
         {
-            Debug.Log("Downloader - Loading Video");
-            using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
+            string path = Path.Combine(Application.persistentDataPath, "Videos");
+            if (!Directory.Exists(path))    Directory.CreateDirectory(path);
+            string filePath = Path.Combine(path, filename);
+            if (File.Exists(filePath))
             {
-                // Request and wait for the desired page.
-                yield return webRequest.SendWebRequest();
-
-                if (webRequest.isNetworkError || webRequest.isHttpError)
-                {
-                    Debug.Log("Downloader - Error: " + webRequest.error + " from: " + uri);
-                }
-                else
-                {
-                    string filePath = Path.Combine(Application.persistentDataPath, filename);
-
-                    File.WriteAllBytes(filePath, webRequest.downloadHandler.data);
-                    Debug.Log("VideoDownload - Video saved: " + filePath);
-
-                    // Callback function
-                    onCompleted(filePath);
-
-                }
-                webRequest.Dispose();
+                Log.Color("Downloader - Video exists in path: " + filePath, this);
+                // Callback function
+                onCompleted(filePath);
+                yield return null;
             }
+            else
+            {
+                Log.Color("Downloader - Loading Video", this);
+                using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
+                {
+                    // Request and wait for the desired page.
+                    yield return webRequest.SendWebRequest();
+                    if (webRequest.isNetworkError || webRequest.isHttpError)
+                    {
+                        Log.ColorError("Downloader - Error: " + webRequest.error + " from: " + uri, this);                        
+                    }
+                    else
+                    {                        
+                        File.WriteAllBytes(filePath, webRequest.downloadHandler.data);
+                        Log.Color("Video Download - Video saved: " + filePath, this);                        
+                        // Callback function
+                        onCompleted(filePath);
+                    }
+                    webRequest.Dispose();
+                }
+            }
+            
         }
     }
 }

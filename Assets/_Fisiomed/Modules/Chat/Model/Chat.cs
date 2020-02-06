@@ -7,9 +7,10 @@ namespace Fisiomed.Chat
     {
         public Element[] sequence;
         public Character[] characters;
-        public Message[] messages;
-        public Interactive[] interactives;
+        public Message[] messages;        
         public Question[] questions;
+        public Interactive[] interactives;
+        public Video[] videos;
     }    
     [Serializable]
     public class Element
@@ -21,9 +22,10 @@ namespace Fisiomed.Chat
     [Serializable]
     public enum ElementType
     {
-        Message,
-        Question,
-        Interactive,
+        Message, // 0
+        Question, // 1
+        Interactive, // 2
+        Video, // 3
     }
     [Serializable]
     public class Character
@@ -47,6 +49,12 @@ namespace Fisiomed.Chat
         public string and;
         public string ios;
         public string web;
+    }
+    [Serializable]
+    public class Video
+    {
+        public string text;
+        public string url;        
     }
     [Serializable]
     public class Question
