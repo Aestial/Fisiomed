@@ -6,7 +6,7 @@ namespace Fisiomed.User
     public class UserManager : Singleton<UserManager>
     {
         [SerializeField] string filename;
-        public User user = new User();
+        public User User = new User();
         string filePath;
         void Start()
         {
@@ -23,7 +23,7 @@ namespace Fisiomed.User
         }
         public void Save()
         {
-            Save(user);
+            Save(User);
         }
     }
 }
