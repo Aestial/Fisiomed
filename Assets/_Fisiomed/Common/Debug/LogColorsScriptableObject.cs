@@ -1,6 +1,13 @@
 ﻿using RotaryHeart.Lib.SerializableDictionary;
 using UnityEngine;
 
+[System.Serializable]
+public class DebugColor
+{
+    public Color color;
+    public bool isActive;
+}
+
 /// <summary>
 /// <c>LogColorsScriptableObject</c> defines the Asset file (ScriptableObject) for
 /// saving the relationship between Classes names and Debug messages colors.
@@ -12,7 +19,7 @@ using UnityEngine;
 public class LogColorsScriptableObject : ScriptableObject
 {
     [System.Serializable]
-    public class StringTypeColors : SerializableDictionaryBase<string, Color> { }
+    public class StringTypeColors : SerializableDictionaryBase<string, DebugColor> { }
     public Color defaultColor = Color.black;
     public StringTypeColors classColors;  
 }

@@ -37,17 +37,17 @@ MonoBehaviour:
     reqReferences: {fileID: 0}
     isExpanded: 1
     _keyValues:
+    - Fisiomed.User.UserManager
     - Loader.Downloader
-    - Fisiomed.Video.VideoManager
-    - Fisiomed.Video.FullscreenImageResize
-    - Fisiomed.Chat.VideoController
+    - Fisiomed.UI.Validator.PageValidator
     _keys:
+    - Fisiomed.User.UserManager
     - Loader.Downloader
-    - Fisiomed.Video.VideoManager
-    - Fisiomed.Video.FullscreenImageResize
-    - Fisiomed.Chat.VideoController
+    - Fisiomed.UI.Validator.PageValidator
     _values:
-    - {r: 0.03529412, g: 0.34901962, b: 0.8235294, a: 1}
-    - {r: 0.754717, g: 0.18155926, b: 0.44372645, a: 1}
-    - {r: 0.6313726, g: 0.18039216, b: 0.38039216, a: 1}
-    - {r: 0.15686275, g: 0.49803922, b: 0.48235294, a: 1}
+    - color: {r: 0.5294118, g: 0.23137255, b: 0.7058824, a: 1}
+      isActive: 1
+    - color: {r: 0.21960784, g: 0.48235294, b: 0.44705883, a: 1}
+      isActive: 1
+    - color: {r: 0.12941177, g: 0.39607844, b: 0.69803923, a: 1}
+      isActive: 0
