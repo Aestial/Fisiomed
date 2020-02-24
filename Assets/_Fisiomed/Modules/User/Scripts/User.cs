@@ -34,7 +34,7 @@ namespace Fisiomed.User
         // User personal info
         public string gender;
         public string age;
-        public string carreer;
+        public string career;
         public string university;
         public string semester;
         public string unamID;

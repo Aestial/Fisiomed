@@ -3,28 +3,30 @@ using UnityEngine.UI;
 
 namespace Fisiomed.UI.Validator
 {
-    public class PageValidator : MonoBehaviour
+    public class PageValidator : MonoBehaviour, IValidator
     {
         [SerializeField] Button validButton;
-        IValidator[] validators;
+        IValidatable[] validatables;
         bool isValid;
-        void Start()
+        void Awake()
         {
             validButton.interactable = false;
-            validators = GetComponentsInChildren<IValidator>();
-            Debug.Log("Validators found:" + validators.Length);
-            for (int i = 0; i < validators.Length; i++)
+            validatables = GetComponentsInChildren<IValidatable>();
+            Log.Color("Validatables found in " + gameObject.name + ": " + validatables.Length, this);
+            for (int i = 0; i < validatables.Length; i++)
             {
-                validators[i].Page = this;
+                validatables[i].Validator = this;
+                Log.Color("Validatable " + i + ": " + validatables[i], this);
             }
         }
         public void Validate()
         {
             isValid = true;
-            for (int i = 0; i < validators.Length; i++)
+            for (int i = 0; i < validatables.Length; i++)
             {
-                isValid &= validators[i].IsValid;
+                isValid &= validatables[i].IsValid;
             }
+            Log.Color("Is Valid: " + isValid, this);
             validButton.interactable = isValid;
         }
     }
