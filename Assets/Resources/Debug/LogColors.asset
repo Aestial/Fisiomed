@@ -50,4 +50,4 @@ MonoBehaviour:
     - color: {r: 0.21960784, g: 0.48235294, b: 0.44705883, a: 1}
       isActive: 1
     - color: {r: 0.12941177, g: 0.39607844, b: 0.69803923, a: 1}
-      isActive: 0
+      isActive: 1
