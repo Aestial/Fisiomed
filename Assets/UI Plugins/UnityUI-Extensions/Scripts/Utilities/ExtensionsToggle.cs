@@ -17,6 +17,11 @@ namespace UnityEngine.UI
         /// </summary>
         public string UniqueID;
 
+        public void SetUniqueID(string uniqueID)
+        {
+            UniqueID = uniqueID;
+        }
+
         public enum ToggleTransition
         {
             None,

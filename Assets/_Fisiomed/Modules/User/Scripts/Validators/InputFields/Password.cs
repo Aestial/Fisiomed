@@ -2,10 +2,9 @@
 
 namespace Fisiomed.UI.Validator
 {
-    public class PasswordValidator : InputFieldValidator
+    public class Password : InputField
     {
         [SerializeField] internal int minCharacters = 8;
-        [SerializeField] internal string errorMessage;
         override public void Validate(string content)
         {
             base.Validate(content);

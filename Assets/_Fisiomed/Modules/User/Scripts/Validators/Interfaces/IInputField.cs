@@ -1,6 +1,6 @@
 ﻿namespace Fisiomed.UI.Validator
 {
-    public interface IInputFieldValidator : IValidator
+    public interface IInputField : IValidatable
     {
         void Validate(string content);
     }
