@@ -3,7 +3,7 @@ using Fisiomed.User;
 
 namespace Fisiomed.UI.Validator
 {
-    public class SemesterValidator : DropdownValidator
+    public class Age : Dropdown
     {
         [SerializeField] NumberDropdownPopulator populator;
         override public void Validate(int option)
@@ -11,10 +11,9 @@ namespace Fisiomed.UI.Validator
             base.Validate(option);
             if (IsValid)
             {
-                string semester = (option + populator.start - 1).ToString();
-                UserManager.Instance.user.personal.semester = semester;
-                UserManager.Instance.Save();
+                string age = (option + populator.start - 1).ToString();
+                UserManager.Instance.User.personal.age = age;
             }                
-        }
+        }        
     }
 }

@@ -17,14 +17,15 @@ public static class Log
         string key = param.GetType().ToString();
         var logColors = Resources.Load<LogColorsScriptableObject>("Debug/LogColors");
 
-        if (logColors.classColors.TryGetValue(key, out Color color))
+        if (logColors.classColors.TryGetValue(key, out DebugColor debugColor))
         {
-            string colorString = ColorUtility.ToHtmlStringRGB(color);
+            if (!debugColor.isActive) return;
+            string colorString = ColorUtility.ToHtmlStringRGB(debugColor.color);
             Debug.Log("<color=#" + colorString + ">" + param.GetType() + " - " + message + "</color>");
         }
         else
         {
-            color = logColors.defaultColor;
+            Color color = logColors.defaultColor;            
             string colorString = ColorUtility.ToHtmlStringRGB(color);
             Debug.LogWarning("<color=#" + colorString + ">" + param.GetType() + " - USING DEFAULT COLOR</color>");
             Debug.Log("<color=#" + colorString + ">" + param.GetType() + " - " + message + "</color>");
@@ -38,15 +39,16 @@ public static class Log
         string key = param.GetType().ToString();
         var logColors = Resources.Load<LogColorsScriptableObject>("Debug/LogColors");
 
-        if (logColors.classColors.TryGetValue(key, out Color color))
-        {            
-            string colorString = ColorUtility.ToHtmlStringRGB(color);            
+        if (logColors.classColors.TryGetValue(key, out DebugColor debugColor))
+        {
+            if (!debugColor.isActive) return;
+            string colorString = ColorUtility.ToHtmlStringRGB(debugColor.color);            
             Debug.LogError("<color=#" + colorString + ">" + param.GetType() + " - " + message + "</color>");
         }
         else
         {
-            color = logColors.defaultColor;
-            string colorString = ColorUtility.ToHtmlStringRGB(color);
+            debugColor.color = logColors.defaultColor;
+            string colorString = ColorUtility.ToHtmlStringRGB(debugColor.color);
             Debug.LogWarning("<color=#" + colorString + ">" + param.GetType() + " - USING DEFAULT COLOR</color>");
             Debug.LogError("<color=#" + colorString + ">" + param.GetType() + " - " + message + "</color>");
         }

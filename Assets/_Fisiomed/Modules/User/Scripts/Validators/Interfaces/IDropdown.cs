@@ -1,6 +1,6 @@
 ﻿namespace Fisiomed.UI.Validator
 {
-    public interface IDropdownValidator : IValidator
+    public interface IDropdown : IValidatable
     {
         void Validate(int option);
     }

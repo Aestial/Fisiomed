@@ -3,7 +3,7 @@ using Fisiomed.User;
 
 namespace Fisiomed.UI.Validator
 {
-    public class NameValidator : InputFieldValidator
+    public class Name : InputField
     {
         [SerializeField] bool isSurname;
         override public void Validate(string content)
@@ -12,10 +12,9 @@ namespace Fisiomed.UI.Validator
             if (IsValid)
             {
                 if (isSurname)
-                    UserManager.Instance.user.personal.surname = content;
+                    UserManager.Instance.User.personal.surname = content;
                 else 
-                    UserManager.Instance.user.personal.name = content;
-                UserManager.Instance.Save();
+                    UserManager.Instance.User.personal.name = content;                
             }
         }
     }

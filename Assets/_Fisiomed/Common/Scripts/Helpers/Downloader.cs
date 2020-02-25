@@ -92,7 +92,7 @@ namespace Loader
 
         public IEnumerator LoadVideo(string uri, string filename, Action<string> onCompleted)
         {
-            string path = Path.Combine(Application.persistentDataPath, "Videos");
+            string path = Path.Combine(Application.persistentDataPath, "videos");
             if (!Directory.Exists(path))    Directory.CreateDirectory(path);
             string filePath = Path.Combine(path, filename);
             if (File.Exists(filePath))

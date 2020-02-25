@@ -1,25 +1,24 @@
 ﻿using UnityEngine;
-using TMPro;
 using Fisiomed.User;
 
 namespace Fisiomed.UI.Validator
 {
-    public class PasswordConfirmValidator : PasswordValidator
-    {
-        [SerializeField] private TMP_InputField OtherInputField;
+    public class Mail : InputField
+    {        
         override public void Validate(string content)
         {
             base.Validate(content);
             if(IsValid)
             {
-                if (content != OtherInputField.text)
+                if (!RegexUtilities.IsValidEmail(content))
                 {
                     OnInvalid(errorMessage);
                     return;
                 }
                 OnValid();
-                UserManager.Instance.user.password = content;
-            }            
-        }
+                UserManager.Instance.User.email = content;
+            }
+
+        }        
     }
 }
