@@ -24,9 +24,6 @@ namespace Fisiomed.Chat
 		public void Set(Chat chat)
 		{
 			this.chat = chat;
-			Debug.Log(chat);
-			Debug.Log(chat.sequence);
-			Debug.Log(chat.questions);
 			lenght = chat.sequence.Length;
 			Character[] characters = chat.characters;						
 			// Download Character Images
