@@ -40,14 +40,18 @@ MonoBehaviour:
     - Fisiomed.User.UserManager
     - Loader.Downloader
     - Fisiomed.UI.Validator.PageValidator
+    - Fisiomed.Video.VideoManager
     _keys:
     - Fisiomed.User.UserManager
     - Loader.Downloader
     - Fisiomed.UI.Validator.PageValidator
+    - Fisiomed.Video.VideoManager
     _values:
     - color: {r: 0.5294118, g: 0.23137255, b: 0.7058824, a: 1}
       isActive: 1
-    - color: {r: 0.21960784, g: 0.48235294, b: 0.44705883, a: 1}
+    - color: {r: 0.21176471, g: 0.5019608, b: 0.41568628, a: 1}
       isActive: 1
     - color: {r: 0.12941177, g: 0.39607844, b: 0.69803923, a: 1}
       isActive: 1
+    - color: {r: 0.06666667, g: 0.5803922, b: 0.68235296, a: 1}
+      isActive: 0
