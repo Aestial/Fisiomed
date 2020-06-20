@@ -106,6 +106,7 @@ PlayerSettings:
   xboxOneMonoLoggingLevel: 0
   xboxOneLoggingLevel: 1
   xboxOneDisableEsram: 0
+  xboxOneEnableTypeOptimization: 0
   xboxOnePresentImmediateThreshold: 0
   switchQueueCommandMemory: 0
   switchQueueControlMemory: 16384
@@ -164,7 +165,7 @@ PlayerSettings:
   buildNumber:
     iOS: 019
   AndroidBundleVersionCode: 109
-  AndroidMinSdkVersion: 19
+  AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 28
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -752,6 +753,7 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   scriptingDefineSymbols:
+    1: RHSD
     4: RHSD
     7: RHSD
   platformArchitecture:
