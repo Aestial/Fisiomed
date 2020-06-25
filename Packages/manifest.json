@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "com.google.firebase.app": "6.15.0",
+    "com.google.firebase.auth": "6.15.0",
+    "com.google.firebase.database": "6.15.0",
     "com.unity.package-manager-ui": "2.0.8",
     "com.unity.textmeshpro": "1.4.1",
     "com.unity.modules.ai": "1.0.0",
@@ -32,5 +35,14 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "Game Package Registry by Google",
+      "url": "https://unityregistry-pa.googleapis.com",
+      "scopes": [
+        "com.google"
+      ]
+    }
+  ]
 }
