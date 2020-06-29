@@ -39,13 +39,15 @@ MonoBehaviour:
     _keyValues:
     - Fisiomed.User.UserManager
     - Loader.Downloader
-    - Fisiomed.UI.Validator.PageValidator
+    - Fisiomed.UI.Validator.Validator
     - Fisiomed.Video.VideoManager
+    - Fisiomed.FirebaseServices.FirebaseManager
     _keys:
     - Fisiomed.User.UserManager
     - Loader.Downloader
-    - Fisiomed.UI.Validator.PageValidator
+    - Fisiomed.UI.Validator.Validator
     - Fisiomed.Video.VideoManager
+    - Fisiomed.FirebaseServices.FirebaseManager
     _values:
     - color: {r: 0.5294118, g: 0.23137255, b: 0.7058824, a: 1}
       isActive: 1
@@ -55,3 +57,5 @@ MonoBehaviour:
       isActive: 1
     - color: {r: 0.06666667, g: 0.5803922, b: 0.68235296, a: 1}
       isActive: 0
+    - color: {r: 0.6431373, g: 0.38431373, b: 0, a: 1}
+      isActive: 1
