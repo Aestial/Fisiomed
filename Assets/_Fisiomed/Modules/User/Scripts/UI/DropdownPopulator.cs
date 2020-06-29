@@ -4,16 +4,16 @@ using TMPro;
 
 namespace Fisiomed.UI
 {
-    public class NumberDropdownPopulator : MonoBehaviour
+    public class DropdownPopulator : MonoBehaviour
     {
         [SerializeField] TMP_Dropdown dropdown;
-        public int start;
-        public int end;
+        public int startValue;
+        public int endValue;
         List<string> options;
         void Start()
         {
             options = new List<string>();
-            for (int i = start; i <= end; i++)
+            for (int i = startValue; i <= endValue; i++)
             {
                 string option = i.ToString();
                 options.Add(option);
