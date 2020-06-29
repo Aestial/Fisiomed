@@ -18,7 +18,7 @@ PluginImporter:
       settings:
         ScriptingBackend: Il2Cpp
   - first:
-      Any: ''
+      Any: 
     second:
       enabled: 0
       settings: {}
@@ -40,6 +40,11 @@ PluginImporter:
       settings: {}
   - first:
       PS4: PS4
+    second:
+      enabled: 1
+      settings: {}
+  - first:
+      Stadia: Stadia
     second:
       enabled: 1
       settings: {}
@@ -100,7 +105,6 @@ PluginImporter:
     second:
       enabled: 1
       settings: {}
-  userData: ''
-  assetBundleName: ''
-  assetBundleVariant: ''
-...
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
