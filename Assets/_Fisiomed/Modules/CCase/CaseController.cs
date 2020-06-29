@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
-using Loader;
-using Fisiomed.Chat;
-using Fisiomed.Quiz;
 
 namespace Fisiomed.Case
 {
+    using App;
+    using Chat;
+    using Quiz;
+    using Loader;
+
     public class CaseController : Singleton<CaseController>
     {        
         [Header("Data")]

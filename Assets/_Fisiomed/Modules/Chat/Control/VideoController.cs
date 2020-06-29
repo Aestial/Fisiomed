@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Loader;
 using Fisiomed.Video;
 
 namespace Fisiomed.Chat
 {
+    using App;
+
     public class VideoController : MonoBehaviour
     {
         [Header("Customize Components")]
