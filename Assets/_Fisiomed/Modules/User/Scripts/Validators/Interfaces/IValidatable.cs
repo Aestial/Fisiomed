@@ -2,12 +2,8 @@
 {
     public interface IValidatable
     {
-        void OnValid();
-        void OnInvalid(string error);
-        IValidator Validator
-        {
-            set;
-        }
+        void SetValid(string content);
+        void SetInvalid(string error);
         bool IsValid
         {
             get;

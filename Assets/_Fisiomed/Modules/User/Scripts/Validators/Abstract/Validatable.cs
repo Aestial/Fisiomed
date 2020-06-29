@@ -1,28 +1,65 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 namespace Fisiomed.UI.Validator
 {
+    [System.Serializable]
+    public class StringVEvent : UnityEvent<string>
+    {
+    }
+    [System.Serializable]
+    public class StringStringVEvent : UnityEvent<string,string>
+    {
+    }
     public abstract class Validatable : MonoBehaviour, IValidatable
     {
-        [SerializeField] internal TMP_Text message;
+        [SerializeField] internal string key;        
         [SerializeField] internal string errorMessage;
-        public IValidator Validator { internal get; set; }
-        public bool IsValid { get; private set; }
+        [SerializeField] internal TMP_Text message;
+        [SerializeField] internal bool getErrorStringFromText = false;        
+        [SerializeField] StringStringVEvent onValid;
+        [SerializeField] UnityEvent onInvalid;
+        public Validator validator;
+
+        private bool _isValid = false;
+        public bool IsValid
+        {
+            get
+            {
+                return _isValid;
+            }
+            set
+            {
+                _isValid = value;                
+                message.enabled = !value;
+                validator.Validate();
+            }
+        }
         public virtual void Start()
         {
-            message.enabled = false;
+            if (!string.IsNullOrEmpty(message.text) && getErrorStringFromText)
+                errorMessage = message.text;         
+            message.enabled = false;            
         }
-        public void OnValid()
+        private void OnEnable()
+        {
+            validator.Subscribe(this);            
+        }
+        private void OnDisable()
+        {
+            validator.Unsubscribe(this);            
+        }
+        public void SetValid(string content)
         {
             IsValid = true;
-            message.enabled = false;
+            onValid.Invoke(content, key);
         }
-        public void OnInvalid(string error)
+        public void SetInvalid(string error)
         {
-            IsValid = false;
-            message.enabled = true;
             message.text = error;
+            IsValid = false;            
+            onInvalid.Invoke();
         }
     }
 }
