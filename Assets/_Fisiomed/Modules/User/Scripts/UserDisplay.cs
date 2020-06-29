@@ -10,7 +10,7 @@ namespace Fisiomed.User
 
         void Start()
         {
-            name.text = UserManager.Instance.User.personal.name;
+            name.text = UserManager.Instance.User.properties["name"];
         }
     }
 }
