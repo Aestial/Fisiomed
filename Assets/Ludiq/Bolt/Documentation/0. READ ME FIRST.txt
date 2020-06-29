@@ -15,12 +15,8 @@ If you have questions, bug reports, or feature requests,
 you can submit them in the online Bolt community forum.
 
 Manual:
-http://ludiq.io/bolt/manual
-
-Community:
-http://ludiq.io/bolt/community
+https://docs.unity3d.com/Packages/com.unity.bolt@latest
 
 Now go create something awesome.
 
-Thanks for your purchase,
-- Lazlo
+Thanks for your purchase!
