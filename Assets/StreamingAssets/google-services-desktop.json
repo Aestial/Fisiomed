@@ -1,0 +1,37 @@
+{
+  "client": [
+    {
+      "services": {
+        "appinvite_service": {
+          "status": 1
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "1088172377023-5dtsrqdjpfgst0ubo7f5ob5dnrpskhl5.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfsLC8LtRuDF6y0vWnUFjrxqAf4yt-6LU"
+        }
+      ], 
+      "client_info": {
+        "mobilesdk_app_id": "1:1088172377023:ios:ecf3ef50290ef9aa6d970a", 
+        "android_client_info": {
+          "package_name": "com.facmed.unam.fisiomed"
+        }
+      }
+    }
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "fisiomed-unam.appspot.com", 
+    "project_id": "fisiomed-unam", 
+    "firebase_url": "https://fisiomed-unam.firebaseio.com", 
+    "project_number": "1088172377023"
+  }
+}

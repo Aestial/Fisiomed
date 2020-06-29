@@ -45,7 +45,7 @@ allprojects {
     }
 }
 // Android Resolver Repos End
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 **APPLY_PLUGINS**
 
 dependencies {
@@ -75,7 +75,6 @@ dependencies {
 android {
   packagingOptions {
       exclude ('/lib/armeabi/*' + '*')
-      exclude ('/lib/armeabi-v7a/*' + '*')
       exclude ('/lib/mips/*' + '*')
       exclude ('/lib/mips64/*' + '*')
       exclude ('/lib/x86/*' + '*')
@@ -92,18 +91,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    sourceSets {
-        main {
-            def unityProjectPath = $/file:///**DIR_UNITYPROJECT**/$.replace("\\", "/")
-            res.srcDirs += (unityProjectPath +  '/Assets/Plugins/Android/Firebase/res/values/google-services.xml')
-        }
-    }
-
     defaultConfig {
-consumerProguardFiles 'proguard-unity.txt'**USER_PROGUARD**
         minSdkVersion **MINSDKVERSION**
         targetSdkVersion **TARGETSDKVERSION**
-        
+        applicationId '**APPLICATIONID**'
         ndk {
             abiFilters **ABIFILTERS**
         }
@@ -131,7 +122,17 @@ consumerProguardFiles 'proguard-unity.txt'**USER_PROGUARD**
             useProguard **PROGUARD_RELEASE**
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'**USER_PROGUARD****SIGNCONFIG**
         }
-    }**PACKAGING_OPTIONS**
+    }**PACKAGING_OPTIONS****SPLITS**
 **BUILT_APK_LOCATION**
-    
-}**REPOSITORIES****SOURCE_BUILD_SETUP**
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = false
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+}**SPLITS_VERSION_CODE****REPOSITORIES****SOURCE_BUILD_SETUP**
