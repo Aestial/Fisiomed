@@ -2,24 +2,27 @@
 using UnityEngine;
 using TMPro;
 
-public class PopupCardController : MonoBehaviour
+namespace Fisiomed.Popup
 {
-    [SerializeField] TMP_Text text;
-    [SerializeField] float lifeTime = 8.0f;
-
-    void Start()
+    public class PopupCardController : MonoBehaviour
     {
-        StartCoroutine(DestroyCoroutine(lifeTime));        
-    }
+        [SerializeField] TMP_Text text;
+        [SerializeField] float lifeTime = 8.0f;
 
-    IEnumerator DestroyCoroutine(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        Destroy(gameObject);
-    }
+        void Start()
+        {
+            StartCoroutine(DestroyCoroutine(lifeTime));
+        }
 
-    public void Print(string msg)
-    {
-        text.text = msg;
+        IEnumerator DestroyCoroutine(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            Destroy(gameObject);
+        }
+
+        public void Print(string msg)
+        {
+            text.text = msg;
+        }
     }
 }
