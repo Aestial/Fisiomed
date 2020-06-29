@@ -5,6 +5,8 @@ using Loader;
 
 namespace Fisiomed.Main
 {
+    using App;
+
     public class MainMenuController : MonoBehaviour
     {
         [Header("Data")]

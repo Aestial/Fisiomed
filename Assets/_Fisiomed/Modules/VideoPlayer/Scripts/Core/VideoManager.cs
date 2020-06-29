@@ -4,6 +4,8 @@ using UnityEngine.Video;
 
 namespace Fisiomed.Video 
 {
+    using App;
+
     public enum VideoMode
     {
         Off,

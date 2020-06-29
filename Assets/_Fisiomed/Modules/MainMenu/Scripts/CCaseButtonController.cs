@@ -6,6 +6,8 @@ using Loader;
 
 namespace Fisiomed.Main
 {
+    using App;
+
     [RequireComponent(typeof(Button))]
     public class CCaseButtonController : MonoBehaviour
     {

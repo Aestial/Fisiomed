@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using Loader;
 
 namespace Fisiomed.Chat
 {
+    using App;
+    using Loader;
+
     public class InteractiveController : Singleton<InteractiveController>
     {
         [Header("Customize Components")]

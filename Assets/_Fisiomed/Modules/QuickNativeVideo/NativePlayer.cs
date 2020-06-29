@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+
 public class NativePlayer : MonoBehaviour 
 {
     [SerializeField] GameObject loader;
@@ -20,7 +21,7 @@ public class NativePlayer : MonoBehaviour
     IEnumerator DisableSafeCanvasCoroutine()
     {
         yield return new WaitForSeconds(0.1f);
-        AppManager.Instance.ShowLoader(false);
+        Fisiomed.App.AppManager.Instance.ShowLoader(false);
     }
 
     public void DownloadAndPlay(string url)
@@ -30,7 +31,7 @@ public class NativePlayer : MonoBehaviour
 
     IEnumerator DownloadAndPlayCoroutine(string url)
     {
-        AppManager.Instance.ShowLoader(true);
+        Fisiomed.App.AppManager.Instance.ShowLoader(true);
 
         string path = Path.Combine(Application.persistentDataPath, "Videos");
         if(!Directory.Exists(path))
