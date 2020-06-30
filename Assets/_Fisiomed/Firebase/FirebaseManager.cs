@@ -65,10 +65,13 @@ namespace Fisiomed.FirebaseServices
         public FirebaseDatabase Database
         {
             get
-            {                if (_database == null)
+            {
+                if (_database == null)
                 {
                     _database = FirebaseDatabase.DefaultInstance;
-                }                return _database;            }
+                }
+                return _database;
+            }
         }
 
         private FirebaseUser _user;
