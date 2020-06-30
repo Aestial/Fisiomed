@@ -16,9 +16,6 @@ namespace Ludiq.Generated.Aot
 	// AppData.op_Equality
 	// AppData.op_Implicit
 	// AppData.op_Inequality
-	// AppManager.op_Equality
-	// AppManager.op_Implicit
-	// AppManager.op_Inequality
 	// AudioManager.op_Equality
 	// AudioManager.op_Implicit
 	// AudioManager.op_Inequality
@@ -46,6 +43,9 @@ namespace Ludiq.Generated.Aot
 	// FindCamera.op_Equality
 	// FindCamera.op_Implicit
 	// FindCamera.op_Inequality
+	// Fisiomed.App.AppManager.op_Equality
+	// Fisiomed.App.AppManager.op_Implicit
+	// Fisiomed.App.AppManager.op_Inequality
 	// Fisiomed.Case.CaseController.op_Equality
 	// Fisiomed.Case.CaseController.op_Implicit
 	// Fisiomed.Case.CaseController.op_Inequality
@@ -82,6 +82,12 @@ namespace Ludiq.Generated.Aot
 	// Fisiomed.Main.MainMenuController.op_Equality
 	// Fisiomed.Main.MainMenuController.op_Implicit
 	// Fisiomed.Main.MainMenuController.op_Inequality
+	// Fisiomed.Popup.PopupCardController.op_Equality
+	// Fisiomed.Popup.PopupCardController.op_Implicit
+	// Fisiomed.Popup.PopupCardController.op_Inequality
+	// Fisiomed.Popup.PopupManager.op_Equality
+	// Fisiomed.Popup.PopupManager.op_Implicit
+	// Fisiomed.Popup.PopupManager.op_Inequality
 	// Fisiomed.Quiz.AnswerController.op_Equality
 	// Fisiomed.Quiz.AnswerController.op_Implicit
 	// Fisiomed.Quiz.AnswerController.op_Inequality
@@ -1398,41 +1404,6 @@ namespace Ludiq.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
-		// AppManager.op_Equality
-		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void AppManager_op_Equality()
-		{
-			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
-			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
-			bool @operator = (arg0 == arg1);
-			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
-			optimized.Invoke(null, arg0, arg1);
-			optimized.Invoke(default(object[]));
-		}
-		
-		// AppManager.op_Implicit
-		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void AppManager_op_Implicit()
-		{
-			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
-			bool conversion = ((bool)(arg0));
-			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
-			optimized.Invoke(null, arg0);
-			optimized.Invoke(default(object[]));
-		}
-		
-		// AppManager.op_Inequality
-		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void AppManager_op_Inequality()
-		{
-			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
-			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
-			bool @operator = (arg0 != arg1);
-			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
-			optimized.Invoke(null, arg0, arg1);
-			optimized.Invoke(default(object[]));
-		}
-		
 		// AudioManager.op_Equality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void AudioManager_op_Equality()
@@ -1739,6 +1710,41 @@ namespace Ludiq.Generated.Aot
 		// FindCamera.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void FindCamera_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.App.AppManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_App_AppManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.App.AppManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_App_AppManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.App.AppManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_App_AppManager_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
@@ -2159,6 +2165,76 @@ namespace Ludiq.Generated.Aot
 		// Fisiomed.Main.MainMenuController.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void Fisiomed_Main_MainMenuController_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.Popup.PopupCardController.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_Popup_PopupCardController_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.Popup.PopupCardController.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_Popup_PopupCardController_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.Popup.PopupCardController.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_Popup_PopupCardController_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.Popup.PopupManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_Popup_PopupManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.Popup.PopupManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_Popup_PopupManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.Popup.PopupManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_Popup_PopupManager_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
