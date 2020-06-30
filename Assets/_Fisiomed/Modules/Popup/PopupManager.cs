@@ -15,12 +15,12 @@ namespace Fisiomed.Popup
             PopupCardController controller = newCard.GetComponent<PopupCardController>();
             controller.Print(message);
             canvas.enabled = true;
-
+            StopAllCoroutines(); 
             StartCoroutine(CheckForDeactivation());
         }
 
         private IEnumerator CheckForDeactivation()
-        {
+        {            
             while (cardContainer.childCount > 0)
             {
                 yield return null;
