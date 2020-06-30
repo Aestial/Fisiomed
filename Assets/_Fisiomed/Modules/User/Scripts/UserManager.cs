@@ -14,7 +14,7 @@ namespace Fisiomed.User
 
     public class UserManager : Singleton<UserManager>
     {
-        [SerializeField] string filename;
+        [SerializeField] string filename = default;
 
         private string filePath;
         private readonly StringStringDictionary temp = new StringStringDictionary();

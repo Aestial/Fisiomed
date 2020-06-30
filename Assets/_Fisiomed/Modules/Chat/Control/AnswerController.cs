@@ -10,11 +10,11 @@ namespace Fisiomed.Chat
     public class AnswerController : MonoBehaviour
     {
         public QuestionController question;
-        [SerializeField] TMP_Text text;
-        [SerializeField] Image background;
-        [SerializeField] float continueWaitTime;
-        [SerializeField] UnityEvent correctEvents;
-        [SerializeField] UnityEvent wrongEvents;
+        [SerializeField] TMP_Text text = default;
+        [SerializeField] Image background = default;
+        [SerializeField] float continueWaitTime = default;
+        [SerializeField] UnityEvent correctEvents = default;
+        [SerializeField] UnityEvent wrongEvents = default;
         Answer answer;
         Button button;
         bool notAnswered;

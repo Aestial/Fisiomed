@@ -5,9 +5,9 @@ namespace Fisiomed.Popup
 {
     public class PopupManager : Singleton<PopupManager>
     {
-        [SerializeField] Canvas canvas;
-        [SerializeField] GameObject cardPrefab;
-        [SerializeField] Transform cardContainer;        
+        [SerializeField] Canvas canvas = default;
+        [SerializeField] GameObject cardPrefab = default;
+        [SerializeField] Transform cardContainer = default;        
 
         public void PrintMessage(string message)
         {

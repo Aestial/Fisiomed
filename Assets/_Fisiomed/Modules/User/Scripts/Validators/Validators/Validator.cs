@@ -10,8 +10,8 @@ namespace Fisiomed.UI.Validator
     }
     public class Validator : MonoBehaviour, IValidator
     {
-        [SerializeField] BoolEvent onValidated;
-        List<Validatable> validatables = new List<Validatable>();
+        [SerializeField] BoolEvent onValidated = default;
+        readonly List<Validatable> validatables = new List<Validatable>();
 
         void Start()
         {

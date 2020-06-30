@@ -6,7 +6,7 @@ namespace Fisiomed.Popup
 {
     public class PopupCardController : MonoBehaviour
     {
-        [SerializeField] TMP_Text text;
+        [SerializeField] TMP_Text text = default;
         [SerializeField] float lifeTime = 8.0f;
 
         void Start()

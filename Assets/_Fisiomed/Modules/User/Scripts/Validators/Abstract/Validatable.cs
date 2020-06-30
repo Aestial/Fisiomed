@@ -14,12 +14,12 @@ namespace Fisiomed.UI.Validator
     }
     public abstract class Validatable : MonoBehaviour, IValidatable
     {
-        [SerializeField] internal string key;        
-        [SerializeField] internal string errorMessage;
-        [SerializeField] internal TMP_Text message;
+        [SerializeField] internal string key = default;
+        [SerializeField] internal string errorMessage = default;
+        [SerializeField] internal TMP_Text message = default;
         [SerializeField] internal bool getErrorStringFromText = false;        
-        [SerializeField] StringStringVEvent onValid;
-        [SerializeField] UnityEvent onInvalid;
+        [SerializeField] StringStringVEvent onValid = default;
+        [SerializeField] UnityEvent onInvalid = default;
         public Validator validator;
 
         private bool _isValid = false;

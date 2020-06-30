@@ -16,8 +16,8 @@ namespace Fisiomed.Video
         public VideoManager video;
 
         [Header("UI Elements")]
-        [SerializeField] RawImage videoOutputImage;
-        [SerializeField] AspectRatioFitter aspectRatioFitter;
+        [SerializeField] RawImage videoOutputImage = default;
+        [SerializeField] AspectRatioFitter aspectRatioFitter = default;
 
         void Awake()
         {

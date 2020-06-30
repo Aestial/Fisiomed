@@ -10,10 +10,10 @@ namespace Fisiomed.Main
     public class MainMenuController : MonoBehaviour
     {
         [Header("Data")]
-        [SerializeField] string defaultUrl;
+        [SerializeField] string defaultUrl = default;
         [Header("Visual")]
-        [SerializeField] GameObject buttonPrefab;
-        [SerializeField] Transform containerPanel;
+        [SerializeField] GameObject buttonPrefab = default;
+        [SerializeField] Transform containerPanel = default;
 
         List<Sprite> optionSprites = new List<Sprite>();
 

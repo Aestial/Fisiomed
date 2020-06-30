@@ -6,7 +6,7 @@ namespace Fisiomed.User
 {
     public class UserDisplay : MonoBehaviour
     {
-        [SerializeField] new TMP_Text name;
+        [SerializeField] new TMP_Text name = default;
 
         void Start()
         {

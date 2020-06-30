@@ -10,11 +10,11 @@ namespace Fisiomed.Chat
     public class VideoController : MonoBehaviour
     {
         [Header("Customize Components")]
-        [SerializeField] Image characterImage;
-        [SerializeField] Image characterBubble;
-        [SerializeField] Image textBubble;
-        [SerializeField] Image textBubbleShadow;        
-        [SerializeField] TMPro.TMP_Text text;
+        [SerializeField] Image characterImage = default;
+        [SerializeField] Image characterBubble = default;
+        [SerializeField] Image textBubble = default;
+        [SerializeField] Image textBubbleShadow = default;
+        [SerializeField] TMPro.TMP_Text text = default;
         string url;
         string filename;
         bool firstTime = true;

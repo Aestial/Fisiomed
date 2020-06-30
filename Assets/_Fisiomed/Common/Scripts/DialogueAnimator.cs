@@ -6,7 +6,7 @@ using TMPro;
 
 public class DialogueAnimator : MonoBehaviour 
 {
-	[SerializeField] private float frequency;
+	[SerializeField] private float frequency = default;
 
 	private TMP_Text m_TextComponent;
 	private string m_Text;

@@ -5,7 +5,7 @@ namespace Fisiomed.UI
 {
     public class PasswordUncover : MonoBehaviour
     {
-        [SerializeField] TMP_InputField inputField;
+        [SerializeField] TMP_InputField inputField = default;
         bool isCovered = true;
         public void ToggleCover(bool isActive)
         {

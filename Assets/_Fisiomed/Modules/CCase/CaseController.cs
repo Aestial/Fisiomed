@@ -11,11 +11,11 @@ namespace Fisiomed.Case
     public class CaseController : Singleton<CaseController>
     {        
         [Header("Data")]
-        [SerializeField] bool useDefault;
-        [SerializeField] string defaultUrl;
-        [SerializeField] string closeSceneName;
+        [SerializeField] bool useDefault = default;
+        [SerializeField] string defaultUrl = default;
+        [SerializeField] string closeSceneName = default;
         [Header("Visuals")]
-        [SerializeField] float loaderTime;
+        [SerializeField] float loaderTime = default;
         CCase ccase;
         public void Close()
         {

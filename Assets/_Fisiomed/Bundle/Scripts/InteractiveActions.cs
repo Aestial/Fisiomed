@@ -2,8 +2,8 @@
 using Fisiomed.Chat;
 public class InteractiveActions : MonoBehaviour
 {
-    [SerializeField] bool destroyObject;
-    [SerializeField] GameObject target;
+    [SerializeField] bool destroyObject = default;
+    [SerializeField] GameObject target = default;
     public void Close()
     {
         if (destroyObject)

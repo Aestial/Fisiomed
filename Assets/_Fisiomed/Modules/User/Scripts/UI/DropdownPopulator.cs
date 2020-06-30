@@ -6,7 +6,7 @@ namespace Fisiomed.UI
 {
     public class DropdownPopulator : MonoBehaviour
     {
-        [SerializeField] TMP_Dropdown dropdown;
+        [SerializeField] TMP_Dropdown dropdown = default;
         public int startValue;
         public int endValue;
         List<string> options;

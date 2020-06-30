@@ -14,16 +14,16 @@ namespace Fisiomed.Video
     public class FullscreenUIController : MonoBehaviour
     {
         [Header("Canvas elements for show and hide")]
-        [SerializeField] Canvas videoCanvas;
-        [SerializeField] Canvas controlCanvas;
+        [SerializeField] Canvas videoCanvas = default;
+        [SerializeField] Canvas controlCanvas = default;
 
         [Header("Skin object and customizable UI elements")]
-        [SerializeField] FullscreenUISkin skin;
-        [SerializeField] Image backgroundImage;
-        [SerializeField] Image scrubHandleImage;
-        [SerializeField] Image[] panelsImages;
-        [SerializeField] Image[] buttonsImages;
-        [SerializeField] Image[] buttonsBackImages;
+        [SerializeField] FullscreenUISkin skin = default;
+        [SerializeField] Image backgroundImage = default;
+        [SerializeField] Image scrubHandleImage = default;
+        [SerializeField] Image[] panelsImages = default;
+        [SerializeField] Image[] buttonsImages = default;
+        [SerializeField] Image[] buttonsBackImages = default;
 
         public void Show(bool enabled)
         {

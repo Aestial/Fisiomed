@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class ImageRadialAnimation : MonoBehaviour 
 {
-	[SerializeField] private float speed;
+	[SerializeField] private float speed = default;
 	private float fill;
 	private Image image;
 

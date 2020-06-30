@@ -5,7 +5,7 @@ namespace Fisiomed.UI.Validator
     public class Dropdown : Validatable, IDropdown
     {
         [SerializeField] internal int startOption = 1;
-        [SerializeField] internal DropdownPopulator dropdownPopulator;
+        [SerializeField] internal DropdownPopulator dropdownPopulator = default;
 
         public void Validate(int option)
         {

@@ -11,12 +11,12 @@ namespace Fisiomed.Main
     [RequireComponent(typeof(Button))]
     public class CCaseButtonController : MonoBehaviour
     {
-        [SerializeField] string nextScene;
-        [SerializeField] string defaultUrl;
-        [SerializeField] TMP_Text textView;
-        [SerializeField] Gradient2 gradient;
-        [SerializeField] Image[] dots;
-        [SerializeField] Image image;
+        [SerializeField] string nextScene = default;
+        [SerializeField] string defaultUrl = default;
+        [SerializeField] TMP_Text textView = default;
+        [SerializeField] Gradient2 gradient = default;
+        [SerializeField] Image[] dots = default;
+        [SerializeField] Image image = default;
         Button button;
 
         void Awake()

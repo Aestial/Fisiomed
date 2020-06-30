@@ -8,8 +8,8 @@ namespace Fisiomed.App
     public class AppManager : Singleton<AppManager>
     {
         public bool iAmFirst;
-        [SerializeField] private float sceneChangeDelay;
-        [SerializeField] private GameObject loaderPrefab;
+        [SerializeField] private float sceneChangeDelay = default;
+        [SerializeField] private GameObject loaderPrefab = default;
         LoaderController loader;
 
         // Called first

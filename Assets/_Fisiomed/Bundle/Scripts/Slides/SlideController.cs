@@ -8,9 +8,9 @@ public class SlideController : MonoBehaviour
 {
     [SerializeField] float appearSpeed = 0.5f;
     [SerializeField] float disappearSpeed = 1.0f;    
-    [SerializeField] bool isVisible;
-    [SerializeField] UnityEvent onFadedIn;
-    [SerializeField] UnityEvent onFadedOut;
+    [SerializeField] bool isVisible = default;
+    [SerializeField] UnityEvent onFadedIn = default;
+    [SerializeField] UnityEvent onFadedOut = default;
     CanvasGroup canvasGroup;
 
     void Start()
