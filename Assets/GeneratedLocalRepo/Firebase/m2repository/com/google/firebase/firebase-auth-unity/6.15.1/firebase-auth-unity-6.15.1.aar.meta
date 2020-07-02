@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: a4f793f034c2a45edbe7a28faf83b48a
+guid: 0d8cda96dafcaa049a1cb7606d0ed2ad
 labels:
 - gpsr
-- gvh
-- gvh_version-6.15.0
-- gvhp_exportpath-Firebase/m2repository/com/google/firebase/firebase-database-unity/6.15.0/firebase-database-unity-6.15.0.srcaar
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2

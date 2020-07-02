@@ -15,10 +15,8 @@ namespace Fisiomed.User
     public class UserManager : Singleton<UserManager>
     {
         [SerializeField] string filename = default;
-
         private string filePath;
         private readonly StringStringDictionary temp = new StringStringDictionary();
-
         private FirebaseDatabase _database;
         private FirebaseUser _firebaseUser;
         public FirebaseUser FirebaseUser
@@ -31,9 +29,9 @@ namespace Fisiomed.User
             {
                 _firebaseUser = value;
                 PrintUser(_firebaseUser);
+                _database = FirebaseManager.Instance.Database;
             }
-        }       
-
+        }
         public User User { get; set; } = new User();
 
         public void SetUserProperty(string value, string key)
@@ -43,56 +41,71 @@ namespace Fisiomed.User
             else
                 User.properties.Add(key, value);       
         }
-
         public void SetUserLoginData(string value, string key)
         {
             if (temp.ContainsKey(key))
                 temp[key] = value;
             else
                 temp.Add(key, value);
-        }
-        
+        }        
         public async void SignUp()
         {
             string email = User.properties["email"];
             string password = User.properties["password"];
-            Log.Color("Signing Up User: " + email, this);
+            string json = JsonUtility.ToJson(User);
+
+            Log.Color("Signing Up User: " + email, this); 
+            SaveJSONLocal(json);           
+
+            // Create Auth user
             try
             {
-                var createdResult = await FirebaseManager.Instance.Auth.CreateUserWithEmailAndPasswordAsync(email, password);                
-                FirebaseManager.Instance.User = createdResult;
-                _firebaseUser = FirebaseManager.Instance.User;
+                var createdResult = await FirebaseManager.Instance.Auth.CreateUserWithEmailAndPasswordAsync(email, password);
+                _firebaseUser = FirebaseManager.Instance.User = createdResult;
                 Debug.LogFormat("Firebase user created successfully: {0} ({1},{2}) ",
                             FirebaseManager.Instance.User.DisplayName,
                             FirebaseManager.Instance.User.UserId,
                             FirebaseManager.Instance.User.Email);
-                PopupManager.Instance.PrintMessage("Firebase user created successfully: " +
-                        FirebaseManager.Instance.User.Email);
+                PopupManager.Instance.PrintMessage("Firebase user created successfully: " + FirebaseManager.Instance.User.Email);
 
                 UserProfile profile = new UserProfile();
                 // TODO: Change for Username
                 profile.DisplayName = User.properties["name"];
                 // TODO: Set Photo URL
-                //string url;
-                //profile.PhotoUrl = url; 
-                await FirebaseManager.Instance.User.UpdateUserProfileAsync(profile);
+                // profile.PhotoUrl = User.properties["photoUrl"];     
 
-                string json = JsonUtility.ToJson(User);
-                await _database.GetReference("users").Child(_firebaseUser.UserId).SetRawJsonValueAsync(json);
-                SaveJSONLocal(json);
-                    
-                Debug.LogFormat("User data saved: {0} ({1})",
-                    _firebaseUser.DisplayName, _firebaseUser.UserId);
-                PopupManager.Instance.PrintMessage("User saved: " + FirebaseManager.Instance.User.DisplayName);
+                // Update user Auth Profile
+                try
+                {
+                    await FirebaseManager.Instance.User.UpdateUserProfileAsync(profile);
+                    Debug.LogFormat("User data updated: {0} ({1})", _firebaseUser.DisplayName, _firebaseUser.UserId);
+                    PopupManager.Instance.PrintMessage("User saved: " + FirebaseManager.Instance.User.DisplayName);
+                }
+                catch (AggregateException ex)
+                {
+                    Log.ColorError("UpdateUserProfileAsync encountered an error: " + ex.Message + " Data: " + ex.Data.Values, this);
+                    PopupManager.Instance.PrintMessage("Updating user error: " + ex.Message);
+                }                               
+                // Save user in Database
+                try
+                {
+                    await _database.GetReference("users").Child(_firebaseUser.UserId).SetRawJsonValueAsync(json);
+                    Debug.LogFormat("User data saved (DB): {0} ({1})", _firebaseUser.DisplayName, _firebaseUser.UserId);
+                    PopupManager.Instance.PrintMessage("User saved in DB: " + FirebaseManager.Instance.User.DisplayName);
+                }
+                catch (AggregateException ex)
+                {
+                    Log.ColorError("SetRawJsonValueAsync encountered an error: " + ex.Message + " Data: " + ex.Data.Values, this);
+                    PopupManager.Instance.PrintMessage("Saving in DB user error: " + ex.Message);
+                }               
             }
             catch (AggregateException ex)
             {
                 // The exception will be caught because you've awaited the call in an async method.
                 Log.ColorError("CreateUserWithEmailAndPasswordAsync encountered an error: " + ex.Message + " Data: " + ex.Data.Values, this);
-                PopupManager.Instance.PrintMessage("Creating error: " + ex.Message);
+                PopupManager.Instance.PrintMessage("Creating user error: " + ex.Message);
             }           
         }
-
         public async void LogIn()
         {
             string email = temp["email"];
@@ -102,23 +115,24 @@ namespace Fisiomed.User
             try
             {
                 var loginResult = await FirebaseManager.Instance.Auth.SignInWithEmailAndPasswordAsync(email, password);
-                FirebaseManager.Instance.User = loginResult;
-                _firebaseUser = FirebaseManager.Instance.User;
+                _firebaseUser = FirebaseManager.Instance.User = loginResult;
                 Debug.LogFormat("Firebase user retrieved successfully: {0} ({1},{2}) ",
                             FirebaseManager.Instance.User.DisplayName,
                             FirebaseManager.Instance.User.UserId,
                             FirebaseManager.Instance.User.Email);
-                PopupManager.Instance.PrintMessage("Firebase user logged successfully: " +
-                        FirebaseManager.Instance.User.Email);
-
-                DataSnapshot dss = await _database.GetReference(_firebaseUser.UserId).GetValueAsync();
-                string json = dss.GetRawJsonValue();
-                User = GetFromJson(json);
-                SaveJSONLocal(json);
-
-                Debug.LogFormat("User logged in successfully: {0} ({1})",
-                    _firebaseUser.DisplayName, _firebaseUser.UserId);
-                PopupManager.Instance.PrintMessage("User logged: " + FirebaseManager.Instance.User.UserId);                
+                PopupManager.Instance.PrintMessage("Firebase user logged successfully: " + FirebaseManager.Instance.User.Email);
+                try
+                {
+                    DataSnapshot dss = await _database.GetReference(_firebaseUser.UserId).GetValueAsync();
+                    string json = dss.GetRawJsonValue();
+                    User = GetFromJson(json);
+                    SaveJSONLocal(json);
+                }
+                catch (AggregateException ex)
+                {
+                    Log.ColorError("GetRawJsonValue encountered an error: " + ex.Message + " Data: " + ex.Data.Values, this);
+                    PopupManager.Instance.PrintMessage("Getting user from DB error: " + ex.Message);
+                }                
             }
             catch (AggregateException ex)
             {
@@ -152,7 +166,7 @@ namespace Fisiomed.User
         }
         private void Start()
         {
-            _database = FirebaseDatabase.DefaultInstance;
+            //_database = FirebaseDatabase.DefaultInstance;
         }
         private void Update()
         {
