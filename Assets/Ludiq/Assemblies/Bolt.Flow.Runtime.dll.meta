@@ -4,8 +4,14 @@ PluginImporter:
   externalObjects: {}
   serializedVersion: 2
   iconMap:
-    Bolt.FlowMachine: {fileID: 2800000, guid: fe5b77214c748b64ba5033f2af1b4c34, type: 3}
-    Bolt.FlowMacro: {fileID: 2800000, guid: b33b72199830c924da117a3cf9f3b69e, type: 3}
+    Bolt.FlowMachine:
+      fileID: 2800000
+      guid: fe5b77214c748b64ba5033f2af1b4c34
+      type: 3
+    Bolt.FlowMacro:
+      fileID: 2800000
+      guid: b33b72199830c924da117a3cf9f3b69e
+      type: 3
   executionOrder: {}
   defineConstraints: []
   isPreloaded: 0
@@ -20,7 +26,7 @@ PluginImporter:
       settings:
         ScriptingBackend: Il2Cpp
   - first:
-      Any: 
+      Any: ''
     second:
       enabled: 0
       settings: {}
@@ -42,11 +48,6 @@ PluginImporter:
       settings: {}
   - first:
       PS4: PS4
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      Stadia: Stadia
     second:
       enabled: 1
       settings: {}
@@ -107,6 +108,7 @@ PluginImporter:
     second:
       enabled: 1
       settings: {}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData: ''
+  assetBundleName: ''
+  assetBundleVariant: ''
+...

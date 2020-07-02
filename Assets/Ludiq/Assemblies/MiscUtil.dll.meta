@@ -43,11 +43,6 @@ PluginImporter:
       enabled: 1
       settings: {}
   - first:
-      Stadia: Stadia
-    second:
-      enabled: 1
-      settings: {}
-  - first:
       Standalone: Linux
     second:
       enabled: 1
