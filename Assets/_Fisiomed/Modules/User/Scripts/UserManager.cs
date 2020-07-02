@@ -78,9 +78,9 @@ namespace Fisiomed.User
                 await FirebaseManager.Instance.User.UpdateUserProfileAsync(profile);
 
                 string json = JsonUtility.ToJson(User);
-                await _database.GetReference(_firebaseUser.UserId).SetRawJsonValueAsync(json);
+                await _database.GetReference("users").Child(_firebaseUser.UserId).SetRawJsonValueAsync(json);
                 SaveJSONLocal(json);
-
+                    
                 Debug.LogFormat("User data saved: {0} ({1})",
                     _firebaseUser.DisplayName, _firebaseUser.UserId);
                 PopupManager.Instance.PrintMessage("User saved: " + FirebaseManager.Instance.User.DisplayName);
