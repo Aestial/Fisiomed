@@ -16,7 +16,7 @@ namespace Fisiomed.App
         void Awake()
         {
             #region Don't Destroy OnLoad Singleton
-            DontDestroyOnLoad(Instance);
+            //DontDestroyOnLoad(Instance);
             AppManager[] appManagers = FindObjectsOfType(typeof(AppManager)) as AppManager[];
             if (appManagers.Length > 1)
             {
