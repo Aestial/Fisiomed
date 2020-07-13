@@ -20,6 +20,10 @@ namespace Fisiomed.User
         {
             get
             {
+                if (_firebaseUser == null)
+                {
+                    return FirebaseManager.Instance.User;
+                }
                 return _firebaseUser;
             }
             set
@@ -31,25 +35,29 @@ namespace Fisiomed.User
                 PrintUser(_firebaseUser);                
             }
         }
-        [SerializeField] User _user = new User();
-        public User User
+        [SerializeField] UserData _userDataAux = new UserData();
+        public UserData UserDataAux
         {
             get
             {
-                return _user;
+                if (_userDataAux == null)
+                {
+                    _userDataAux = new UserData();                    
+                }
+                return _userDataAux;
             }
             set
             {
-                _user = value;
+                _userDataAux = value;
             }
         }
 
         public void SetUserProperty(string value, string key)
         {
-            if (_user.properties.ContainsKey(key))
-                _user.properties[key] = value;
+            if (UserDataAux.properties.ContainsKey(key))
+                UserDataAux.properties[key] = value;
             else
-                _user.properties.Add(key, value);       
+                UserDataAux.properties.Add(key, value);       
         }
         public void SetUserLoginData(string value, string key)
         {
@@ -60,9 +68,9 @@ namespace Fisiomed.User
         }        
         public async void SignUp()
         {
-            string email = _user.properties["email"];
-            string password = _user.properties["password"];
-            string json = JsonUtility.ToJson(_user);
+            string email = UserDataAux.properties["email"];
+            string password = UserDataAux.properties["password"];
+            string json = JsonUtility.ToJson(UserDataAux);
 
             Log.Color("Signing Up User: " + email, this); 
             SaveJSONLocal(json);           
@@ -80,7 +88,7 @@ namespace Fisiomed.User
 
                 UserProfile profile = new UserProfile();
                 // TODO: Change for Username
-                profile.DisplayName = _user.properties["name"];
+                profile.DisplayName = UserDataAux.properties["name"];
                 // TODO: Set Photo URL
                 // profile.PhotoUrl = _user.properties["photoUrl"];     
 
@@ -149,7 +157,7 @@ namespace Fisiomed.User
                 Log.Color(dss.ToString(), this);
                 string json = dss.GetRawJsonValue();
                 Log.Color(json, this);
-                User = GetFromJson(json);
+                UserDataAux = GetFromJson(json);
                 SaveJSONLocal(json);
             }
             catch (AggregateException ex)
@@ -161,8 +169,8 @@ namespace Fisiomed.User
 
         public void SignOut()
         {
-            Log.Color("Signing out user: " + _firebaseUser.DisplayName, this);
-            PopupManager.Instance.PrintMessage("Signing out: " + _firebaseUser.DisplayName);
+            Log.Color("Signing out user: " + FirebaseUser.DisplayName, this);
+            PopupManager.Instance.PrintMessage("Signing out: " + FirebaseUser.DisplayName);
             FirebaseManager.Instance.Auth.SignOut();
         }
 
@@ -170,16 +178,15 @@ namespace Fisiomed.User
         {
             string path = Application.persistentDataPath;
             filePath = Path.Combine(path, filename);
-
             if (File.Exists(filePath))
             {
                 Log.Color("User file exists in:" + filePath, this);
-                User = GetFromJson(File.ReadAllText(filePath));
+                UserDataAux = GetFromJson(File.ReadAllText(filePath));
             }
-            else
-            {
-                User = new User();
-            }
+            //else
+            //{
+            //    UserDataAux = new UserData();
+            //}
         }
         void Update()
         {
@@ -188,10 +195,10 @@ namespace Fisiomed.User
                 SignOut();
             }
         }
-        private User GetFromJson(string json)
+        private UserData GetFromJson(string json)
         {
             Log.Color("Getting User from JSON: " + json, this);
-            User user = JsonUtility.FromJson<User>(json);
+            UserData user = JsonUtility.FromJson<UserData>(json);
             return user;
         }
         private void SaveJSONLocal(string json)

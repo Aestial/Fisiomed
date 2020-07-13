@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -2428,7 +2428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0, g: 0.47843137, b: 0.8901961, a: 0.16862746}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -3738,7 +3738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -4036,6 +4036,11 @@ PrefabInstance:
     - target: {fileID: 3396173113262015982, guid: 4f474b91492154ea395231af16854659,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550513542528604441, guid: 4f474b91492154ea395231af16854659,
+        type: 3}
+      propertyPath: iAmFirst
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7145040290006007449, guid: 4f474b91492154ea395231af16854659,
@@ -4603,7 +4608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -4941,7 +4946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -6999,7 +7004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
@@ -7348,7 +7353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -8428,7 +8433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -9499,7 +9504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -9984,7 +9989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -10300,7 +10305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -10667,7 +10672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -11534,7 +11539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -11744,7 +11749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -13303,7 +13308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -13716,7 +13721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -13921,7 +13926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -14690,7 +14695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -15416,7 +15421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -15856,7 +15861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -16019,7 +16024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -16674,7 +16679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -17087,39 +17092,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010720115}
   m_CullTransparentMesh: 0
---- !u!21 &1021254711
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/Procedural UI Image
-  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1023231280
 GameObject:
   m_ObjectHideFlags: 0
@@ -17198,7 +17170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -18123,7 +18095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -18703,7 +18675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -19212,7 +19184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -19302,7 +19274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -19392,7 +19364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -19729,7 +19701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -20198,7 +20170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -20287,7 +20259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -20708,7 +20680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -21108,7 +21080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -21345,6 +21317,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283250171}
   m_CullTransparentMesh: 0
+--- !u!21 &1295368392
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/Procedural UI Image
+  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1300233451
 GameObject:
   m_ObjectHideFlags: 0
@@ -21519,7 +21524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -22979,7 +22984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -23068,7 +23073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -23553,7 +23558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -24224,7 +24229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -24778,7 +24783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -25135,7 +25140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -25278,7 +25283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -25717,7 +25722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -29572,7 +29577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -29919,7 +29924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -30328,7 +30333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -33160,160 +33165,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
---- !u!1 &1991348324
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1991348326}
-  - component: {fileID: 1991348325}
-  m_Layer: 0
-  m_Name: FirebaseManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1991348325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991348324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c03bda7681b4d448a27493b2b51b63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnFirebaseInitialized:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1085296564}
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SignOut
-          m_BoolArgument: 0
-        m_CallState: 0
-      - m_Target: {fileID: 1051102708}
-        m_MethodName: PrintMessage
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Firebase Initialized!
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnFirebaseUserSignedIn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1185918977}
-        m_MethodName: set_FirebaseUser
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1705974080792366113}
-        m_MethodName: ChangeSceneDelayBefore
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: MainMenuScene
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1051102708}
-        m_MethodName: PrintMessage
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Signed in, accessing...
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnFirebaseUserSignedOut:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1051102708}
-        m_MethodName: PrintMessage
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Signed Out!
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1085296564}
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SignOut
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnFirebaseUserNull:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1085296564}
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SignOut
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1051102708}
-        m_MethodName: PrintMessage
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Welcome new user!
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!4 &1991348326
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991348324}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 534.3844, y: 772.8329, z: -100.623985}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1996696282
 GameObject:
   m_ObjectHideFlags: 0
@@ -33972,7 +33823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -34077,7 +33928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -34243,7 +34094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -34505,7 +34356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -34949,7 +34800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -35039,7 +34890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -35128,7 +34979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -35563,7 +35414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -35674,7 +35525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -36251,7 +36102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -36341,7 +36192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1021254711}
+  m_Material: {fileID: 1295368392}
   m_Color: {r: 0.007843138, g: 0.53333336, b: 0.81960785, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -36694,6 +36545,125 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73bbd3872706d4badac1a0cc243f684b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &6309758765119132617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6309758766437155756, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: OnFirebaseInitialized.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1085296564}
+    - target: {fileID: 6309758766437155756, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: OnFirebaseInitialized.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1051102708}
+    - target: {fileID: 6309758766437155756, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: OnFirebaseUserSignedIn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1185918977}
+    - target: {fileID: 6309758766437155756, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: OnFirebaseUserSignedIn.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1705974080792366113}
+    - target: {fileID: 6309758766437155756, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: OnFirebaseUserSignedIn.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1051102708}
+    - target: {fileID: 6309758766437155756, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: OnFirebaseUserSignedOut.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1051102708}
+    - target: {fileID: 6309758766437155756, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: OnFirebaseUserSignedOut.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1085296564}
+    - target: {fileID: 6309758766437155756, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: OnFirebaseUserNull.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1085296564}
+    - target: {fileID: 6309758766437155756, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: OnFirebaseUserNull.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1051102708}
+    - target: {fileID: 6309758766437155756, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: iAmFirst
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155757, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_Name
+      value: FirebaseManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 534.3844
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 772.8329
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -100.623985
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309758766437155759, guid: fb2a50b563f224a5a870a93ac9e9f0eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb2a50b563f224a5a870a93ac9e9f0eb, type: 3}
 --- !u!1001 &7831485576534791784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36705,6 +36675,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AppManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864158017958222409, guid: b60b5468e58d9473ba5fad0acbefc5a9,
+        type: 3}
+      propertyPath: iAmFirst
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8864158017958222410, guid: b60b5468e58d9473ba5fad0acbefc5a9,
         type: 3}

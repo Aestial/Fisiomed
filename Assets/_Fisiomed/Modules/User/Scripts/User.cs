@@ -8,13 +8,13 @@ namespace Fisiomed.User
     public class StringStringDictionary : SerializableDictionaryBase<string,string> { }
     
     [Serializable]
-    public class User
+    public class UserData
     {
         public string id; // DB ID
         public StringStringDictionary properties;
         //public GameProfile gamer;
         //public PersonalProfile personal;
-        public User()
+        public UserData()
         {
             //gamer = new GameProfile();
             //personal = new PersonalProfile();

@@ -9,6 +9,8 @@ using UnityEngine.Events;
 
 namespace Fisiomed.FirebaseServices
 {
+    using App;
+
     [System.Serializable]
     public class FirebaseUserEvent : UnityEvent<FirebaseUser>
     {
@@ -20,10 +22,10 @@ namespace Fisiomed.FirebaseServices
     /// fail on device.
     /// </summary>
     /// 
-    public class FirebaseManager : MonoBehaviour
+    public class FirebaseManager : Singleton<FirebaseManager>
     {
         private static FirebaseManager _instance;
-        public static FirebaseManager Instance
+        public static new FirebaseManager Instance
         {
             get
             {
@@ -97,21 +99,30 @@ namespace Fisiomed.FirebaseServices
         public UnityEvent OnFirebaseUserSignedOut = new UnityEvent();
         public UnityEvent OnFirebaseUserNull = new UnityEvent();
 
-        private readonly UnityEvent OnDestroyed = new UnityEvent();
+        public bool iAmFirst;
 
         private async void Awake()
         {
+            #region Don't Destroy OnLoad Singleton
+            DontDestroyOnLoad(Instance);
+            AppManager[] appManagers = FindObjectsOfType(typeof(AppManager)) as AppManager[];
+            if (appManagers.Length > 1)
+            {
+                for (int i = 0; i < appManagers.Length; i++)
+                {
+                    if (!appManagers[i].iAmFirst)
+                        DestroyImmediate(appManagers[i].gameObject);
+                }
+            }
+            else
+            {
+                iAmFirst = true;
+                await InitializeFirebase();
+                _instance = this;
+            }                
+            #endregion            
             // Add Listeners
             OnFirebaseInitialized.AddListener(InitializeAuth);
-            OnDestroyed.AddListener(DestroyAuth);
-
-            if (_instance == null)
-            {
-                DontDestroyOnLoad(gameObject);
-                _instance = this;
-
-                await InitializeFirebase();                
-            }
         }
 
         private void InitializeAuth()
@@ -120,12 +131,6 @@ namespace Fisiomed.FirebaseServices
             _auth = FirebaseAuth.GetAuth(App);
             _auth.StateChanged += AuthStateChanged;
             //AuthStateChanged(this, null);
-        }
-
-        private void DestroyAuth()
-        {
-            _auth.StateChanged -= AuthStateChanged;
-            _auth = null;
         }
 
         // Track state changes of the auth object.
@@ -137,8 +142,10 @@ namespace Fisiomed.FirebaseServices
                 bool signedIn = _user != _auth.CurrentUser && _auth.CurrentUser != null;
                 if (!signedIn && _user != null)
                 {
-                    Log.Color("Signed out " + _user.UserId, this);
+                    Log.Color("Signed out " + _user.UserId, this);                    
                     OnFirebaseUserSignedOut.Invoke();
+                    AppManager.Instance.ChangeScene("AuthScene");
+
                 }
                 _user = _auth.CurrentUser;
                 if (signedIn)
@@ -171,20 +178,19 @@ namespace Fisiomed.FirebaseServices
         }
 
         private void OnDestroy()
-        {
+        { 
+            _auth.StateChanged -= AuthStateChanged;
+            _auth = null;
             _database = null;
             _app = null;
             _user = null;
+
             if (_instance == this)
             {
                 _instance = null;
-            }
-
-            OnDestroyed.Invoke();
-
+            }           
             // Remove Listeners
-            OnFirebaseInitialized.RemoveAllListeners();
-            OnDestroyed.RemoveAllListeners();
+            OnFirebaseInitialized.RemoveAllListeners();            
         }
 
         private static FirebaseManager LazyInitFirebaseManager()

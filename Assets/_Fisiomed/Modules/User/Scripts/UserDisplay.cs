@@ -16,11 +16,10 @@ namespace Fisiomed.User
         {
             for (int i = 0; i < keys.Length; i++)
             {
-                values.Add(UserManager.Instance.User.properties[keys[i]]);
+                values.Add(UserManager.Instance.UserDataAux.properties[keys[i]]);
             }
             content = string.Format(format, values.ToArray());
             text.text = content;     
         }
     }
 }
- 
