@@ -1,13 +1,10 @@
 ﻿using System.IO;
-using System.Threading.Tasks;
 using Firebase.Auth;
 using Firebase.Database;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Fisiomed.User
 {
-    using App;
     using FirebaseServices;
     using Popup;
     using System;
@@ -28,18 +25,31 @@ namespace Fisiomed.User
             set
             {
                 _firebaseUser = value;
-                PrintUser(_firebaseUser);
                 _database = FirebaseManager.Instance.Database;
+                Log.Color(_database.ToString(), this);
+                RetrieveFromDB(_firebaseUser.UserId);
+                PrintUser(_firebaseUser);                
             }
         }
-        public User User { get; set; } = new User();
+        [SerializeField] User _user = new User();
+        public User User
+        {
+            get
+            {
+                return _user;
+            }
+            set
+            {
+                _user = value;
+            }
+        }
 
         public void SetUserProperty(string value, string key)
         {
-            if (User.properties.ContainsKey(key))
-                User.properties[key] = value;
+            if (_user.properties.ContainsKey(key))
+                _user.properties[key] = value;
             else
-                User.properties.Add(key, value);       
+                _user.properties.Add(key, value);       
         }
         public void SetUserLoginData(string value, string key)
         {
@@ -50,9 +60,9 @@ namespace Fisiomed.User
         }        
         public async void SignUp()
         {
-            string email = User.properties["email"];
-            string password = User.properties["password"];
-            string json = JsonUtility.ToJson(User);
+            string email = _user.properties["email"];
+            string password = _user.properties["password"];
+            string json = JsonUtility.ToJson(_user);
 
             Log.Color("Signing Up User: " + email, this); 
             SaveJSONLocal(json);           
@@ -70,9 +80,9 @@ namespace Fisiomed.User
 
                 UserProfile profile = new UserProfile();
                 // TODO: Change for Username
-                profile.DisplayName = User.properties["name"];
+                profile.DisplayName = _user.properties["name"];
                 // TODO: Set Photo URL
-                // profile.PhotoUrl = User.properties["photoUrl"];     
+                // profile.PhotoUrl = _user.properties["photoUrl"];     
 
                 // Update user Auth Profile
                 try
@@ -121,24 +131,31 @@ namespace Fisiomed.User
                             FirebaseManager.Instance.User.UserId,
                             FirebaseManager.Instance.User.Email);
                 PopupManager.Instance.PrintMessage("Firebase user logged successfully: " + FirebaseManager.Instance.User.Email);
-                try
-                {
-                    DataSnapshot dss = await _database.GetReference(_firebaseUser.UserId).GetValueAsync();
-                    string json = dss.GetRawJsonValue();
-                    User = GetFromJson(json);
-                    SaveJSONLocal(json);
-                }
-                catch (AggregateException ex)
-                {
-                    Log.ColorError("GetRawJsonValue encountered an error: " + ex.Message + " Data: " + ex.Data.Values, this);
-                    PopupManager.Instance.PrintMessage("Getting user from DB error: " + ex.Message);
-                }                
+                RetrieveFromDB(_firebaseUser.UserId);                                
             }
             catch (AggregateException ex)
             {
                 // The exception will be caught because you've awaited the call in an async method.
                 Log.ColorError("SignInWithEmailAndPasswordAsync encountered an error: " + ex.Message + " Data: " + ex.Data.Values, this);
                 PopupManager.Instance.PrintMessage("Logging error: " + ex.Message);
+            }
+        }
+
+        private async void RetrieveFromDB(string userId)
+        {
+            try
+            {
+                DataSnapshot dss = await _database.GetReference("users").Child(_firebaseUser.UserId).GetValueAsync();
+                Log.Color(dss.ToString(), this);
+                string json = dss.GetRawJsonValue();
+                Log.Color(json, this);
+                User = GetFromJson(json);
+                SaveJSONLocal(json);
+            }
+            catch (AggregateException ex)
+            {
+                Log.ColorError("GetRawJsonValue encountered an error: " + ex.Message + " Data: " + ex.Data.Values, this);
+                PopupManager.Instance.PrintMessage("Getting user from DB error: " + ex.Message);
             }
         }
 
@@ -156,7 +173,7 @@ namespace Fisiomed.User
 
             if (File.Exists(filePath))
             {
-                Log.Color("File path:" + filePath, this);
+                Log.Color("User file exists in:" + filePath, this);
                 User = GetFromJson(File.ReadAllText(filePath));
             }
             else
@@ -164,11 +181,7 @@ namespace Fisiomed.User
                 User = new User();
             }
         }
-        private void Start()
-        {
-            //_database = FirebaseDatabase.DefaultInstance;
-        }
-        private void Update()
+        void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -177,14 +190,13 @@ namespace Fisiomed.User
         }
         private User GetFromJson(string json)
         {
-            Log.Color(json, this);
+            Log.Color("Getting User from JSON: " + json, this);
             User user = JsonUtility.FromJson<User>(json);
-            Log.Color(user.ToString(), this);
             return user;
         }
         private void SaveJSONLocal(string json)
         {
-            Log.Color("Saving JSON Local: " + json, this);
+            Log.Color("Saving JSON locally: " + json, this);
             File.WriteAllText(filePath, json);
         }
         private void PrintUser(FirebaseUser user)
@@ -192,24 +204,5 @@ namespace Fisiomed.User
             Log.Color("Current User: " + user.DisplayName, this);
             PopupManager.Instance.PrintMessage("Current: " + user.DisplayName);
         }
-
-        //public async Task<bool> SaveJSONOnDatabase(string userData)
-        //{
-        //    FirebaseUser fUser = FirebaseManager.Instance.User;
-        //    var dataSnapshot = await _database.GetReference(fUser.UserId).SetRawJsonValueAsync(userData);
-        //    return dataSnapshot.Exists;
-        //}
-        //void OnEnable()
-        //{
-        //    SceneManager.sceneLoaded += OnSceneLoaded;
-        //}
-        //void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        //{
-        //    Log.Color("On Scene Loaded: " + scene.name, this);            
-        //}
-        //void OnDisable()
-        //{
-        //    SceneManager.sceneLoaded -= OnSceneLoaded;
-        //}
     }
 }
