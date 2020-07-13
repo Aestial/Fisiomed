@@ -51,15 +51,15 @@ MonoBehaviour:
     - Fisiomed.Video.VideoManager
     - Fisiomed.FirebaseServices.FirebaseManager
     _values:
-    - color: {r: 0.06666667, g: 0.5803922, b: 0.68235296, a: 1}
+    - color: {r: 0.12246352, g: 0.6037736, b: 0.48853034, a: 1}
       isActive: 1
-    - color: {r: 0.745283, g: 0.63921493, b: 0.094918124, a: 1}
+    - color: {r: 0.7176471, g: 0.40435672, b: 0.023529427, a: 1}
       isActive: 1
-    - color: {r: 0.5360979, g: 0.5943396, b: 0.036445368, a: 1}
+    - color: {r: 0.7264151, g: 0.2424784, b: 0.01713243, a: 1}
       isActive: 0
-    - color: {r: 0.6509434, g: 0.11974903, b: 0.49128383, a: 1}
+    - color: {r: 0.7264151, g: 0.0788092, b: 0.56234336, a: 1}
       isActive: 0
-    - color: {r: 0.7735849, g: 0.22580795, b: 0.0693307, a: 1}
+    - color: {r: 0.5294272, g: 0.099368125, b: 0.7264151, a: 1}
       isActive: 0
-    - color: {r: 0.6698113, g: 0.4193256, b: 0.0473923, a: 1}
+    - color: {r: 0.764151, g: 0.6063376, b: 0.039649345, a: 1}
       isActive: 1
