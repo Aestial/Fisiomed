@@ -19,6 +19,15 @@ namespace Fisiomed.Popup
             StartCoroutine(CheckForDeactivation());
         }
 
+        public void CleanMessages()
+        {
+            for (int i = 0; i < cardContainer.childCount; i++)
+            {
+                Destroy(cardContainer.GetChild(i).gameObject);
+            }
+            canvas.enabled = false;
+        }
+
         private IEnumerator CheckForDeactivation()
         {            
             while (cardContainer.childCount > 0)
@@ -31,7 +40,7 @@ namespace Fisiomed.Popup
         public bool iAmFirst;
 
         void Awake()
-        {
+        {            
             DontDestroyOnLoad(Instance);
             PopupManager[] managers = FindObjectsOfType(typeof(PopupManager)) as PopupManager[];
 
@@ -49,6 +58,10 @@ namespace Fisiomed.Popup
             {
                 iAmFirst = true;
             }
+        }
+        void Start()
+        {
+            CleanMessages();
         }
     }
 }
