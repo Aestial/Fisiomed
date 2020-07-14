@@ -123,7 +123,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1.9
+  bundleVersion: 0.2.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -173,7 +173,7 @@ PlayerSettings:
   buildNumber:
     iOS: 019
     iPhone: 019
-  AndroidBundleVersionCode: 109
+  AndroidBundleVersionCode: 200
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 28
   AndroidPreferredInstallLocation: 1
@@ -247,7 +247,7 @@ PlayerSettings:
   clonedFromGUID: 00000000000000000000000000000000
   templatePackageId: 
   templateDefaultScene: 
-  AndroidTargetArchitectures: 2
+  AndroidTargetArchitectures: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: '{inproject}: Keys/prod.keystore'

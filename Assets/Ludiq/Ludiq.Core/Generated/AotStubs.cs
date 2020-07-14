@@ -124,6 +124,9 @@ namespace Ludiq.Generated.Aot
 	// Fisiomed.UI.Validator.Validator.op_Equality
 	// Fisiomed.UI.Validator.Validator.op_Implicit
 	// Fisiomed.UI.Validator.Validator.op_Inequality
+	// Fisiomed.User.AuthSceneController.op_Equality
+	// Fisiomed.User.AuthSceneController.op_Implicit
+	// Fisiomed.User.AuthSceneController.op_Inequality
 	// Fisiomed.User.UserDisplay.op_Equality
 	// Fisiomed.User.UserDisplay.op_Implicit
 	// Fisiomed.User.UserDisplay.op_Inequality
@@ -2655,6 +2658,41 @@ namespace Ludiq.Generated.Aot
 		// Fisiomed.UI.Validator.Validator.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void Fisiomed_UI_Validator_Validator_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.User.AuthSceneController.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_User_AuthSceneController_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.User.AuthSceneController.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_User_AuthSceneController_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Fisiomed.User.AuthSceneController.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Fisiomed_User_AuthSceneController_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
