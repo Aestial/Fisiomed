@@ -17,17 +17,17 @@ namespace Fisiomed.App
         {
             #region Don't Destroy OnLoad Singleton
             //DontDestroyOnLoad(Instance);
-            AppManager[] appManagers = FindObjectsOfType(typeof(AppManager)) as AppManager[];
-            if (appManagers.Length > 1)
-            {
-                for (int i = 0; i < appManagers.Length; i++)
-                {
-                    if (!appManagers[i].iAmFirst)
-                        DestroyImmediate(appManagers[i].gameObject);
-                }
-            }
-            else
-                iAmFirst = true;
+            //AppManager[] appManagers = FindObjectsOfType(typeof(AppManager)) as AppManager[];
+            //if (appManagers.Length > 1)
+            //{
+            //    for (int i = 0; i < appManagers.Length; i++)
+            //    {
+            //        if (!appManagers[i].iAmFirst)
+            //            DestroyImmediate(appManagers[i].gameObject);
+            //    }
+            //}
+            //else
+            //    iAmFirst = true;
             #endregion
         }
         // Called second

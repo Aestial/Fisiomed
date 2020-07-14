@@ -9,11 +9,10 @@ using UnityEngine.Events;
 
 namespace Fisiomed.FirebaseServices
 {
-    using App;
-
     [System.Serializable]
     public class FirebaseUserEvent : UnityEvent<FirebaseUser>
     {
+
     }
     /// <summary>
     /// This should be added to a loading scene. It will initialize Firebase then indicate with an event when
@@ -22,10 +21,10 @@ namespace Fisiomed.FirebaseServices
     /// fail on device.
     /// </summary>
     /// 
-    public class FirebaseManager : Singleton<FirebaseManager>
+    public class FirebaseManager : MonoBehaviour
     {
         private static FirebaseManager _instance;
-        public static new FirebaseManager Instance
+        public static FirebaseManager Instance
         {
             get
             {
@@ -93,71 +92,36 @@ namespace Fisiomed.FirebaseServices
             }
         }
 
-        public UnityEvent OnFirebaseInitialized = new UnityEvent();
-
-        public FirebaseUserEvent OnFirebaseUserSignedIn = new FirebaseUserEvent();
-        public UnityEvent OnFirebaseUserSignedOut = new UnityEvent();
-        public UnityEvent OnFirebaseUserNull = new UnityEvent();
+        // TODO: Change for non editor serializable:
+        [HideInInspector] public UnityEvent OnFirebaseInitialized = new UnityEvent();
+        [HideInInspector] public FirebaseUserEvent OnFirebaseUserSignedIn = new FirebaseUserEvent();
+        [HideInInspector] public UnityEvent OnFirebaseUserSignedOut = new UnityEvent();
+        [HideInInspector] public UnityEvent OnFirebaseUserNull = new UnityEvent();
 
         public bool iAmFirst;
 
         private async void Awake()
         {
-            #region Don't Destroy OnLoad Singleton
-            DontDestroyOnLoad(Instance);
-            AppManager[] appManagers = FindObjectsOfType(typeof(AppManager)) as AppManager[];
-            if (appManagers.Length > 1)
+            FirebaseManager[] managers = FindObjectsOfType(typeof(FirebaseManager)) as FirebaseManager[];
+            if (managers.Length > 1)
             {
-                for (int i = 0; i < appManagers.Length; i++)
+                for (int i = 0; i < managers.Length; i++)
                 {
-                    if (!appManagers[i].iAmFirst)
-                        DestroyImmediate(appManagers[i].gameObject);
+                    if (!managers[i].iAmFirst)
+                    {
+                        DestroyImmediate(managers[i].gameObject);
+                    }
                 }
             }
             else
             {
                 iAmFirst = true;
-                await InitializeFirebase();
-                _instance = this;
-            }                
-            #endregion            
-            // Add Listeners
-            OnFirebaseInitialized.AddListener(InitializeAuth);
-        }
-
-        private void InitializeAuth()
-        {
-            Log.Color("Setting up Firebase Auth...", this);
-            _auth = FirebaseAuth.GetAuth(App);
-            _auth.StateChanged += AuthStateChanged;
-            //AuthStateChanged(this, null);
-        }
-
-        // Track state changes of the auth object.
-        void AuthStateChanged(object sender, System.EventArgs eventArgs)
-        {            
-            Log.Color("Firebase Auth state changed! " + eventArgs, this);
-            if (_auth.CurrentUser != _user)
-            {
-                bool signedIn = _user != _auth.CurrentUser && _auth.CurrentUser != null;
-                if (!signedIn && _user != null)
+                if (_instance == null)
                 {
-                    Log.Color("Signed out " + _user.UserId, this);                    
-                    OnFirebaseUserSignedOut.Invoke();
-                    AppManager.Instance.ChangeScene("AuthScene");
-
+                    DontDestroyOnLoad(gameObject);
+                    _instance = this;
+                    await InitializeFirebase();
                 }
-                _user = _auth.CurrentUser;
-                if (signedIn)
-                {
-                    Log.Color("Signed in " + _user.DisplayName + "(" + _user.UserId + ")", this);
-                    OnFirebaseUserSignedIn.Invoke(_user);
-                }
-            }
-            if (_user == null)
-            {
-                Log.Color("User doesn't exist.", this);
-                OnFirebaseUserNull.Invoke();
             }
         }
 
@@ -167,9 +131,10 @@ namespace Fisiomed.FirebaseServices
             var dependencyResult = await FirebaseApp.CheckAndFixDependenciesAsync();
             if (dependencyResult == DependencyStatus.Available)
             {
-                Log.Color($"Initialized successful.", this);
                 _app = FirebaseApp.DefaultInstance;
                 OnFirebaseInitialized.Invoke();
+                InitializeAuth();
+                PrintMessage($"Firebase initialized successfully.");                
             }
             else
             {
@@ -177,20 +142,63 @@ namespace Fisiomed.FirebaseServices
             }
         }
 
-        private void OnDestroy()
-        { 
-            _auth.StateChanged -= AuthStateChanged;
-            _auth = null;
-            _database = null;
-            _app = null;
-            _user = null;
+        private void InitializeAuth()
+        {
+            Log.Color("Setting up Firebase Auth...", this);
+            _auth = FirebaseAuth.GetAuth(App);
+            _auth.StateChanged += AuthStateChanged;
+        }
 
+        private void OnDestroy()
+        {
             if (_instance == this)
             {
+                _auth.StateChanged -= AuthStateChanged;
                 _instance = null;
+                _auth = null;
+                _database = null;
+                _app = null;
+                _user = null;
             }           
-            // Remove Listeners
-            OnFirebaseInitialized.RemoveAllListeners();            
+        }
+
+        // Track state changes of the auth object.
+        public void AuthStateChanged(object sender, EventArgs eventArgs)
+        {
+            Log.Color("Firebase Auth state changed! " + eventArgs, this);
+            try
+            {
+                if (_auth.CurrentUser != _user)
+                {
+                    bool signedIn = _user != _auth.CurrentUser && _auth.CurrentUser != null;
+                    if (!signedIn && _user != null)
+                    {
+                        PrintMessage("Signed Out" + _user.UserId);
+                        OnFirebaseUserSignedOut.Invoke();
+                    }
+                    _user = _auth.CurrentUser;
+                    if (signedIn)
+                    {
+                        PrintMessage("Signed in " + _user.DisplayName + "(" + _user.UserId + ")");
+                        OnFirebaseUserSignedIn.Invoke(_user);
+                    }
+                }
+                if (_user == null)
+                {
+                    PrintMessage("User doesn't exist.");
+                    OnFirebaseUserNull.Invoke();
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void PrintMessage(string message)
+        {
+            Log.Color(message, this);
+            Popup.PopupManager.Instance.PrintMessage(message);
         }
 
         private static FirebaseManager LazyInitFirebaseManager()

@@ -16,6 +16,9 @@ namespace Fisiomed.User
         private readonly StringStringDictionary temp = new StringStringDictionary();
         private FirebaseDatabase _database;
         private FirebaseUser _firebaseUser;
+
+        public bool isSignUp = false;
+
         public FirebaseUser FirebaseUser
         {
             get
@@ -31,8 +34,16 @@ namespace Fisiomed.User
                 _firebaseUser = value;
                 _database = FirebaseManager.Instance.Database;
                 Log.Color(_database.ToString(), this);
-                RetrieveFromDB(_firebaseUser.UserId);
-                PrintUser(_firebaseUser);                
+                if (isSignUp)
+                {
+                    PrintUser(_firebaseUser);
+                }
+                else
+                {
+                    RetrieveFromDB(_firebaseUser.UserId);
+                    PrintUser(_firebaseUser);
+                }
+                
             }
         }
         [SerializeField] UserData _userDataAux = new UserData();
@@ -72,7 +83,9 @@ namespace Fisiomed.User
             string password = UserDataAux.properties["password"];
             string json = JsonUtility.ToJson(UserDataAux);
 
-            Log.Color("Signing Up User: " + email, this); 
+            Log.Color("Signing Up User: " + email, this);
+
+            isSignUp = true;
             SaveJSONLocal(json);           
 
             // Create Auth user
@@ -115,14 +128,16 @@ namespace Fisiomed.User
                 {
                     Log.ColorError("SetRawJsonValueAsync encountered an error: " + ex.Message + " Data: " + ex.Data.Values, this);
                     PopupManager.Instance.PrintMessage("Saving in DB user error: " + ex.Message);
-                }               
+                }
             }
             catch (AggregateException ex)
             {
                 // The exception will be caught because you've awaited the call in an async method.
                 Log.ColorError("CreateUserWithEmailAndPasswordAsync encountered an error: " + ex.Message + " Data: " + ex.Data.Values, this);
                 PopupManager.Instance.PrintMessage("Creating user error: " + ex.Message);
-            }           
+            }
+
+            isSignUp = false;
         }
         public async void LogIn()
         {

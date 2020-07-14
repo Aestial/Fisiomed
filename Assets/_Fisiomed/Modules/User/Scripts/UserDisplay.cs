@@ -14,12 +14,19 @@ namespace Fisiomed.User
 
         void Start()
         {
-            for (int i = 0; i < keys.Length; i++)
+            try
             {
-                values.Add(UserManager.Instance.UserDataAux.properties[keys[i]]);
+                for (int i = 0; i < keys.Length; i++)
+                {
+                    values.Add(UserManager.Instance.UserDataAux.properties[keys[i]]);
+                }
+                content = string.Format(format, values.ToArray());
+                text.text = content;
             }
-            content = string.Format(format, values.ToArray());
-            text.text = content;     
+            catch (KeyNotFoundException e)
+            {
+                Log.Color("Keys not found. " + e.Message, this);
+            }
         }
     }
 }
