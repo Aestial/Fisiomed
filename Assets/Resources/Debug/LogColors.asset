@@ -62,12 +62,12 @@ MonoBehaviour:
     - color: {r: 0.5849056, g: 0.32054147, b: 0, a: 1}
       isActive: 1
     - color: {r: 0.5849056, g: 0.32054147, b: 0, a: 1}
-      isActive: 0
+      isActive: 1
     - color: {r: 0.5754717, g: 0.22398598, b: 0, a: 1}
       isActive: 1
     - color: {r: 0.6792453, g: 0.13491718, b: 0, a: 1}
-      isActive: 0
+      isActive: 1
     - color: {r: 0.7264151, g: 0.0788092, b: 0.56234336, a: 1}
-      isActive: 0
+      isActive: 1
     - color: {r: 0.5294272, g: 0.099368125, b: 0.7264151, a: 1}
-      isActive: 0
+      isActive: 1
