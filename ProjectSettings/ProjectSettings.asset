@@ -172,7 +172,7 @@ PlayerSettings:
     iPhone: com.facmed.unam.fisiomed
   buildNumber:
     iOS: 019
-    iPhone: 019
+    iPhone: 200
   AndroidBundleVersionCode: 200
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 28

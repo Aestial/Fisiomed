@@ -63,5 +63,10 @@ namespace Fisiomed.Popup
         {
             CleanMessages();
         }
+
+        void OnDestroy()
+        {
+            CleanMessages();
+        }
     }
 }
