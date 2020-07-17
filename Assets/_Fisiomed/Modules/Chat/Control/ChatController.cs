@@ -9,16 +9,16 @@ namespace Fisiomed.Chat
 	public class ChatController : Singleton<ChatController> 
 	{	
 		[Header("Visual")]
-		[SerializeField] Canvas canvas;
-		[SerializeField] GameObject messageBubblePrefab;
-		[SerializeField] GameObject questionBubblePrefab;
-        [SerializeField] GameObject interactiveBubblePrefab;
-        [SerializeField] GameObject videoBubblePrefab;
-        [SerializeField] Transform containerPanel;
-		[SerializeField] Button nextButton;
+		[SerializeField] Canvas canvas = default;
+		[SerializeField] GameObject messageBubblePrefab = default;
+		[SerializeField] GameObject questionBubblePrefab = default;
+		[SerializeField] GameObject interactiveBubblePrefab = default;
+		[SerializeField] GameObject videoBubblePrefab = default;
+		[SerializeField] Transform containerPanel = default;
+		[SerializeField] Button nextButton = default;
 		public List<Sprite> characterSprites = new List<Sprite>();
-        [SerializeField] int lenght;
-        [SerializeField] int currentIndex;
+        [SerializeField] int lenght = default;
+		[SerializeField] int currentIndex = default;
 		Chat chat;
 		#region Public Methods
 		public void Set(Chat chat)

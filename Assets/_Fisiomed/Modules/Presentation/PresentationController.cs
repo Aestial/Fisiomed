@@ -7,9 +7,9 @@ namespace Fisiomed.Case
 {
     public class PresentationController : Singleton<PresentationController>
     {
-        [SerializeField] Canvas canvas;
-        [SerializeField] TMP_Text text;
-        [SerializeField] Image image;
+        [SerializeField] Canvas canvas = default;
+        [SerializeField] TMP_Text text = default;
+        [SerializeField] Image image = default;
         public void Set(Info info)
         {                
             StartCoroutine(Downloader.Instance.LoadTexture(info.imageUrl, OnTextureLoaded));

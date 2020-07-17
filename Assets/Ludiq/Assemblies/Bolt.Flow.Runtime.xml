@@ -1495,6 +1495,12 @@
             Sets the value of a graph variable.
             </summary>
         </member>
+        <member name="T:Bolt.SaveVariables">
+            <summary>
+            Forces saved variables to be saved to the PlayerPrefs.
+            This is useful on WebGL where automatic save on quit is not supported.
+            </summary>
+        </member>
         <member name="T:Bolt.SetVariable">
             <summary>
             Assigns the value of a variable.

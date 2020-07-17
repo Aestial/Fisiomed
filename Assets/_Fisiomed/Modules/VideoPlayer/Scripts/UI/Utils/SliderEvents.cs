@@ -4,8 +4,8 @@ using UnityEngine.EventSystems;
 
 public class SliderEvents : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
-    [SerializeField] UnityEvent onPointerDownAction;
-    [SerializeField] UnityEvent onPointerUpAction;
+    [SerializeField] UnityEvent onPointerDownAction = default;
+    [SerializeField] UnityEvent onPointerUpAction = default;
 
     public void OnPointerDown(PointerEventData eventData)
     {

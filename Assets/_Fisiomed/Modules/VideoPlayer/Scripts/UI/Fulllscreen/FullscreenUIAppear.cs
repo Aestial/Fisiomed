@@ -15,7 +15,7 @@ namespace Fisiomed.Video
     {
         public VideoManager video;
 
-        [SerializeField] CanvasGroup canvasGroup;
+        [SerializeField] CanvasGroup canvasGroup = default;
 
         [SerializeField] float startWaitTime = 1.5f;
         [SerializeField] float triggerWaitTime = 3.0f;

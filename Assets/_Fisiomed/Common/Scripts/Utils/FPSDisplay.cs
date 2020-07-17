@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FPSDisplay : MonoBehaviour
 {
-	[SerializeField] private Color color;
+	[SerializeField] private Color color = default;
 	float deltaTime = 0.0f;
 
 	void Update()

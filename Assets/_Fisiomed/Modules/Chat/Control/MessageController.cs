@@ -13,11 +13,11 @@ namespace Fisiomed.Chat
     public class MessageController : MonoBehaviour
     {
         [Header("Customize Components")]
-        [SerializeField] Image characterImage;
-        [SerializeField] Image characterBubble;
-        [SerializeField] Image textBubble;
-        [SerializeField] Image textBubbleShadow;
-        [SerializeField] TMP_Text text;
+        [SerializeField] Image characterImage = default;
+        [SerializeField] Image characterBubble = default;
+        [SerializeField] Image textBubble = default;
+        [SerializeField] Image textBubbleShadow = default;
+        [SerializeField] TMP_Text text = default;
         #region Public Methods
         public void Set(Message message, Character character, Sprite sprite)
         {           

@@ -4,6 +4,8 @@ using UnityEngine.Video;
 
 namespace Fisiomed.Video 
 {
+    using App;
+
     public enum VideoMode
     {
         Off,
@@ -20,7 +22,7 @@ namespace Fisiomed.Video
         public VideoPlayer video;
         public bool isActive;
         [SerializeField] VideoMode currentMode = VideoMode.Off;
-        [SerializeField] FullscreenUIController fullscreenHUD;
+        [SerializeField] FullscreenUIController fullscreenHUD = default;
         public UnityAction<int, int> onPrepared;
         public UnityAction onEndReached;
         public UnityAction onPlaying;

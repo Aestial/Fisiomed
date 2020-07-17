@@ -17,10 +17,10 @@ namespace Fisiomed.Video
         public VideoManager video;
 
         [Header("UI Elements")]
-        [SerializeField] Slider slider;
-        [SerializeField] TMP_Text timeText;
-        [SerializeField] Image playButton;
-        [SerializeField] Image pauseButton;
+        [SerializeField] Slider slider = default;
+        [SerializeField] TMP_Text timeText = default;
+        [SerializeField] Image playButton = default;
+        [SerializeField] Image pauseButton = default;
 
         bool isDragging;
 

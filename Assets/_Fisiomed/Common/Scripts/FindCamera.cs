@@ -2,7 +2,7 @@
 
 public class FindCamera : MonoBehaviour
 {
-    new Camera camera;
+    Camera camera;
     Canvas canvas;    
     void Start()
     {

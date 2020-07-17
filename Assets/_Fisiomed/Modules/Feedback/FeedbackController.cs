@@ -5,10 +5,10 @@ namespace Fisiomed.Feedback
 {
     public class FeedbackController : Singleton<FeedbackController>
     {
-        [SerializeField] Canvas canvas;
-        [SerializeField] TMP_Text text;
-        [SerializeField] Canvas rightCanvas;
-        [SerializeField] Canvas wrongCanvas;
+        [SerializeField] Canvas canvas = default;
+        [SerializeField] TMP_Text text = default;
+        [SerializeField] Canvas rightCanvas = default;
+        [SerializeField] Canvas wrongCanvas = default;
         string caller;
         Notifier notifier = new Notifier();
         public const string ON_MODAL_CLOSED = "OnModalClosed";
