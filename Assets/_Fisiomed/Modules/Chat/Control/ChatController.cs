@@ -35,8 +35,12 @@ namespace Fisiomed.Chat
             //canvas.enabled &= currentIndex <= lenght;
             canvas.enabled = last;
             nextButton.interactable = last;
-            if (++currentIndex < lenght)
-				ShowElement(currentIndex);			
+			if (++currentIndex < lenght)
+				ShowElement(currentIndex);
+			else
+            {
+				// NOTIFY: FINISHED CHAT
+            }
 		}
 		#endregion
 		private void ShowElement(int index)

@@ -12,7 +12,7 @@ public static class TextProcess
         string gender;
         try
         {
-            gender = UserManager.Instance.UserDataAux.properties["gender"];
+            gender = UserManager.Instance.UserData.properties["gender"];
         }
         catch (KeyNotFoundException e)
         {
@@ -25,7 +25,7 @@ public static class TextProcess
         string name;
         try
         {
-            name = UserManager.Instance.UserDataAux.properties["name"];
+            name = UserManager.Instance.UserData.properties["name"];
         }
         catch (KeyNotFoundException e)
         {

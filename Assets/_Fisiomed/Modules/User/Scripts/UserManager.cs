@@ -46,29 +46,58 @@ namespace Fisiomed.User
                 
             }
         }
-        [SerializeField] UserData _userDataAux = new UserData();
-        public UserData UserDataAux
+        [SerializeField] UserData _userData = new UserData();
+        public UserData UserData
         {
             get
             {
-                if (_userDataAux == null)
+                if (_userData == null)
                 {
-                    _userDataAux = new UserData();                    
+                    _userData = new UserData();                    
                 }
-                return _userDataAux;
+                return _userData;
             }
             set
             {
-                _userDataAux = value;
+                _userData = value;
+            }
+        }
+
+
+        public void SaveUserProgress(int index, string progress)
+        {
+            if (UserData.progress.ContainsKey(index))
+                UserData.progress[index] = progress;
+            else
+                UserData.progress.Add(index, progress);
+
+            string json = JsonUtility.ToJson(UserData);
+            SaveJSONLocal(json);
+            SaveOnDB(json);
+        }
+
+        private async void SaveOnDB(string json)
+        {
+            // Save user in Database
+            try
+            {
+                await _database.GetReference("users").Child(_firebaseUser.UserId).SetRawJsonValueAsync(json);
+                Debug.LogFormat("User data saved (DB): {0} ({1})", _firebaseUser.DisplayName, _firebaseUser.UserId);
+                PopupManager.Instance.PrintMessage("User saved in DB: " + FirebaseManager.Instance.User.DisplayName);
+            }
+            catch (AggregateException ex)
+            {
+                Log.ColorError("SetRawJsonValueAsync encountered an error: " + ex.Message + " Data: " + ex.Data.Values, this);
+                PopupManager.Instance.PrintMessage("Saving in DB user error: " + ex.Message);
             }
         }
 
         public void SetUserProperty(string value, string key)
         {
-            if (UserDataAux.properties.ContainsKey(key))
-                UserDataAux.properties[key] = value;
+            if (UserData.properties.ContainsKey(key))
+                UserData.properties[key] = value;
             else
-                UserDataAux.properties.Add(key, value);       
+                UserData.properties.Add(key, value);       
         }
         public void SetUserLoginData(string value, string key)
         {
@@ -79,9 +108,9 @@ namespace Fisiomed.User
         }        
         public async void SignUp()
         {
-            string email = UserDataAux.properties["email"];
-            string password = UserDataAux.properties["password"];
-            string json = JsonUtility.ToJson(UserDataAux);
+            string email = UserData.properties["email"];
+            string password = UserData.properties["password"];
+            string json = JsonUtility.ToJson(UserData);
 
             Log.Color("Signing Up User: " + email, this);
 
@@ -101,7 +130,7 @@ namespace Fisiomed.User
 
                 UserProfile profile = new UserProfile();
                 // TODO: Change for Username
-                profile.DisplayName = UserDataAux.properties["name"];
+                profile.DisplayName = UserData.properties["name"];
                 // TODO: Set Photo URL
                 // profile.PhotoUrl = _user.properties["photoUrl"];     
 
@@ -172,7 +201,7 @@ namespace Fisiomed.User
                 Log.Color(dss.ToString(), this);
                 string json = dss.GetRawJsonValue();
                 Log.Color(json, this);
-                UserDataAux = GetFromJson(json);
+                UserData = GetFromJson(json);
                 SaveJSONLocal(json);
             }
             catch (AggregateException ex)
@@ -196,7 +225,7 @@ namespace Fisiomed.User
             if (File.Exists(filePath))
             {
                 Log.Color("User file exists in:" + filePath, this);
-                UserDataAux = GetFromJson(File.ReadAllText(filePath));
+                UserData = GetFromJson(File.ReadAllText(filePath));
             }
             //else
             //{

@@ -6,35 +6,27 @@ namespace Fisiomed.User
 {
     [Serializable]
     public class StringStringDictionary : SerializableDictionaryBase<string,string> { }
-    
+    [Serializable]
+    public class IntStringDictionary : SerializableDictionaryBase<int,string> { }
+
     [Serializable]
     public class UserData
     {
         public string id; // DB ID
         public StringStringDictionary properties;
-        //public GameProfile gamer;
-        //public PersonalProfile personal;
+        public IntStringDictionary progress;
         public UserData()
         {
-            //gamer = new GameProfile();
-            //personal = new PersonalProfile();
             properties = new StringStringDictionary();
+            progress = new IntStringDictionary();
         }
     }
-    [Serializable]
-    public class GameProfile
-    {
-        // Game information
-        public string username;
-        public string avatar;
-        public int level;
-    }    
     //[Serializable]
-    //public class PersonalProfile
-    //{
+    // propierties:
     //    // Real name
     //    public string name;
-    //    public string surname;
+    //    public string f-surname;
+    //    public string m-surname;
     //    // User personal info
     //    public string gender;
     //    public string age;
@@ -42,5 +34,8 @@ namespace Fisiomed.User
     //    public string university;
     //    public string semester;
     //    public string unamID;
-    //}
+    //    // Game information
+    //    public string username;
+    //    public string avatar;
+    //    public int level;
 }
