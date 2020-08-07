@@ -397,8 +397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5073d1bc479549ec99cab3d45db58f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearSpeed: 0.5
-  disappearSpeed: 1
+  appearSpeed: 1.5
+  disappearSpeed: 2.2
   isVisible: 0
   onFadedIn:
     m_PersistentCalls:
@@ -658,8 +658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5073d1bc479549ec99cab3d45db58f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearSpeed: 0.5
-  disappearSpeed: 1
+  appearSpeed: 1.5
+  disappearSpeed: 2.2
   isVisible: 1
   onFadedIn:
     m_PersistentCalls:
@@ -1174,7 +1174,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0}
   m_AnchorMax: {x: 0.92142856, y: 0.97367644}
-  m_AnchoredPosition: {x: 6.8000793, y: -0.049804688}
+  m_AnchoredPosition: {x: 6.800049, y: -0.049804688}
   m_SizeDelta: {x: 13.7, y: 0.099999905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2465228097112256431
@@ -3580,8 +3580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5073d1bc479549ec99cab3d45db58f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearSpeed: 0.5
-  disappearSpeed: 1
+  appearSpeed: 1.5
+  disappearSpeed: 2.2
   isVisible: 0
   onFadedIn:
     m_PersistentCalls:
@@ -4146,8 +4146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5073d1bc479549ec99cab3d45db58f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearSpeed: 0.5
-  disappearSpeed: 1
+  appearSpeed: 1.5
+  disappearSpeed: 2.2
   isVisible: 0
   onFadedIn:
     m_PersistentCalls:
