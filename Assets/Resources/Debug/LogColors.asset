@@ -37,17 +37,37 @@ MonoBehaviour:
     reqReferences: {fileID: 0}
     isExpanded: 1
     _keyValues:
+    - Fisiomed.App.AppManager
+    - Fisiomed.FirebaseServices.FirebaseManager
     - Fisiomed.User.UserManager
+    - Fisiomed.User.UserDisplay
+    - Fisiomed.User.AuthSceneController
+    - Fisiomed.UI.Validator.Validator
     - Loader.Downloader
-    - Fisiomed.UI.Validator.PageValidator
+    - Fisiomed.Video.VideoManager
     _keys:
+    - Fisiomed.App.AppManager
+    - Fisiomed.FirebaseServices.FirebaseManager
     - Fisiomed.User.UserManager
+    - Fisiomed.User.UserDisplay
+    - Fisiomed.User.AuthSceneController
+    - Fisiomed.UI.Validator.Validator
     - Loader.Downloader
-    - Fisiomed.UI.Validator.PageValidator
+    - Fisiomed.Video.VideoManager
     _values:
-    - color: {r: 0.5294118, g: 0.23137255, b: 0.7058824, a: 1}
+    - color: {r: 0.07587219, g: 0.5188679, b: 0.41442177, a: 1}
       isActive: 1
-    - color: {r: 0.21960784, g: 0.48235294, b: 0.44705883, a: 1}
+    - color: {r: 0.5377358, g: 0.42202055, b: 0, a: 1}
       isActive: 1
-    - color: {r: 0.12941177, g: 0.39607844, b: 0.69803923, a: 1}
+    - color: {r: 0.5849056, g: 0.32054147, b: 0, a: 1}
+      isActive: 1
+    - color: {r: 0.5849056, g: 0.32054147, b: 0, a: 1}
+      isActive: 1
+    - color: {r: 0.5754717, g: 0.22398598, b: 0, a: 1}
+      isActive: 1
+    - color: {r: 0.6792453, g: 0.13491718, b: 0, a: 1}
+      isActive: 1
+    - color: {r: 0.7264151, g: 0.0788092, b: 0.56234336, a: 1}
+      isActive: 1
+    - color: {r: 0.5294272, g: 0.099368125, b: 0.7264151, a: 1}
       isActive: 1

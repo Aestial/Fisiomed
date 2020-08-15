@@ -6,9 +6,9 @@ namespace Fisiomed.Quiz
 {
     public class QuestionController : MonoBehaviour
     {
-        [SerializeField] private TMP_Text questionText;
-        [SerializeField] private Transform answersPanel;
-        [SerializeField] private GameObject answerPrefab;
+        [SerializeField] private TMP_Text questionText = default;
+        [SerializeField] private Transform answersPanel = default;
+        [SerializeField] private GameObject answerPrefab = default;
         CanvasGroup answersGroup;
         private Question question;
         public QuizController quiz;

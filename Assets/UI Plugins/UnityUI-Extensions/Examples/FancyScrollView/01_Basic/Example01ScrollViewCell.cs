@@ -3,9 +3,9 @@
     public class Example01ScrollViewCell : FancyScrollViewCell<Example01CellDto>
     {
         [SerializeField]
-        Animator animator;
+        Animator animator = default;
         [SerializeField]
-        Text message;
+        Text message = default;
 
         readonly int scrollTriggerHash = Animator.StringToHash("scroll");
 

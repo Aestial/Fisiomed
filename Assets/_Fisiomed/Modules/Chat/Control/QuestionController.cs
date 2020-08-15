@@ -6,10 +6,10 @@ namespace Fisiomed.Chat
     public class QuestionController : MonoBehaviour
     {
         [Header("Customize Components")]
-        [SerializeField] Image characterImage;
-        [SerializeField] Image characterBubble;
-        [SerializeField] GameObject answerBubblePrefab;
-        [SerializeField] private Transform container;
+        [SerializeField] Image characterImage = default;
+        [SerializeField] Image characterBubble = default;
+        [SerializeField] GameObject answerBubblePrefab = default;
+        [SerializeField] private Transform container = default;
         ChatController chat;
         //CanvasGroup answersGroup;
         // Question question;        

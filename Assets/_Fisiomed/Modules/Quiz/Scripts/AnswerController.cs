@@ -10,11 +10,11 @@ namespace Fisiomed.Quiz
     {
         public QuestionController question;
         public bool isCorrect;
-        [SerializeField] Button button;
-        [SerializeField] TMP_Text text;
-        [SerializeField] float continueWaitTime;
-        [SerializeField] UnityEvent correctEvents;
-        [SerializeField] UnityEvent wrongEvents;
+        [SerializeField] Button button = default;
+        [SerializeField] TMP_Text text = default;
+        [SerializeField] float continueWaitTime = default;
+        [SerializeField] UnityEvent correctEvents = default;
+        [SerializeField] UnityEvent wrongEvents = default;
 
         public void Set(QuestionController question, Answer answer)
         {

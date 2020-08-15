@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1088172377023-5dtsrqdjpfgst0ubo7f5ob5dnrpskhl5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1088172377023-5dtsrqdjpfgst0ubo7f5ob5dnrpskhl5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDfsLC8LtRuDF6y0vWnUFjrxqAf4yt-6LU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1088172377023</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.facmed.unam.fisiomed</string>
+	<key>PROJECT_ID</key>
+	<string>fisiomed-unam</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fisiomed-unam.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1088172377023:ios:ecf3ef50290ef9aa6d970a</string>
+	<key>DATABASE_URL</key>
+	<string>https://fisiomed-unam.firebaseio.com</string>
+</dict>
+</plist>

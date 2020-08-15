@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LoaderController : Singleton<LoaderController>
 {    
-    [SerializeField] Canvas loaderCanvas;
-    [SerializeField] Animator animator;
+    [SerializeField] Canvas loaderCanvas = default;
+    [SerializeField] Animator animator = default;
     [SerializeField] float resetTime = 1.0f;
     float enabledTime, disabledTime;
     public void SetLoader(bool enabled)

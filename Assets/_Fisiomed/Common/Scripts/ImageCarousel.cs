@@ -5,8 +5,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class ImageCarousel : MonoBehaviour 
 {
-	[SerializeField] private float waitTime;
-	[SerializeField] private Sprite[] sprites;
+	[SerializeField] private float waitTime = default;
+	[SerializeField] private Sprite[] sprites = default;
 	private int index;
 	private Image image;
 

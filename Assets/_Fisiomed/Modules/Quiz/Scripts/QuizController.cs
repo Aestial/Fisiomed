@@ -5,11 +5,11 @@ namespace Fisiomed.Quiz
 {
     public class QuizController : Singleton<QuizController>, ILoader
     {
-        [SerializeField] QuestionController questionController;
-        [SerializeField] Canvas questionCanvas;
+        [SerializeField] QuestionController questionController = default;
+        [SerializeField] Canvas questionCanvas = default;
         [SerializeField] int currentIndex = -1;
-        [SerializeField] bool hasDefault;
-        [SerializeField] string json;
+        [SerializeField] bool hasDefault = default;
+        [SerializeField] string json = default;
         Quiz quiz;
         Notifier notifier = new Notifier();
         
