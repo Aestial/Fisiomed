@@ -6,20 +6,27 @@ using Loader;
 
 namespace Fisiomed.Chat
 {
+	using App;
+
 	public class ChatController : Singleton<ChatController> 
 	{	
 		[Header("Visual")]
 		[SerializeField] Canvas canvas = default;
+		
 		[SerializeField] GameObject messageBubblePrefab = default;
 		[SerializeField] GameObject questionBubblePrefab = default;
 		[SerializeField] GameObject interactiveBubblePrefab = default;
 		[SerializeField] GameObject videoBubblePrefab = default;
+		[SerializeField] GameObject endBubblePrefab = default;
+
 		[SerializeField] Transform containerPanel = default;
 		[SerializeField] Button nextButton = default;
 		public List<Sprite> characterSprites = new List<Sprite>();
-        [SerializeField] int lenght = default;
+        
+		[SerializeField] int lenght = default;
 		[SerializeField] int currentIndex = default;
 		Chat chat;
+		
 		#region Public Methods
 		public void Set(Chat chat)
 		{
@@ -39,10 +46,11 @@ namespace Fisiomed.Chat
 				ShowElement(currentIndex);
 			else
             {
+				ShowEnd();
 				// NOTIFY: FINISHED CHAT
             }
 		}
-		#endregion
+		#endregion		
 		private void ShowElement(int index)
 		{
 			Element element = chat.sequence[index];
@@ -54,7 +62,7 @@ namespace Fisiomed.Chat
 					Message message = chat.messages[element.index];
 					GameObject newMessage = Instantiate(messageBubblePrefab, containerPanel);
 					MessageController messageC = newMessage.GetComponent<MessageController>();
-					messageC.Set(message, character, sprite);
+					messageC.Set(message.text, character, sprite);
 					nextButton.interactable = true;
 				break;
 				case ElementType.Question:
@@ -82,6 +90,14 @@ namespace Fisiomed.Chat
 				break;
 			}			
 		}		
+		private void ShowEnd()
+		{
+			GameObject newMessage = Instantiate(endBubblePrefab, containerPanel);
+			
+			// MessageController messageC = newMessage.GetComponent<MessageController>();
+			// messageC.Set(message, character, sprite);
+			// nextButton.interactable = true;
+		}
 		IEnumerator DownloadSprites()
 		{
 			for (int i = 0; i < chat.characters.Length; i++)
@@ -89,8 +105,9 @@ namespace Fisiomed.Chat
 				string url = chat.characters[i].imageUrl;
 				yield return StartCoroutine(Downloader.Instance.LoadTexture(url, OnTextureLoaded));
 			}
-			yield return null;
-			ShowElement(currentIndex);			
+			yield return null;			
+			ShowElement(currentIndex);	
+			AppManager.Instance.ShowLoader(false);
 		}
 		void OnTextureLoaded(Texture texture)
 		{

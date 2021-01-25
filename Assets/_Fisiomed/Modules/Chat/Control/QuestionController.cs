@@ -5,11 +5,11 @@ namespace Fisiomed.Chat
 {
     public class QuestionController : MonoBehaviour
     {
+        [SerializeField] GameObject answerBubblePrefab = default;
+        [SerializeField] private Transform container = default;
         [Header("Customize Components")]
         [SerializeField] Image characterImage = default;
         [SerializeField] Image characterBubble = default;
-        [SerializeField] GameObject answerBubblePrefab = default;
-        [SerializeField] private Transform container = default;
         ChatController chat;
         //CanvasGroup answersGroup;
         // Question question;        
@@ -64,21 +64,5 @@ namespace Fisiomed.Chat
                 //Destroy(answer.gameObject);
             }
         }        
-        // void SetColors(string text, string textB, string faceB)
-        // {
-        //     Color textColor = new Color();
-        // 	Color textBColor = new Color();
-        // 	Color faceBColor = new Color();
-        // 	ColorUtility.TryParseHtmlString (text, out textColor);
-        // 	ColorUtility.TryParseHtmlString (textB, out textBColor);
-        // 	ColorUtility.TryParseHtmlString (faceB, out faceBColor);
-        //     SetColors(textColor, textBColor, faceBColor);
-        // }
-        // void SetColors(Color textColor, Color textBColor, Color charBColor)
-        // {            
-        //     text.color = textColor;
-        //     textBubble.color = textBColor;
-        //     characterBubble.color = charBColor;            
-        // }       
     }
 }
