@@ -14,8 +14,6 @@ namespace Fisiomed.Case
         [SerializeField] bool useDefault = default;
         [SerializeField] string defaultUrl = default;
         [SerializeField] string closeSceneName = default;
-        [Header("Visuals")]
-        [SerializeField] float loaderTime = default;
         CCase ccase;
         public void Close()
         {
@@ -44,12 +42,6 @@ namespace Fisiomed.Case
             PresentationController.Instance.Set(ccase.info);
             ChatController.Instance.Set(ccase.chat);            
             QuizController.Instance.Set(ccase.quiz);
-            StartCoroutine(WaitLoader());
-        }
-        IEnumerator WaitLoader()
-        {
-            yield return new WaitForSeconds(loaderTime);
-            AppManager.Instance.ShowLoader(false);
         }
     }
 }
