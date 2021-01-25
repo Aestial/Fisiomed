@@ -80,3 +80,13 @@ Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.test-framework from version 1.1.14 to 1.1.16
+
+=== Mon Sep 21 11:04:44 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.ide.visualstudio@2.0.2
+The following packages were updated:
+  com.unity.textmeshpro from version 2.0.1 to 3.0.1
